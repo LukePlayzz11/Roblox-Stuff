@@ -1,59 +1,47 @@
-Version 0.641.1.6410739
-Added Property AudioListener.DistanceAttenuation: BinaryString {RobloxSecurity}
-Added Property Lighting.Intent: Enum.Intent [NotScriptable]
-Added Property Lighting.Quality: Enum.Quality [NotScriptable]
+Version 0.643.0.6430700
+Added Class FluidForceSensor : SensorBase [NotBrowsable]
+Added Property FluidForceSensor.CenterOfPressure: Vector3 [ReadOnly]
+Added Property FluidForceSensor.Force: Vector3 [ReadOnly]
+Added Property FluidForceSensor.Torque: Vector3 [ReadOnly]
+Added Function FluidForceSensor:EvaluateAsync(linearVelocity: Vector3, angularVelocity: Vector3, cframe: CFrame) -> ...any [Yields]
 
-Added Function AudioListener:GetDistanceAttenuation() -> { [string]: any } [CustomLuaState]
-Added Function AudioListener:SetDistanceAttenuation(curve: { [string]: any }) -> () [CustomLuaState]
-Added Function AvatarCreationService:GenerateAvatarAsync(sessionId: string, previewId: string) -> string [Yields]
-Added Function AvatarCreationService:GenerateAvatarPreviewAsync2(sessionId: string, fileId: string, textPrompt: string) -> string [Yields]
-Added Function AvatarCreationService:LoadAvatarHumanoidDescriptionAsync(id: string) -> HumanoidDescription [Yields]
-Added Function AvatarCreationService:RequestAvatarGenerationSessionAsync(player: Player, callback: (...any) -> ...any) -> ...any [Yields]
-Added Function CaptureService:GetCaptureUploadDataAsync(capturePath: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
-Added Function ConversationalAIAcceptanceService:ReportJSONEncodeFailure(instanceName: string, className: string) -> () {RobloxScriptSecurity}
-Added Function GuiService:DismissNotification(notificationId: string) -> boolean
-Added Function GuiService:NotificationDismissed(notificationId: string) -> () {RobloxScriptSecurity}
-Added Function GuiService:NotificationDisplayed(notificationId: string) -> () {RobloxScriptSecurity}
-Added Function GuiService:SendNotification(notificationInfo: { [string]: any }) -> string
-Added Function GuiService:UserInteractedWithNotification(notificationId: string, buttonIndex: number) -> () {RobloxScriptSecurity}
-Added Function Instance:GetStyled(name: string) -> any
+Added Property Studio.ActionOnStopSync: Enum.ActionOnStopSync
 
-Added Enum Intent
-Added EnumItem Intent.Realistic : 0
-Added EnumItem Intent.Flat : 1
+Added Function Players:ReportChatAbuse(eligibleChatLines: { any }, targetChatLines: { any }, tags: { [string]: any }) -> () {RobloxScriptSecurity}
+Added Function StudioAssetService:AutoSetupAvatarAsync(modelId: string, progressCallback: (...any) -> ...any) -> Instance? {RobloxScriptSecurity} [Yields]
 
-Added Enum Quality
-Added EnumItem Quality.Performance : 0
-Added EnumItem Quality.Quality : 1
+Added Event Players.PromptGameServerTargetedChatReportEnrichment(reportId: string, eligibleChatLines: { any }, targetChatLines: { any }) {RobloxSecurity} [Hidden]
+Added Event VoiceChatInternal.TempSetMicMutedToggleMic() {RobloxScriptSecurity}
 
-Added EnumItem Technology.Unified : 5 [Preliminary]
+Added Enum ActionOnStopSync
+Added EnumItem ActionOnStopSync.AlwaysAsk : 0
+Added EnumItem ActionOnStopSync.KeepLocalFiles : 1
+Added EnumItem ActionOnStopSync.DeleteLocalFiles : 2
 
-Added Tag [Deprecated] to Function InsertService:GetCollection
-Added Tag [Deprecated] to Function InsertService:GetUserSets
+Added EnumItem ConnectionError.ServerEmpty : 302
+Added EnumItem SecurityCapability.Input : 17
+Added EnumItem SecurityCapability.Environment : 18
+Added EnumItem SecurityCapability.RemoteEvent : 19
 
-Removed Class AvatarGenerationJob
-Removed Property AvatarGenerationJob.Error
-Removed Property AvatarGenerationJob.ErrorMessage
-Removed Property AvatarGenerationJob.Progress
-Removed Property AvatarGenerationJob.Status
-Removed Function AvatarGenerationJob:Cancel
-Removed Function AvatarGenerationJob:GetOutput
-Removed Function AvatarGenerationJob:Wait
+Removed Function AppUpdateService:DisableDUAR
+Removed Function AppUpdateService:DisableDUARAndOpenSurvey
+Removed Function StudioPublishService:GetLocalFilePath
+Removed Function StudioPublishService:GetPlaceDisplayName
 
-Removed Class AvatarGenerationSession
-Removed Function AvatarGenerationSession:GenerateAvatarModel
-Removed Function AvatarGenerationSession:GenerateAvatarPreview
-
-Removed Class Avatar2DGenerationJob
-Removed Property Avatar2DGenerationJob.Result
-
-Removed Class Avatar3DGenerationJob
-Removed Property Avatar3DGenerationJob.Result
-
-Removed Function AvatarCreationService:CreateAvatarGenerationSessionAsync
-
-Removed Enum AvatarGenerationJobStatus
-Removed EnumItem AvatarGenerationJobStatus.NotStarted
-Removed EnumItem AvatarGenerationJobStatus.InProgress
-Removed EnumItem AvatarGenerationJobStatus.Completed
-Removed EnumItem AvatarGenerationJobStatus.Failed
+Removed Tag [NotBrowsable] from Class AudioAnalyzer
+Removed Tag [NotBrowsable] from Class AudioChorus
+Removed Tag [NotBrowsable] from Class AudioCompressor
+Removed Tag [NotBrowsable] from Class AudioDeviceInput
+Removed Tag [NotBrowsable] from Class AudioDeviceOutput
+Removed Tag [NotBrowsable] from Class AudioDistortion
+Removed Tag [NotBrowsable] from Class AudioEcho
+Removed Tag [NotBrowsable] from Class AudioEmitter
+Removed Tag [NotBrowsable] from Class AudioEqualizer
+Removed Tag [NotBrowsable] from Class AudioFader
+Removed Tag [NotBrowsable] from Class AudioFilter
+Removed Tag [NotBrowsable] from Class AudioFlanger
+Removed Tag [NotBrowsable] from Class AudioListener
+Removed Tag [NotBrowsable] from Class AudioPitchShifter
+Removed Tag [NotBrowsable] from Class AudioPlayer
+Removed Tag [NotBrowsable] from Class AudioReverb
+Removed Tag [NotBrowsable] from Class Wire
