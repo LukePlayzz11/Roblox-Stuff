@@ -1,47 +1,537 @@
-Version 0.643.0.6430700
-Added Class FluidForceSensor : SensorBase [NotBrowsable]
-Added Property FluidForceSensor.CenterOfPressure: Vector3 [ReadOnly]
-Added Property FluidForceSensor.Force: Vector3 [ReadOnly]
-Added Property FluidForceSensor.Torque: Vector3 [ReadOnly]
-Added Function FluidForceSensor:EvaluateAsync(linearVelocity: Vector3, angularVelocity: Vector3, cframe: CFrame) -> ...any [Yields]
+Version 0.645.0.6450665
+Added Property PlayerEmulatorService.TextElongationFactor: number {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property SoundService.DefaultListenerLocation: Enum.ListenerLocation {PluginSecurity}
+Added Property UIDragDetector.SelectionModeDragSpeed: UDim2
+Added Property UIDragDetector.SelectionModeRotateSpeed: number
+Added Property UIDragDetector.UIDragSpeedAxisMapping: Enum.UIDragSpeedAxisMapping
+Added Property UserGameSettings.PartyVoiceVolume: number {RobloxScriptSecurity}
 
-Added Property Studio.ActionOnStopSync: Enum.ActionOnStopSync
+Added Function AvatarCreationService:PromptSelectAvatarGenerationImageAsync(player: Player) -> string [Yields]
+Added Function ChatWindowConfiguration:DeriveNewMessageProperties() -> ChatWindowMessageProperties
+Added Function SoundService:GetAudioInstances() -> { any } {RobloxScriptSecurity}
+Added Function StartPageService:getLocalGamesFromRegistry() -> { any } {RobloxScriptSecurity}
+Added Function StartPageService:getRecentAPIGamesFromRegistry() -> { any } {RobloxScriptSecurity}
 
-Added Function Players:ReportChatAbuse(eligibleChatLines: { any }, targetChatLines: { any }, tags: { [string]: any }) -> () {RobloxScriptSecurity}
-Added Function StudioAssetService:AutoSetupAvatarAsync(modelId: string, progressCallback: (...any) -> ...any) -> Instance? {RobloxScriptSecurity} [Yields]
+Added Event AvatarCreationService.ReplicateAvatarGenerationImageId(fileId: string, error: string) {RobloxSecurity} [Hidden]
+Added Event AvatarCreationService.RequestAvatarGenerationImage() {RobloxSecurity} [Hidden]
 
-Added Event Players.PromptGameServerTargetedChatReportEnrichment(reportId: string, eligibleChatLines: { any }, targetChatLines: { any }) {RobloxSecurity} [Hidden]
-Added Event VoiceChatInternal.TempSetMicMutedToggleMic() {RobloxScriptSecurity}
+Added Callback TextChatService.OnChatWindowAdded(message: TextChatMessage) -> ...any
 
-Added Enum ActionOnStopSync
-Added EnumItem ActionOnStopSync.AlwaysAsk : 0
-Added EnumItem ActionOnStopSync.KeepLocalFiles : 1
-Added EnumItem ActionOnStopSync.DeleteLocalFiles : 2
+Added Enum ListenerLocation
+Added EnumItem ListenerLocation.Default : 0
+Added EnumItem ListenerLocation.None : 1
+Added EnumItem ListenerLocation.Character : 2
+Added EnumItem ListenerLocation.Camera : 3
 
-Added EnumItem ConnectionError.ServerEmpty : 302
-Added EnumItem SecurityCapability.Input : 17
-Added EnumItem SecurityCapability.Environment : 18
-Added EnumItem SecurityCapability.RemoteEvent : 19
+Added Enum UIDragSpeedAxisMapping
+Added EnumItem UIDragSpeedAxisMapping.XY : 0
+Added EnumItem UIDragSpeedAxisMapping.XX : 1
+Added EnumItem UIDragSpeedAxisMapping.YY : 2
 
-Removed Function AppUpdateService:DisableDUAR
-Removed Function AppUpdateService:DisableDUARAndOpenSurvey
-Removed Function StudioPublishService:GetLocalFilePath
-Removed Function StudioPublishService:GetPlaceDisplayName
+Added Enum WhisperChatPrivacyMode
+Added EnumItem WhisperChatPrivacyMode.AllUsers : 0
+Added EnumItem WhisperChatPrivacyMode.NoOne : 1
 
-Removed Tag [NotBrowsable] from Class AudioAnalyzer
-Removed Tag [NotBrowsable] from Class AudioChorus
-Removed Tag [NotBrowsable] from Class AudioCompressor
-Removed Tag [NotBrowsable] from Class AudioDeviceInput
-Removed Tag [NotBrowsable] from Class AudioDeviceOutput
-Removed Tag [NotBrowsable] from Class AudioDistortion
-Removed Tag [NotBrowsable] from Class AudioEcho
-Removed Tag [NotBrowsable] from Class AudioEmitter
-Removed Tag [NotBrowsable] from Class AudioEqualizer
-Removed Tag [NotBrowsable] from Class AudioFader
-Removed Tag [NotBrowsable] from Class AudioFilter
-Removed Tag [NotBrowsable] from Class AudioFlanger
-Removed Tag [NotBrowsable] from Class AudioListener
-Removed Tag [NotBrowsable] from Class AudioPitchShifter
-Removed Tag [NotBrowsable] from Class AudioPlayer
-Removed Tag [NotBrowsable] from Class AudioReverb
-Removed Tag [NotBrowsable] from Class Wire
+Changed the security of Property Script.Source
+from:{PluginSecurity}
+to:{None}
+
+Changed the value-type of Property AdGui.FallbackImage
+from:string
+to:ContentId
+
+Changed the value-type of Property Animation.AnimationId
+from:string
+to:ContentId
+
+Changed the value-type of Property AudioPlayer.Asset
+from:string
+to:ContentId
+
+Changed the value-type of Property BackpackItem.TextureId
+from:string
+to:ContentId
+
+Changed the value-type of Property BaseScript.LinkedSource
+from:string
+to:ContentId
+
+Changed the value-type of Property BaseWrap.CageMeshId
+from:string
+to:ContentId
+
+Changed the value-type of Property BaseWrap.TemporaryCageMeshId
+from:string
+to:ContentId
+
+Changed the value-type of Property BaseWrap.HSRAssetId
+from:string
+to:ContentId
+
+Changed the value-type of Property Beam.Texture
+from:string
+to:ContentId
+
+Changed the value-type of Property ClickDetector.CursorIcon
+from:string
+to:ContentId
+
+Changed the value-type of Property Clothing.Outfit1
+from:string
+to:ContentId
+
+Changed the value-type of Property Clothing.Outfit2
+from:string
+to:ContentId
+
+Changed the value-type of Property Decal.Texture
+from:string
+to:ContentId
+
+Changed the value-type of Property DragDetector.ActivatedCursorIcon
+from:string
+to:ContentId
+
+Changed the value-type of Property FileMesh.MeshId
+from:string
+to:ContentId
+
+Changed the value-type of Property FileMesh.TextureId
+from:string
+to:ContentId
+
+Changed the value-type of Property FloorWire.Texture
+from:string
+to:ContentId
+
+Changed the value-type of Property ImageButton.HoverImage
+from:string
+to:ContentId
+
+Changed the value-type of Property ImageButton.Image
+from:string
+to:ContentId
+
+Changed the value-type of Property ImageButton.PressedImage
+from:string
+to:ContentId
+
+Changed the value-type of Property ImageHandleAdornment.Image
+from:string
+to:ContentId
+
+Changed the value-type of Property ImageLabel.Image
+from:string
+to:ContentId
+
+Changed the value-type of Property MaterialVariant.ColorMap
+from:string
+to:ContentId
+
+Changed the value-type of Property MaterialVariant.MetalnessMap
+from:string
+to:ContentId
+
+Changed the value-type of Property MaterialVariant.NormalMap
+from:string
+to:ContentId
+
+Changed the value-type of Property MaterialVariant.RoughnessMap
+from:string
+to:ContentId
+
+Changed the value-type of Property MaterialVariant.TexturePack
+from:string
+to:ContentId
+
+Changed the value-type of Property MeshPart.MeshID
+from:string
+to:ContentId
+
+Changed the value-type of Property MeshPart.MeshId
+from:string
+to:ContentId
+
+Changed the value-type of Property MeshPart.TextureID
+from:string
+to:ContentId
+
+Changed the value-type of Property ModuleScript.LinkedSource
+from:string
+to:ContentId
+
+Changed the value-type of Property Mouse.Icon
+from:string
+to:ContentId
+
+Changed the value-type of Property PackageLink.PackageId
+from:string
+to:ContentId
+
+Changed the value-type of Property PackageLink.PackageIdSerialize
+from:string
+to:ContentId
+
+Changed the value-type of Property Pants.PantsTemplate
+from:string
+to:ContentId
+
+Changed the value-type of Property PartOperation.AssetId
+from:string
+to:ContentId
+
+Changed the value-type of Property ParticleEmitter.Texture
+from:string
+to:ContentId
+
+Changed the value-type of Property PluginToolbarButton.Icon
+from:string
+to:ContentId
+
+Changed the value-type of Property ScreenshotHud.CameraButtonIcon
+from:string
+to:ContentId
+
+Changed the value-type of Property ScrollingFrame.BottomImage
+from:string
+to:ContentId
+
+Changed the value-type of Property ScrollingFrame.MidImage
+from:string
+to:ContentId
+
+Changed the value-type of Property ScrollingFrame.TopImage
+from:string
+to:ContentId
+
+Changed the value-type of Property Shirt.ShirtTemplate
+from:string
+to:ContentId
+
+Changed the value-type of Property ShirtGraphic.Graphic
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.MoonTextureId
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.SkyboxBk
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.SkyboxDn
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.SkyboxFt
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.SkyboxLf
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.SkyboxRt
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.SkyboxUp
+from:string
+to:ContentId
+
+Changed the value-type of Property Sky.SunTextureId
+from:string
+to:ContentId
+
+Changed the value-type of Property Sound.SoundId
+from:string
+to:ContentId
+
+Changed the value-type of Property SurfaceAppearance.ColorMap
+from:string
+to:ContentId
+
+Changed the value-type of Property SurfaceAppearance.MetalnessMap
+from:string
+to:ContentId
+
+Changed the value-type of Property SurfaceAppearance.NormalMap
+from:string
+to:ContentId
+
+Changed the value-type of Property SurfaceAppearance.RoughnessMap
+from:string
+to:ContentId
+
+Changed the value-type of Property SurfaceAppearance.TexturePack
+from:string
+to:ContentId
+
+Changed the value-type of Property TerrainDetail.ColorMap
+from:string
+to:ContentId
+
+Changed the value-type of Property TerrainDetail.MetalnessMap
+from:string
+to:ContentId
+
+Changed the value-type of Property TerrainDetail.NormalMap
+from:string
+to:ContentId
+
+Changed the value-type of Property TerrainDetail.RoughnessMap
+from:string
+to:ContentId
+
+Changed the value-type of Property TerrainDetail.TexturePack
+from:string
+to:ContentId
+
+Changed the value-type of Property Trail.Texture
+from:string
+to:ContentId
+
+Changed the value-type of Property UIDragDetector.ActivatedCursorIcon
+from:string
+to:ContentId
+
+Changed the value-type of Property UIDragDetector.CursorIcon
+from:string
+to:ContentId
+
+Changed the value-type of Property UserInputService.MouseIcon
+from:string
+to:ContentId
+
+Changed the value-type of Property VideoFrame.Video
+from:string
+to:ContentId
+
+Changed the value-type of Property WrapDeformer.RenderMeshID
+from:string
+to:ContentId
+
+Changed the value-type of Property WrapLayer.ReferenceMeshId
+from:string
+to:ContentId
+
+Changed the value-type of Property WrapLayer.TemporaryReferenceId
+from:string
+to:ContentId
+
+Changed the parameters of Function AnimationClipProvider:GetAnimationClip
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Function AnimationClipProvider:GetAnimationClipAsync
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Function AnimationClipProvider:GetClipEvaluatorAsync
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Function AssetService:CreateEditableImageAsync
+from:(textureId: string)
+to:(textureId: ContentId)
+
+Changed the parameters of Function AssetService:CreateEditableMeshAsync
+from:(meshId: string)
+to:(meshId: ContentId)
+
+Changed the parameters of Function AssetService:CreateEditableMeshStripSkinningAsync
+from:(meshId: string)
+to:(meshId: ContentId)
+
+Changed the parameters of Function AssetService:CreateMeshPartAsync
+from:(meshId: string, options: { [string]: any }?)
+to:(meshId: ContentId, options: { [string]: any }?)
+
+Changed the parameters of Function CaptureService:GetCaptureFilePathAsync
+from:(captureContentId: string)
+to:(captureContentId: ContentId)
+
+Changed the parameters of Function CaptureService:GetCaptureSizeAsync
+from:(captureContentId: string)
+to:(captureContentId: ContentId)
+
+Changed the parameters of Function CaptureService:PromptShareCapture
+from:(contentId: string, launchData: string, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any)
+to:(contentId: ContentId, launchData: string, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any)
+
+Changed the parameters of Function CaptureService:SaveScreenshotCapture
+from:()
+to:(additionalInfo: string? = "")
+
+Changed the parameters of Function ContentProvider:GetAssetFetchStatus
+from:(contentId: string)
+to:(contentId: ContentId)
+
+Changed the parameters of Function ContentProvider:GetAssetFetchStatusChangedSignal
+from:(contentId: string)
+to:(contentId: ContentId)
+
+Changed the parameters of Function ContentProvider:Preload
+from:(contentId: string)
+to:(contentId: ContentId)
+
+Changed the parameters of Function ContentProvider:RegisterEncryptedAsset
+from:(assetId: string, encryptionKey: string)
+to:(assetId: ContentId, encryptionKey: string)
+
+Changed the parameters of Function ContentProvider:RegisterSessionEncryptedAsset
+from:(contentId: string, sessionKey: string)
+to:(contentId: ContentId, sessionKey: string)
+
+Changed the parameters of Function ContentProvider:UnregisterEncryptedAsset
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Function DataModel:GetObjects
+from:(url: string)
+to:(url: ContentId)
+
+Changed the parameters of Function DataModel:GetObjectsAllOrNone
+from:(url: string, binaryFormatOnly: boolean? = false)
+to:(url: ContentId, binaryFormatOnly: boolean? = false)
+
+Changed the parameters of Function DataModel:GetObjectsAsync
+from:(url: string)
+to:(url: ContentId)
+
+Changed the parameters of Function DataModel:InsertObjectsAndJoinIfLegacyAsync
+from:(url: string)
+to:(url: ContentId)
+
+Changed the parameters of Function DataModel:Load
+from:(url: string)
+to:(url: ContentId)
+
+Changed the parameters of Function GeometryService:HashMeshAsync
+from:(meshId: string)
+to:(meshId: ContentId)
+
+Changed the parameters of Function HeightmapImporterService:GetHeightmapPreviewAsync
+from:(heightmapAssetId: string)
+to:(heightmapAssetId: ContentId)
+
+Changed the parameters of Function HeightmapImporterService:ImportHeightmap
+from:(region: Region3, heightmapAssetId: string, colormapAssetId: string, defaultMaterial: Enum.Material)
+to:(region: Region3, heightmapAssetId: ContentId, colormapAssetId: ContentId, defaultMaterial: Enum.Material)
+
+Changed the parameters of Function HeightmapImporterService:IsValidColormap
+from:(colormapAssetId: string)
+to:(colormapAssetId: ContentId)
+
+Changed the parameters of Function HeightmapImporterService:IsValidHeightmap
+from:(heightmapAssetId: string)
+to:(heightmapAssetId: ContentId)
+
+Changed the parameters of Function InsertService:CreateMeshPartAsync
+from:(meshId: string, collisionFidelity: Enum.CollisionFidelity, renderFidelity: Enum.RenderFidelity)
+to:(meshId: ContentId, collisionFidelity: Enum.CollisionFidelity, renderFidelity: Enum.RenderFidelity)
+
+Changed the parameters of Function InsertService:LoadPackageAsset
+from:(url: string)
+to:(url: ContentId)
+
+Changed the parameters of Function InsertService:LoadPackageAssetAsync
+from:(url: string)
+to:(url: ContentId)
+
+Changed the parameters of Function KeyframeSequenceProvider:GetKeyframeSequence
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Function KeyframeSequenceProvider:GetKeyframeSequenceAsync
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Function StudioAssetService:AutoSetupAvatarAsync
+from:(modelId: string, progressCallback: (...any) -> ...any)
+to:(modelId: ContentId, progressCallback: (...any) -> ...any)
+
+Changed the parameters of Function StudioAssetService:RequestAvatarAutosetupAsync
+from:(meshId: string, textureId: string, progressCallback: (...any) -> ...any)
+to:(meshId: ContentId, textureId: ContentId, progressCallback: (...any) -> ...any)
+
+Changed the parameters of Function TextService:GetFamilyInfoAsync
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Function UGCValidationService:FetchAssetWithFormat
+from:(url: string, assetFormat: string)
+to:(url: ContentId, assetFormat: string)
+
+Changed the return-type of Function AnimationClipProvider:RegisterActiveAnimationClip
+from:string
+to:ContentId
+
+Changed the return-type of Function AnimationClipProvider:RegisterAnimationClip
+from:string
+to:ContentId
+
+Changed the return-type of Function File:GetTemporaryId
+from:string
+to:ContentId
+
+Changed the return-type of Function GeometryService:StitchMeshesAsync
+from:string
+to:ContentId
+
+Changed the return-type of Function KeyframeSequenceProvider:RegisterActiveKeyframeSequence
+from:string
+to:ContentId
+
+Changed the return-type of Function KeyframeSequenceProvider:RegisterKeyframeSequence
+from:string
+to:ContentId
+
+Changed the return-type of Function PublishService:PublishCageMeshAsync
+from:string
+to:ContentId
+
+Changed the return-type of Function UserInputService:GetImageForKeyCode
+from:string
+to:ContentId
+
+Changed the return-type of Function ViewportFrame:CaptureSnapshotAsync
+from:string
+to:ContentId
+
+Changed the thread safety of Function Lighting:GetMinutesAfterMidnight
+from:{🧬Unsafe}
+to:{🧬Safe}
+
+Changed the thread safety of Function Lighting:GetMoonDirection
+from:{🧬Unsafe}
+to:{🧬Safe}
+
+Changed the thread safety of Function Lighting:GetSunDirection
+from:{🧬Unsafe}
+to:{🧬Safe}
+
+Changed the parameters of Event Animator.OnCombinedUpdate
+from:(animation: string, playState: boolean, fadeTime: number, weight: number, speed: number, timePosition: number, priority: Enum.AnimationPriority, looping: boolean, valuesUpdated: number)
+to:(animation: ContentId, playState: boolean, fadeTime: number, weight: number, speed: number, timePosition: number, priority: Enum.AnimationPriority, looping: boolean, valuesUpdated: number)
+
+Changed the parameters of Event Animator.OnCombinedUpdate2
+from:(animation: string, playState: boolean, fadeTime: number, weight: number, speed: number, timePosition: number, priority: Enum.AnimationPriority, valuesUpdated: number)
+to:(animation: ContentId, playState: boolean, fadeTime: number, weight: number, speed: number, timePosition: number, priority: Enum.AnimationPriority, valuesUpdated: number)
+
+Changed the parameters of Event CaptureService.OpenShareCapturePrompt
+from:(promptId: number, contentId: string, launchData: string)
+to:(promptId: number, contentId: ContentId, launchData: string)
+
+Changed the parameters of Event CaptureService.UserCaptureSaved
+from:(captureContentId: string)
+to:(captureContentId: ContentId)
+
+Changed the parameters of Event ContentProvider.AssetFetchFailed
+from:(assetId: string)
+to:(assetId: ContentId)
+
+Changed the parameters of Event SafetyService.ScreenshotContentReady
+from:(screenshotJobId: number, contentId: string)
+to:(screenshotJobId: number, contentId: ContentId)
