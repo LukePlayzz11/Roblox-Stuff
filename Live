@@ -1,65 +1,88 @@
-Version 0.646.0.6460700
-Added Class AudioLimiter : Instance
-Added Property AudioLimiter.Bypass: boolean
-Added Property AudioLimiter.MaxLevel: number
-Added Property AudioLimiter.Release: number
-Added Function AudioLimiter:GetConnectedWires(pin: string) -> { Instance }
+Version 0.647.0.6470717
+Renamed Class ExplorerFilterAutocompleterInstance to "ExplorerFilterAutocompleter"
 
-Added Class StudioUserService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Property StudioUserService.IsLoggedIn: boolean {RobloxScriptSecurity} [ReadOnly]
+Renamed Class ExplorerFilterInstance to "ExplorerFilter"
 
-Added Property Annotation.LoadingReplies: boolean {RobloxScriptSecurity} [Hidden]
-Added Property Annotation.ReplyCount: number {RobloxScriptSecurity} [Hidden]
-Added Property Plugin.DisableUIDragDetectorDrags: boolean {RobloxScriptSecurity}
+Added Class Object : <<<ROOT>>> [NotCreatable] [NotReplicated]
+Added Property Object.ClassName: string [ReadOnly]
+Added Function Object:GetPropertyChangedSignal(property: string) -> RBXScriptSignal
+Added Function Object:IsA(className: string) -> boolean [CustomLuaState] {🧬Safe}
+Added Event Object.Changed(property: string)
 
-Added Function AvatarCreationService:GetBatchTokenDetailsAsync(tokenIds: { any }) -> { any } [Yields]
-Added Function ConversationalAIAcceptanceService:SendCommandErrorTelemetry(requestId: string, commandName: string, errorMessage: string) -> () {RobloxScriptSecurity}
-Added Function TextChatService:CanUsersWhisperAsync(fromUserId: number, toUserId: number) -> boolean {RobloxScriptSecurity} [Yields]
-Added Function WrapDeformer:CreateEditableMeshAsync() -> EditableMesh [Yields]
-Added Function WrapDeformer:GetDeformedCFrame(originalCFrame: CFrame) -> CFrame
+Added Property ImageButton.ImageContent: string [Hidden] [NotReplicated]
+Added Property ImageLabel.ImageContent: string [Hidden] [NotReplicated]
+Added Property MeshPart.MeshContent: string {✏️NotAccessibleSecurity} [Hidden] [NotReplicated]
+Added Property MeshPart.TextureContent: string [Hidden] [NotReplicated]
 
-Added Enum ContentSourceType
-Added EnumItem ContentSourceType.None : 0
-Added EnumItem ContentSourceType.Uri : 1
-Added EnumItem ContentSourceType.Object : 2
+Added Function AssetService:CreateEditableImage() -> EditableImage
+Added Function AssetService:CreateEditableMesh() -> EditableMesh
+Added Function AvatarEditorService:refreshAvatarThumbnails(thumbnailTypes: { any }) -> () {RobloxScriptSecurity}
+Added Function CommerceService:GetCommerceProductInfoAsync(commerceProductId: number) -> { [string]: any } [Yields]
+Added Function TextService:GetTextSizeOffsetAsync(fontSize: number, font: Font) -> number [Yields]
+Added Function UGCValidationService:CalculateEditableMeshInsideMeshPercentage(editableMeshRoot: EditableMesh, editableMeshQuery: EditableMesh, meshQueryTransform: CFrame, meshQueryScale: Vector3) -> number {RobloxScriptSecurity}
+Added Function UGCValidationService:CalculateMeshInsideMeshPercentage(meshIdRoot: string, meshIdQuery: string, meshqueryTransform: CFrame, meshQueryScale: Vector3) -> number {RobloxScriptSecurity} [Yields]
+Added Function WrapDeformer:GetDeformedCFrameAsync(originalCFrame: CFrame) -> CFrame [Yields]
 
-Added Enum RolloutState
-Added EnumItem RolloutState.Default : 0
-Added EnumItem RolloutState.Disabled : 1
-Added EnumItem RolloutState.Enabled : 2
+Changed the security of Class ExplorerFilterAutocompleter
+from:{None}
+to:{RobloxScriptSecurity}
 
-Added EnumItem PoseEasingStyle.CubicV2 : 5
+Changed the superclass of Class Instance
+from:"<<<ROOT>>>"
+to:"Object"
 
-Changed the superclass of Class BubbleChatMessageProperties
-from:"Instance"
-to:"TextChatMessageProperties"
+Changed the category of Property UIGridStyleLayout.HorizontalAlignment
+from:"Behavior"
+to:"Alignment"
 
-Changed the security of Property ModuleScript.Source
-from:{PluginSecurity}
-to:{None}
+Changed the category of Property UIGridStyleLayout.VerticalAlignment
+from:"Behavior"
+to:"Alignment"
 
-Changed the parameters of Function AnnotationsService:ResolveAnnotation
-from:(annotation: Annotation, resolved: boolean)
-to:(userId: number, annotation: Annotation, resolved: boolean)
+Changed the category of Property UIListLayout.HorizontalFlex
+from:"Data"
+to:"Alignment"
 
-Changed the parameters of Function AvatarCreationService:GenerateAvatarPreviewAsync2
-from:(sessionId: string, fileId: string, textPrompt: string)
-to:(sessionId: string, fileId: string, textPrompt: string, options: { [string]: any })
+Changed the category of Property UIListLayout.ItemLineAlignment
+from:"Data"
+to:"Alignment"
 
-Changed the parameters of Function ConversationalAIAcceptanceService:ErrorTelemetry
-from:(requestId: string, errorType: string)
-to:(requestId: string, errorId: string, errorType: string, errorMessage: string)
+Changed the category of Property UIListLayout.VerticalFlex
+from:"Data"
+to:"Alignment"
 
-Changed the parameters of Function StartPageService:openPlace
-from:(placeId: number, launchTutorial: boolean)
-to:(placeId: number, universeId: number, launchTutorial: boolean)
+Changed the parameters of Function AvatarCreationService:PromptCreateAvatarAsync
+from:(player: Player, humanoidDescription: HumanoidDescription)
+to:(tokenId: string, player: Player, humanoidDescription: HumanoidDescription)
 
-Changed the parameters of Event AnnotationsService.AnnotationResolved
-from:(annotation: Annotation, resolved: boolean)
-to:(userId: number, annotation: Annotation, resolved: boolean)
+Changed the security of Function ExplorerFilter:GetErrors
+from:{None}
+to:{RobloxScriptSecurity}
 
-Removed Property WrapDeformer.RenderMeshID
-Removed Property WrapDeformer.Enabled
-Removed Property WrapDeformer.Amount
+Changed the security of Function ExplorerFilter:GetLexemes
+from:{None}
+to:{RobloxScriptSecurity}
 
-Removed Function ContentProvider:GetDetailedFailedRequests
+Changed the security of Function ExplorerFilter:InstancePassesFilter
+from:{None}
+to:{RobloxScriptSecurity}
+
+Changed the security of Function ExplorerFilter:SetFilter
+from:{None}
+to:{RobloxScriptSecurity}
+
+Changed the security and return-type of Function ExplorerFilter:GetAutocompleter
+from:{None}ExplorerFilterAutocompleterInstance
+to:{RobloxScriptSecurity}ExplorerFilterAutocompleter
+
+Changed the parameters of Event AvatarCreationService.UgcValidationSuccess
+from:(guid: string, serializedModel: string)
+to:(guid: string, serializedModel: string, price: number)
+
+Removed Property Instance.ClassName
+
+Removed Function Instance:GetPropertyChangedSignal
+Removed Function Instance:IsA
+Removed Function WrapDeformer:GetDeformedCFrame
+
+Removed Event Instance.Changed
