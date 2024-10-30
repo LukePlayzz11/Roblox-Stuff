@@ -1,782 +1,145 @@
-Version 0.648.0.6480781
-Added Class RobloxSerializableInstance : Instance [NotCreatable] [NotReplicated]
-Added Property RobloxSerializableInstance.Data: BinaryString {RobloxSecurity}
+Version 0.649.0.6490878
+Added Property AnnotationsService.AnnotationsVisible: boolean {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property PackageLink.HasNewVersion: boolean {RobloxScriptSecurity} [Hidden] [ReadOnly]
+Added Property Stats.FrameTime: number [ReadOnly]
+Added Property Stats.HeartbeatTime: number [ReadOnly]
+Added Property Stats.PhysicsStepTime: number [ReadOnly]
+Added Property Stats.RenderCPUFrameTime: number [ReadOnly]
+Added Property Stats.RenderGPUFrameTime: number [ReadOnly]
+Added Property Stats.SceneDrawcallCount: number [ReadOnly]
+Added Property Stats.SceneTriangleCount: number [ReadOnly]
+Added Property Stats.ShadowsDrawcallCount: number [ReadOnly]
+Added Property Stats.ShadowsTriangleCount: number [ReadOnly]
+Added Property Stats.UI2DDrawcallCount: number [ReadOnly]
+Added Property Stats.UI2DTriangleCount: number [ReadOnly]
+Added Property Stats.UI3DDrawcallCount: number [ReadOnly]
+Added Property Stats.UI3DTriangleCount: number [ReadOnly]
+Added Property WorkspaceAnnotation.AdorneeOffset: Vector3 {RobloxScriptSecurity} [Hidden]
 
-Added Class RomarkRbxAnalyticsService : Instance [NotCreatable] [Service]
+Added Function AnnotationsService:LoadResolvedAnnotations(count: number) -> () {RobloxScriptSecurity}
+Added Function CommerceService:PrepareCommerceProductPurchase(commerceProductId: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+Added Function CommerceService:SignalPromptCommerceProductPurchaseFinished(productId: string, didTryPurchase: boolean, checkoutSessionId: string? = "") -> () {RobloxScriptSecurity}
+Added Function EditableImage:Destroy() -> ()
+Added Function EditableMesh:Destroy() -> ()
+Added Function ScriptDocument:MultiEditTextAsync(edits: { any }) -> ...any {PluginSecurity} [Yields]
+Added Function StreamingService:AttemptSaveAndSendPlaceTelemetry(requestId: string, toolSource: string) -> () {RobloxScriptSecurity} [Yields]
+Added Function StreamingService:DEPRECATED_RegisterCommand(commandName: string, function: ((...any) -> ...any)?) -> () {RobloxScriptSecurity} [Preliminary]
+Added Function StreamingService:DEPRECATED_RegisterSequentialCommand(commandName: string, function: ((...any) -> ...any)?) -> () {RobloxScriptSecurity} [Preliminary]
+Added Function StreamingService:RegisterCommandInternal(commandName: string, function: ((...any) -> ...any)?, isSequential: boolean? = false, isPublic: boolean? = false) -> () {RobloxScriptSecurity}
+Added Function WorkspaceAnnotation:GetAbsolutePosition() -> Vector3 {RobloxScriptSecurity}
+Added Function WorkspaceAnnotation:SetAdorneeOffsetFromAbsolutePosition(position: Vector3) -> () {RobloxScriptSecurity}
 
-Added Class WebViewService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function WebViewService:CloseWindow() -> () {RobloxScriptSecurity}
-Added Function WebViewService:IsAvailable() -> boolean {RobloxScriptSecurity} [Yields]
-Added Function WebViewService:MutateWindow(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?) -> () {RobloxScriptSecurity}
-Added Function WebViewService:OpenWindow(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?) -> () {RobloxScriptSecurity}
-Added Event WebViewService.OnJavaScriptCall(content: string) {RobloxScriptSecurity}
-Added Event WebViewService.OnWindowClosed() {RobloxScriptSecurity}
+Added Event AnnotationsService.ServerLoadResolvedAnnotations(count: number) {RobloxSecurity}
+Added Event CommerceService.BenefitStatusReceived(isGranted: boolean) {RobloxScriptSecurity}
+Added Event CommerceService.FetchReceipt() {RobloxSecurity}
+Added Event CommerceService.PurchaseBrowserClosed() {RobloxScriptSecurity}
+Added Event TextChatService.UpdateChatTimeout(userId: number, startTime: number, duration: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.FetchUserTurnAuthOperationFailed(sessionId: string) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.UpdateTurnAuthInfoRequest() {RobloxSecurity} [Hidden]
 
-Added Property AudioEmitter.AngleAttenuation: BinaryString {RobloxSecurity}
-Added Property AudioListener.AngleAttenuation: BinaryString {RobloxSecurity}
-Added Property BaseWrap.CageMeshContent: string {✏️PluginSecurity} [Hidden]
-Added Property EditableMesh.FixedSize: boolean {✏️RobloxSecurity} [ReadOnly]
-Added Property Workspace.SandboxedInstanceMode: Enum.SandboxedInstanceMode [NotScriptable]
-Added Property WrapLayer.ReferenceMeshContent: string {✏️PluginSecurity} [Hidden]
+Added EnumItem SecurityCapability.LegacySound : 20
 
-Added Function AssetService:CheckTextureAlphaAsync(textureId: ContentId) -> boolean {RobloxScriptSecurity} [Yields]
-Added Function AudioEmitter:GetAngleAttenuation() -> { [string]: any } [CustomLuaState]
-Added Function AudioEmitter:SetAngleAttenuation(curve: { [string]: any }) -> () [CustomLuaState]
-Added Function AudioListener:GetAngleAttenuation() -> { [string]: any } [CustomLuaState]
-Added Function AudioListener:SetAngleAttenuation(curve: { [string]: any }) -> () [CustomLuaState]
-Added Function AudioPlayer:GetWaveformAsync(timeRange: NumberRange, samples: number) -> { any } [Yields]
-Added Function AvatarCreationService:DeserializeAvatarModel(serializedModel: string) -> Instance? {RobloxScriptSecurity}
-Added Function EditableImage:GetContent() -> string
-Added Function EditableMesh:GetContent() -> string
-Added Function HapticEffect:SetKeys(keys: { any }) -> () {RobloxScriptSecurity}
-Added Function ScriptContext:CompressLuaApp() -> () {RobloxScriptSecurity}
-Added Function SoundService:OpenDirectionalCurveEditor(selectedCurveObjects: Instances) -> () {RobloxScriptSecurity}
-Added Function UGCValidationService:GetCagingRelevancyMetrics(innerCageMeshId: string, outerCageMeshId: string, refMeshId: string, offsetInner: Vector3, offsetOuter: Vector3) -> ...any {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:GetEditableCagingRelevancyMetrics(innerCage: Object, outerCage: Object, refMesh: Object, offsetInner: Vector3, offsetOuter: Vector3) -> ...any {RobloxScriptSecurity}
-Added Function WrapDeformer:SetCageMeshContent(content: string) -> ()
+Added Tag [Deprecated] to Function AssetService:CreateEditableMeshFromPartAsync
+Added Tag [Deprecated] to Function EditableMesh:CreateMeshPartAsync
+Added Tag [Deprecated] to Property Stats.HeartbeatTimeMs
+Added Tag [Deprecated] to Property Stats.PhysicsStepTimeMs
+Added Tag [NotCreatable] to Class EditableImage
+Added Tag [NotCreatable] to Class EditableMesh
 
-Added Event SoundService.OpenDirectionalCurveEditorSignal(selectedCurveObjects: Instances) {RobloxScriptSecurity}
+Changed the security of Property PackageLink.AutoUpdate
+from:{None}
+to:{RobloxScriptSecurity}
 
-Added Enum SandboxedInstanceMode
-Added EnumItem SandboxedInstanceMode.Default : 0
-Added EnumItem SandboxedInstanceMode.Experimental : 1
+Changed the security of Property PackageLink.ModifiedState
+from:{None}
+to:{RobloxScriptSecurity}
 
-Added EnumItem AdUIEventType.PlayEventTriggered : 7
-Added EnumItem AdUIEventType.PauseEventTriggered : 8
-Added EnumItem CompletionItemTag.ElideLeftOverride : 12
-Added EnumItem CompletionItemTag.UseTextEditForAutocompleteScore : 13
-
-Added Tag [ReadOnly] to Property EditableImage.Size
-
-Changed the superclass of Class EditableImage
-from:"Instance"
-to:"Object"
-
-Changed the superclass of Class EditableMesh
-from:"DataModelMesh"
-to:"Object"
-
-Changed the serialization of Property EditableImage.Size
-from:[💾|📁 Serialized]
-to:[💾 SaveOnly]
-
-Changed the serialization of Property Sound.EmitterSize
-from:[💾|📁 Serialized]
-to:[📁 LoadOnly]
-
-Changed the serialization of Property Sound.RollOffMaxDistance
+Changed the serialization of Property BaseWrap.CageMeshContent
 from:[🚫 None]
 to:[💾|📁 Serialized]
 
-Changed the serialization of Property Sound.RollOffMinDistance
+Changed the serialization of Property EditableImage.ImageData
 from:[🚫 None]
 to:[💾|📁 Serialized]
 
-Changed the serialization of Property Sound.xmlRead_MaxDistance_3
-from:[💾|📁 Serialized]
-to:[📁 LoadOnly]
-
-Changed the parameters of Function BasePart:IntersectAsync
-from:(parts: { Instance }, collisionfidelity: Enum.CollisionFidelity? = "Default", renderFidelity: Enum.RenderFidelity? = "Automatic")
-to:(parts: Instances, collisionfidelity: Enum.CollisionFidelity? = "Default", renderFidelity: Enum.RenderFidelity? = "Automatic")
-
-Changed the parameters of Function BasePart:SubtractAsync
-from:(parts: { Instance }, collisionfidelity: Enum.CollisionFidelity? = "Default", renderFidelity: Enum.RenderFidelity? = "Automatic")
-to:(parts: Instances, collisionfidelity: Enum.CollisionFidelity? = "Default", renderFidelity: Enum.RenderFidelity? = "Automatic")
-
-Changed the parameters of Function BasePart:UnionAsync
-from:(parts: { Instance }, collisionfidelity: Enum.CollisionFidelity? = "Default", renderFidelity: Enum.RenderFidelity? = "Automatic")
-to:(parts: Instances, collisionfidelity: Enum.CollisionFidelity? = "Default", renderFidelity: Enum.RenderFidelity? = "Automatic")
-
-Changed the parameters of Function Camera:GetLargestCutoffDistance
-from:(ignoreList: { Instance })
-to:(ignoreList: Instances)
-
-Changed the parameters of Function DraftsService:CommitEdits
-from:(scripts: { Instance })
-to:(scripts: Instances)
-
-Changed the parameters of Function DraftsService:DiscardEdits
-from:(scripts: { Instance })
-to:(scripts: Instances)
-
-Changed the parameters of Function DraftsService:RestoreScripts
-from:(scripts: { Instance })
-to:(scripts: Instances)
-
-Changed the parameters of Function DraftsService:ShowDiffsAgainstBase
-from:(scripts: { Instance })
-to:(scripts: Instances)
-
-Changed the parameters of Function DraftsService:ShowDiffsAgainstServer
-from:(scripts: { Instance })
-to:(scripts: Instances)
-
-Changed the parameters of Function DraftsService:ShowSourceDiffsAgainstCurrent
-from:(sources: { any }, scripts: { Instance })
-to:(sources: { any }, scripts: Instances)
-
-Changed the parameters of Function DraftsService:UpdateToLatestVersion
-from:(scripts: { Instance })
-to:(scripts: Instances)
-
-Changed the parameters of Function Dragger:MouseDown
-from:(mousePart: Instance, pointOnMousePart: Vector3, parts: { Instance })
-to:(mousePart: Instance, pointOnMousePart: Vector3, parts: Instances)
-
-Changed the parameters of Function EditableImage:DrawImage
-from:(position: Vector2, image: EditableImage, combineType: Enum.ImageCombineType)
-to:(position: Vector2, image: Object, combineType: Enum.ImageCombineType)
-
-Changed the parameters of Function EditableImage:DrawProjectionImage
-from:(mesh: EditableMesh, projection: { [string]: any }, brushConfig: { [string]: any })
-to:(mesh: Object, projection: { [string]: any }, brushConfig: { [string]: any })
-
-Changed the parameters of Function EditableMesh:CreateMeshPartAsync
-from:(options: { [string]: any }?)
-to:(initialSize: Vector3, options: { [string]: any }?)
-
-Changed the parameters of Function MaterialGenerationService:DEPRECATED_UploadMaterialVariantsAsync
-from:(materialVaraints: { Instance })
-to:(materialVaraints: Instances)
-
-Changed the parameters of Function PackageUIService:ConvertToPackageUpload
-from:(uploadUrl: string, cloneInstances: { Instance }, originalInstances: { Instance })
-to:(uploadUrl: string, cloneInstances: Instances, originalInstances: Instances)
-
-Changed the parameters of Function ParabolaAdornment:FindPartOnParabola
-from:(ignoreDescendentsTable: { Instance })
-to:(ignoreDescendentsTable: Instances)
-
-Changed the parameters of Function Plugin:Intersect
-from:(objects: { Instance })
-to:(objects: Instances)
-
-Changed the parameters of Function Plugin:Union
-from:(objects: { Instance })
-to:(objects: Instances)
-
-Changed the parameters of Function PublishService:CreateAssetAndWaitForAssetId
-from:(instances: { Instance }, operationId: string, creatorType: Enum.AssetCreatorType, creatorId: number, assetType: string, name: string, description: string, expectedPrice: number? = 0)
-to:(instances: Instances, operationId: string, creatorType: Enum.AssetCreatorType, creatorId: number, assetType: string, name: string, description: string, expectedPrice: number? = 0)
-
-Changed the parameters of Function Selection:Add
-from:(instancesToAdd: { Instance })
-to:(instancesToAdd: Instances)
-
-Changed the parameters of Function Selection:Remove
-from:(instancesToRemove: { Instance })
-to:(instancesToRemove: Instances)
-
-Changed the parameters of Function Selection:Set
-from:(selection: { Instance })
-to:(selection: Instances)
-
-Changed the parameters of Function SoundService:OpenAttenuationCurveEditor
-from:(selectedCurveObjects: { Instance })
-to:(selectedCurveObjects: Instances)
-
-Changed the parameters of Function StudioAssetService:ConvertToPackageUpload
-from:(uploadUrl: string, cloneInstances: { Instance }, originalInstances: { Instance })
-to:(uploadUrl: string, cloneInstances: Instances, originalInstances: Instances)
-
-Changed the parameters of Function StudioAssetService:DEPRECATED_SerializeInstances
-from:(instances: { Instance })
-to:(instances: Instances)
-
-Changed the parameters of Function StudioAssetService:SerializeInstances
-from:(instances: { Instance }, groupId: number? = 0, isPackage: boolean? = false)
-to:(instances: Instances, groupId: number? = 0, isPackage: boolean? = false)
-
-Changed the parameters of Function StudioAssetService:ShowSaveToRoblox
-from:(instances: { Instance }, assetType: any, hasSubsequent: boolean? = false)
-to:(instances: Instances, assetType: any, hasSubsequent: boolean? = false)
-
-Changed the parameters of Function StyleBase:SetStyleRules
-from:(rules: { Instance })
-to:(rules: Instances)
-
-Changed the parameters of Function StyleSheet:SetDerives
-from:(derives: { Instance })
-to:(derives: Instances)
-
-Changed the parameters of Function TeleportService:TeleportAsync
-from:(placeId: number, players: { Instance }, teleportOptions: Instance?)
-to:(placeId: number, players: Instances, teleportOptions: Instance?)
-
-Changed the parameters of Function TeleportService:TeleportPartyAsync
-from:(placeId: number, players: { Instance }, teleportData: any, customLoadingScreen: Instance?)
-to:(placeId: number, players: Instances, teleportData: any, customLoadingScreen: Instance?)
-
-Changed the parameters of Function TeleportService:TeleportToPrivateServer
-from:(placeId: number, reservedServerAccessCode: string, players: { Instance }, spawnName: string? = "", teleportData: any, customLoadingScreen: Instance?)
-to:(placeId: number, reservedServerAccessCode: string, players: Instances, spawnName: string? = "", teleportData: any, customLoadingScreen: Instance?)
-
-Changed the parameters of Function TextureGenerationService:CreatePartGroup
-from:(instances: { Instance })
-to:(instances: Instances)
-
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshInsideMeshPercentage
-from:(editableMeshRoot: EditableMesh, editableMeshQuery: EditableMesh, meshQueryTransform: CFrame, meshQueryScale: Vector3)
-to:(editableMeshRoot: Object, editableMeshQuery: Object, meshQueryTransform: CFrame, meshQueryScale: Vector3)
-
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshTotalSurfaceArea
-from:(editableMesh: EditableMesh, meshScale: Vector3)
-to:(editableMesh: Object, meshScale: Vector3)
-
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshUniqueUVCount
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:CheckEditableMeshInCameraFrustum
-from:(editableMesh: EditableMesh, meshScale: Vector3, handleWorldCF: CFrame, cameraWorldCF: CFrame)
-to:(editableMesh: Object, meshScale: Vector3, handleWorldCF: CFrame, cameraWorldCF: CFrame)
-
-Changed the parameters of Function UGCValidationService:GetDynamicHeadEditableMeshInactiveControls
-from:(editableMesh: EditableMesh, controlNames: { any })
-to:(editableMesh: Object, controlNames: { any })
-
-Changed the parameters of Function UGCValidationService:GetEditableImageSize
-from:(editableImage: EditableImage)
-to:(editableImage: Object)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshMaxNearbyVerticesCollisions
-from:(editableMesh: EditableMesh, meshScale: Vector3)
-to:(editableMesh: Object, meshScale: Vector3)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshTriCount
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshVertColors
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshVerticesSimilarityRate
-from:(editableMesh: EditableMesh, meshScale: Vector3)
-to:(editableMesh: Object, meshScale: Vector3)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshVerts
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:IsEditableMeshNumCoplanarIntersectionsOverLimit
-from:(editableMesh: EditableMesh, limit: number, meshScale: Vector3, intersectBackFaces: boolean)
-to:(editableMesh: Object, limit: number, meshScale: Vector3, intersectBackFaces: boolean)
-
-Changed the parameters of Function UGCValidationService:ResetCollisionFidelityWithEditableMeshDataLua
-from:(meshPart: MeshPart, editableMesh: EditableMesh, collisionFidelity: Enum.CollisionFidelity? = "Box")
-to:(meshPart: MeshPart, editableMesh: Object, collisionFidelity: Enum.CollisionFidelity? = "Box")
-
-Changed the parameters of Function UGCValidationService:ValidateDynamicHeadEditableMesh
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableImageNumTextureChannels
-from:(editableImage: EditableImage, numTextureChannelsRequired: number)
-to:(editableImage: Object, numTextureChannelsRequired: number)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableImageSize
-from:(editableImage: EditableImage)
-to:(editableImage: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshBounds
-from:(editableMesh: EditableMesh, meshScale: Vector3, boundsOffset: Vector3, attachmentCF: CFrame, handleCF: CFrame)
-to:(editableMesh: Object, meshScale: Vector3, boundsOffset: Vector3, attachmentCF: CFrame, handleCF: CFrame)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageMeshIntersection
-from:(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh)
-to:(innerCage: Object, outerCage: Object, refMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageNonManifoldAndHoles
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageUVCoincident
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageUVTriangleArea
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshFullBodyCageDeletion
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshMisMatchUV
-from:(innerCage: EditableMesh, outerCage: EditableMesh)
-to:(innerCage: Object, outerCage: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshOverlappingVertices
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshTriangleArea
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshTriangles
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVSpace
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVValuesInReference
-from:(referenceValues: { any }, editableMesh: EditableMesh)
-to:(referenceValues: { any }, editableMesh: Object)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshUniqueUVCount
-from:(editableMesh: EditableMesh, numRequired: number)
-to:(editableMesh: Object, numRequired: number)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshVertColors
-from:(editableMesh: EditableMesh, includeAlpha: boolean? = true)
-to:(editableMesh: Object, includeAlpha: boolean? = true)
-
-Changed the parameters of Function UGCValidationService:ValidateSkinnedEditableMesh
-from:(editableMesh: EditableMesh)
-to:(editableMesh: Object)
-
-Changed the parameters of Function Workspace:BreakJoints
-from:(objects: { Instance })
-to:(objects: Instances)
-
-Changed the parameters of Function Workspace:JoinToOutsiders
-from:(objects: { Instance }, jointType: Enum.JointCreationMode)
-to:(objects: Instances, jointType: Enum.JointCreationMode)
-
-Changed the parameters of Function Workspace:MakeJoints
-from:(objects: { Instance })
-to:(objects: Instances)
-
-Changed the parameters of Function Workspace:UnjoinFromOutsiders
-from:(objects: { Instance })
-to:(objects: Instances)
-
-Changed the parameters of Function WorldRoot:ArePartsTouchingOthers
-from:(partList: { Instance }, overlapIgnored: number? = 0.000199999995)
-to:(partList: Instances, overlapIgnored: number? = 0.000199999995)
-
-Changed the parameters of Function WorldRoot:BulkMoveTo
-from:(partList: { Instance }, cframeList: { any }, eventMode: Enum.BulkMoveMode? = "FireAllEvents")
-to:(partList: Instances, cframeList: { any }, eventMode: Enum.BulkMoveMode? = "FireAllEvents")
-
-Changed the parameters of Function WorldRoot:FindPartOnRayWithIgnoreList
-from:(ray: Ray, ignoreDescendantsTable: { Instance }, terrainCellsAreCubes: boolean? = false, ignoreWater: boolean? = false)
-to:(ray: Ray, ignoreDescendantsTable: Instances, terrainCellsAreCubes: boolean? = false, ignoreWater: boolean? = false)
-
-Changed the parameters of Function WorldRoot:FindPartOnRayWithWhitelist
-from:(ray: Ray, whitelistDescendantsTable: { Instance }, ignoreWater: boolean? = false)
-to:(ray: Ray, whitelistDescendantsTable: Instances, ignoreWater: boolean? = false)
-
-Changed the parameters of Function WorldRoot:IsRegion3EmptyWithIgnoreList
-from:(region: Region3, ignoreDescendentsTable: { Instance })
-to:(region: Region3, ignoreDescendentsTable: Instances)
-
-Changed the parameters of Function WorldRoot:StepPhysics
-from:(dt: number, parts: { Instance }? = Objects.new())
-to:(dt: number, parts: Instances? = Instances.new())
-
-Changed the parameters and return-type of Function AssetService:CreateEditableImage
-from:()-> EditableImage
-to:(editableImageOptions: { [string]: any }?)-> Object
-
-Changed the parameters and return-type of Function AssetService:CreateEditableImageAsync
-from:(textureId: ContentId)-> EditableImage
-to:(content: string, editableImageOptions: { [string]: any }?)-> Object
-
-Changed the parameters and return-type of Function AssetService:CreateEditableMesh
-from:()-> EditableMesh
-to:(editableMeshOptions: { [string]: any }?)-> Object
-
-Changed the parameters and return-type of Function AssetService:CreateEditableMeshAsync
-from:(meshId: ContentId)-> EditableMesh
-to:(content: string, editableMeshOptions: { [string]: any }?)-> Object
-
-Changed the parameters and return-type of Function Camera:GetPartsObscuringTarget
-from:(castPoints: { any }, ignoreList: { Instance })-> { Instance }
-to:(castPoints: { any }, ignoreList: Instances)-> Instances
-
-Changed the parameters and return-type of Function Plugin:Negate
-from:(objects: { Instance })-> { Instance }
-to:(objects: Instances)-> Instances
-
-Changed the parameters and return-type of Function Plugin:Separate
-from:(objects: { Instance })-> { Instance }
-to:(objects: Instances)-> Instances
-
-Changed the parameters and return-type of Function WorldRoot:FindPartsInRegion3WithIgnoreList
-from:(region: Region3, ignoreDescendantsTable: { Instance }, maxParts: number? = 20)-> { Instance }
-to:(region: Region3, ignoreDescendantsTable: Instances, maxParts: number? = 20)-> Instances
-
-Changed the parameters and return-type of Function WorldRoot:FindPartsInRegion3WithWhiteList
-from:(region: Region3, whitelistDescendantsTable: { Instance }, maxParts: number? = 20)-> { Instance }
-to:(region: Region3, whitelistDescendantsTable: Instances, maxParts: number? = 20)-> Instances
-
-Changed the return-type of Function AnnotationsService:GetAnnotationThreads
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AssetService:CreateEditableMeshFromPartAsync
-from:EditableMesh
-to:Object
-
-Changed the return-type of Function AssetService:CreateEditableMeshStripSkinningAsync
-from:EditableMesh
-to:Object
-
-Changed the return-type of Function Attachment:GetConstraints
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioAnalyzer:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioChorus:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioCompressor:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioDeviceInput:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioDeviceOutput:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioDistortion:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioEcho:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioEmitter:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioEmitter:GetInteractingListeners
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioEqualizer:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioFader:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioFilter:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioFlanger:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioLimiter:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioListener:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioListener:GetInteractingEmitters
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioPitchShifter:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioPlayer:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AudioReverb:GetConnectedWires
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function AvatarCreationService:LoadAvatarPreviewImageAsync
-from:EditableImage
-to:Object
-
-Changed the return-type of Function BasePart:GetConnectedParts
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function BasePart:GetJoints
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function BasePart:GetNoCollisionConstraints
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function BasePart:GetTouchingParts
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function BasePlayerGui:GetGuiObjectsAtPosition
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function BasePlayerGui:GetGuiObjectsInCircle
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function CollaboratorsService:GetCollaboratorsList
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function CollectionService:GetCollection
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function CollectionService:GetTagged
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function CustomEvent:GetAttachedReceivers
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function DataModel:GetObjects
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function DataModel:GetObjectsAllOrNone
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function DataModel:GetObjectsAsync
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function DataModel:InsertObjectsAndJoinIfLegacyAsync
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function DebuggerManager:GetDebuggers
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Dialog:GetCurrentPlayers
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function DraftsService:GetDrafts
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function DraftsService:GetEditors
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function InsertService:LoadAssetWithFormat
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function InsertService:LoadPackageAsset
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function InsertService:LoadPackageAssetAsync
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Instance:GetChildren
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Instance:children
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Keyframe:GetMarkers
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Keyframe:GetPoses
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function KeyframeSequence:GetKeyframes
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function LayerCollector:GetGuiObjectsAtPosition
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function LocalizationService:GetCorescriptLocalizations
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function MaterialGenerationService:DEPRECATED_GenerateMaterialVariantsAync
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Model:GetPersistentPlayers
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Players:GetPlayers
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Players:players
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Pose:GetSubPoses
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function ScriptDebugger:GetBreakpoints
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function ScriptDebugger:GetWatches
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function ScriptEditorService:GetScriptDocuments
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Selection:Get
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function StudioService:PromptImportFiles
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function StyleBase:GetStyleRules
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function StyleSheet:GetDerives
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function StylingService:GetStyleSheetDerivesChain
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Team:GetPlayers
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function Teams:GetTeams
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function TextureGenerationPartGroup:GetInstances
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function UGCValidationService:FetchAssetWithFormat
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function WorldRoot:FindPartsInRegion3
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function WorldRoot:GetPartBoundsInBox
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function WorldRoot:GetPartBoundsInRadius
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function WorldRoot:GetPartsInPart
-from:{ Instance }
-to:Instances
-
-Changed the return-type of Function WrapDeformer:CreateEditableMeshAsync
-from:EditableMesh
-to:Object
-
-Changed the parameters of Event PackageUIService.OnOpenConvertToPackagePlugin
-from:(instances: { Instance }, name: string, cloneInstances: { Instance })
-to:(instances: Instances, name: string, cloneInstances: Instances)
-
-Changed the parameters of Event PluginMouse.DragEnter
-from:(instances: { Instance })
-to:(instances: Instances)
-
-Changed the parameters of Event SoundService.OpenAttenuationCurveEditorSignal
-from:(selectedCurveObjects: { Instance })
-to:(selectedCurveObjects: Instances)
-
-Changed the parameters of Event SoundService.OpenAudioEqualizerEditorSignal
-from:(selectedEqualizerObjects: { Instance })
-to:(selectedEqualizerObjects: Instances)
-
-Changed the parameters of Event StudioAssetService.OnSaveToRoblox
-from:(instances: { Instance }, assetType: any, hasSubsequent: boolean)
-to:(instances: Instances, assetType: any, hasSubsequent: boolean)
-
-Changed the parameters of Event StudioService.OnPublishAsPlugin
-from:(instances: { Instance })
-to:(instances: Instances)
-
-Changed the parameters of Event StudioService.OnSaveToRoblox
-from:(instances: { Instance })
-to:(instances: Instances)
-
-Changed the parameters and expected return-type of Callback Plugin.ProcessAssetInsertionDrag
-from:(assetId: string, assetTypeId: number, instances: { Instance })-> { Instance }
-to:(assetId: string, assetTypeId: number, instances: Instances)-> Instances
-
-Changed the value of EnumItem HapticEffectType.UIHover from 0 to 1
-Changed the value of EnumItem HapticEffectType.UIClick from 1 to 2
-Changed the value of EnumItem HapticEffectType.UINotification from 2 to 3
-Changed the value of EnumItem HapticEffectType.GameplayExplosion from 3 to 4
-Changed the value of EnumItem HapticEffectType.GameplayCollision from 4 to 5
-
-Removed Class RobloxEditableImage
-Removed Property RobloxEditableImage.ImageDataSerialize
-
-Removed Class RobloxEditableMesh
-Removed Property RobloxEditableMesh.MeshDataSerialize
-
-Removed Function EditableImage:Copy
-Removed Function EditableImage:Crop
-Removed Function EditableImage:ReadPixels
-Removed Function EditableImage:Resize
-Removed Function EditableImage:Rotate
-Removed Function EditableImage:WritePixels
-Removed Function EditableMesh:GetAdjacentTriangles
-Removed Function EditableMesh:GetTriangleVertices
-Removed Function EditableMesh:GetTriangles
-Removed Function EditableMesh:GetVertexColor
-Removed Function EditableMesh:GetVertexColorAlpha
-Removed Function EditableMesh:GetVertexNormal
-Removed Function EditableMesh:RemoveTriangle
-Removed Function EditableMesh:RemoveVertex
-Removed Function EditableMesh:SetVertexColor
-Removed Function EditableMesh:SetVertexColorAlpha
-Removed Function EditableMesh:SetVertexNormal
-
-Removed Tag [NotReplicated] from Property ImageButton.ImageContent
-Removed Tag [NotReplicated] from Property ImageLabel.ImageContent
-Removed Tag [NotReplicated] from Property MeshPart.MeshContent
-Removed Tag [NotReplicated] from Property MeshPart.TextureContent
-Removed Tag [NotReplicated] from Property Sound.RollOffMaxDistance
-Removed Tag [NotReplicated] from Property Sound.RollOffMinDistance
+Changed the serialization of Property EditableMesh.MeshData
+from:[🚫 None]
+to:[💾|📁 Serialized]
+
+Changed the serialization of Property ImageButton.ImageContent
+from:[🚫 None]
+to:[💾|📁 Serialized]
+
+Changed the serialization of Property ImageLabel.ImageContent
+from:[🚫 None]
+to:[💾|📁 Serialized]
+
+Changed the serialization of Property MeshPart.MeshContent
+from:[🚫 None]
+to:[💾|📁 Serialized]
+
+Changed the serialization of Property MeshPart.TextureContent
+from:[🚫 None]
+to:[💾|📁 Serialized]
+
+Changed the serialization of Property WrapLayer.ReferenceMeshContent
+from:[🚫 None]
+to:[💾|📁 Serialized]
+
+Changed the parameters of Function AnnotationsService:LoadAnnotationReplies
+from:(annotation: Annotation, count: number? = 25)
+to:(annotation: Annotation)
+
+Changed the parameters of Function AnnotationsService:ResolveAnnotation
+from:(userId: number, annotation: Annotation, resolved: boolean)
+to:(annotation: Annotation, resolved: boolean)
+
+Changed the parameters of Function CommerceService:GetCommerceProductInfoAsync
+from:(commerceProductId: number)
+to:(commerceProductId: string)
+
+Changed the parameters of Function CommerceService:PromptCommerceProductPurchase
+from:(user: Player, commerceProductId: number)
+to:(user: Player, commerceProductId: string)
+
+Changed the security of Function SoundService:OpenDirectionalCurveEditor
+from:{RobloxScriptSecurity}
+to:{PluginSecurity}
+
+Changed the security of Function StreamingService:ExecuteCommandAsync
+from:{LocalUserSecurity}
+to:{None}
+
+Changed the security and parameters of Function AssetService:CreateMeshPartAsync
+from:{PluginSecurity}(meshId: ContentId, options: { [string]: any }?)
+to:{None}(meshContent: string, options: { [string]: any }?)
+
+Changed the parameters of Event AnnotationsService.AnnotationResolved
+from:(userId: number, annotation: Annotation, resolved: boolean)
+to:(annotation: Annotation, resolved: boolean)
+
+Changed the parameters of Event CommerceService.PromptCommerceProductPurchaseFinished
+from:(user: Player, productId: number)
+to:(user: Player, productId: string)
+
+Changed the security and parameters of Event CommerceService.PromptCommerceProductPurchaseRequested
+from:{RobloxSecurity}(commerceProductId: number)
+to:{RobloxScriptSecurity}(commerceProductId: string)
+
+Removed Property Workspace.DecreaseMinimumPartDensityMode
+Removed Property WorkspaceAnnotation.Position
+
+Removed Function EditableImage:GetContent
+Removed Function EditableMesh:GetContent
+Removed Function StreamingService:RegisterCommand
+Removed Function StreamingService:RegisterSequentialCommand
+
+Removed Enum DecreaseMinimumPartDensityMode
+Removed EnumItem DecreaseMinimumPartDensityMode.Default
+Removed EnumItem DecreaseMinimumPartDensityMode.Disabled
+Removed EnumItem DecreaseMinimumPartDensityMode.Enabled
+
+Removed Tag [Hidden] from Event CommerceService.PromptCommerceProductPurchaseRequested
+Removed Tag [NotBrowsable] from Class FluidForceSensor
+Removed Tag [NotScriptable] from Property PackageLink.AutoUpdate
+Removed Tag [NotScriptable] from Property PackageLink.ModifiedState
