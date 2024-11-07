@@ -1,145 +1,55 @@
-Version 0.649.0.6490878
-Added Property AnnotationsService.AnnotationsVisible: boolean {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property PackageLink.HasNewVersion: boolean {RobloxScriptSecurity} [Hidden] [ReadOnly]
-Added Property Stats.FrameTime: number [ReadOnly]
-Added Property Stats.HeartbeatTime: number [ReadOnly]
-Added Property Stats.PhysicsStepTime: number [ReadOnly]
-Added Property Stats.RenderCPUFrameTime: number [ReadOnly]
-Added Property Stats.RenderGPUFrameTime: number [ReadOnly]
-Added Property Stats.SceneDrawcallCount: number [ReadOnly]
-Added Property Stats.SceneTriangleCount: number [ReadOnly]
-Added Property Stats.ShadowsDrawcallCount: number [ReadOnly]
-Added Property Stats.ShadowsTriangleCount: number [ReadOnly]
-Added Property Stats.UI2DDrawcallCount: number [ReadOnly]
-Added Property Stats.UI2DTriangleCount: number [ReadOnly]
-Added Property Stats.UI3DDrawcallCount: number [ReadOnly]
-Added Property Stats.UI3DTriangleCount: number [ReadOnly]
-Added Property WorkspaceAnnotation.AdorneeOffset: Vector3 {RobloxScriptSecurity} [Hidden]
+Version 0.650.0.6500743
+Added Property AudioEcho.RampTime: number
+Added Property ScrollingFrame.DraggingScrollBar: Enum.DraggingScrollBar {RobloxScriptSecurity} [Hidden] [ReadOnly]
+Added Property StarterPlayer.AvatarJointUpgrade_SerializedRollout: Enum.RolloutState [Hidden] [NotScriptable]
+Added Property Workspace.TouchEventsUseCollisionGroups: Enum.RolloutState [NotScriptable]
 
-Added Function AnnotationsService:LoadResolvedAnnotations(count: number) -> () {RobloxScriptSecurity}
-Added Function CommerceService:PrepareCommerceProductPurchase(commerceProductId: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
-Added Function CommerceService:SignalPromptCommerceProductPurchaseFinished(productId: string, didTryPurchase: boolean, checkoutSessionId: string? = "") -> () {RobloxScriptSecurity}
-Added Function EditableImage:Destroy() -> ()
-Added Function EditableMesh:Destroy() -> ()
-Added Function ScriptDocument:MultiEditTextAsync(edits: { any }) -> ...any {PluginSecurity} [Yields]
-Added Function StreamingService:AttemptSaveAndSendPlaceTelemetry(requestId: string, toolSource: string) -> () {RobloxScriptSecurity} [Yields]
-Added Function StreamingService:DEPRECATED_RegisterCommand(commandName: string, function: ((...any) -> ...any)?) -> () {RobloxScriptSecurity} [Preliminary]
-Added Function StreamingService:DEPRECATED_RegisterSequentialCommand(commandName: string, function: ((...any) -> ...any)?) -> () {RobloxScriptSecurity} [Preliminary]
-Added Function StreamingService:RegisterCommandInternal(commandName: string, function: ((...any) -> ...any)?, isSequential: boolean? = false, isPublic: boolean? = false) -> () {RobloxScriptSecurity}
-Added Function WorkspaceAnnotation:GetAbsolutePosition() -> Vector3 {RobloxScriptSecurity}
-Added Function WorkspaceAnnotation:SetAdorneeOffsetFromAbsolutePosition(position: Vector3) -> () {RobloxScriptSecurity}
+Added Function EditableImage:DrawImageProjected(mesh: Object, projection: { [string]: any }, brushConfig: { [string]: any }) -> ()
+Added Function EditableImage:DrawImageTransformed(position: Vector2, scale: Vector2, rotation: number, image: Object, options: { [string]: any }?) -> ()
+Added Function EditableMesh:GetCenter() -> Vector3
+Added Function EditableMesh:GetSize() -> Vector3
+Added Function GuiService:OnNotificationDisplayed(notificationId: string) -> () {RobloxScriptSecurity}
+Added Function GuiService:OnNotificationInteraction(notificationId: string, buttonIndex: number) -> () {RobloxScriptSecurity}
+Added Function TextChatService:CanUsersDirectChatAsync(requesterUserId: number, userIds: { any }) -> { any } [Yields]
 
-Added Event AnnotationsService.ServerLoadResolvedAnnotations(count: number) {RobloxSecurity}
-Added Event CommerceService.BenefitStatusReceived(isGranted: boolean) {RobloxScriptSecurity}
-Added Event CommerceService.FetchReceipt() {RobloxSecurity}
-Added Event CommerceService.PurchaseBrowserClosed() {RobloxScriptSecurity}
-Added Event TextChatService.UpdateChatTimeout(userId: number, startTime: number, duration: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.FetchUserTurnAuthOperationFailed(sessionId: string) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.UpdateTurnAuthInfoRequest() {RobloxSecurity} [Hidden]
+Added Event TeamCreatePublishService.TeamCreateErrorStatus(result: Enum.TeamCreateErrorState) {RobloxScriptSecurity}
 
-Added EnumItem SecurityCapability.LegacySound : 20
+Added Enum DraggingScrollBar
+Added EnumItem DraggingScrollBar.None : 0
+Added EnumItem DraggingScrollBar.Horizontal : 1
+Added EnumItem DraggingScrollBar.Vertical : 2
 
-Added Tag [Deprecated] to Function AssetService:CreateEditableMeshFromPartAsync
-Added Tag [Deprecated] to Function EditableMesh:CreateMeshPartAsync
-Added Tag [Deprecated] to Property Stats.HeartbeatTimeMs
-Added Tag [Deprecated] to Property Stats.PhysicsStepTimeMs
-Added Tag [NotCreatable] to Class EditableImage
-Added Tag [NotCreatable] to Class EditableMesh
+Added Enum TeamCreateErrorState
+Added EnumItem TeamCreateErrorState.PlaceSizeTooLarge : 0
+Added EnumItem TeamCreateErrorState.PlaceSizeApproachingLimit : 1
+Added EnumItem TeamCreateErrorState.NoError : 2
 
-Changed the security of Property PackageLink.AutoUpdate
-from:{None}
-to:{RobloxScriptSecurity}
+Added EnumItem PromptCreateAvatarResult.PurchaseFailure : 10
 
-Changed the security of Property PackageLink.ModifiedState
-from:{None}
-to:{RobloxScriptSecurity}
+Added Tag [NotReplicated] to Property ScreenGui.IgnoreGuiInset
+Added Tag [NotScriptable] to Property StarterPlayer.AvatarJointUpgrade
 
-Changed the serialization of Property BaseWrap.CageMeshContent
-from:[🚫 None]
-to:[💾|📁 Serialized]
+Changed the value-type of Property StarterPlayer.AvatarJointUpgrade
+from:Enum.AvatarJointUpgrade
+to:Enum.RolloutState
 
-Changed the serialization of Property EditableImage.ImageData
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the serialization of Property EditableMesh.MeshData
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the serialization of Property ImageButton.ImageContent
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the serialization of Property ImageLabel.ImageContent
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the serialization of Property MeshPart.MeshContent
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the serialization of Property MeshPart.TextureContent
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the serialization of Property WrapLayer.ReferenceMeshContent
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the parameters of Function AnnotationsService:LoadAnnotationReplies
-from:(annotation: Annotation, count: number? = 25)
-to:(annotation: Annotation)
-
-Changed the parameters of Function AnnotationsService:ResolveAnnotation
-from:(userId: number, annotation: Annotation, resolved: boolean)
-to:(annotation: Annotation, resolved: boolean)
-
-Changed the parameters of Function CommerceService:GetCommerceProductInfoAsync
-from:(commerceProductId: number)
-to:(commerceProductId: string)
-
-Changed the parameters of Function CommerceService:PromptCommerceProductPurchase
-from:(user: Player, commerceProductId: number)
-to:(user: Player, commerceProductId: string)
-
-Changed the security of Function SoundService:OpenDirectionalCurveEditor
+Changed the security of Event UserInputService.TouchDrag
 from:{RobloxScriptSecurity}
-to:{PluginSecurity}
-
-Changed the security of Function StreamingService:ExecuteCommandAsync
-from:{LocalUserSecurity}
 to:{None}
 
-Changed the security and parameters of Function AssetService:CreateMeshPartAsync
-from:{PluginSecurity}(meshId: ContentId, options: { [string]: any }?)
-to:{None}(meshContent: string, options: { [string]: any }?)
+Changed the value of EnumItem PromptCreateAvatarResult.UnknownFailure from 10 to 11
 
-Changed the parameters of Event AnnotationsService.AnnotationResolved
-from:(userId: number, annotation: Annotation, resolved: boolean)
-to:(annotation: Annotation, resolved: boolean)
+Removed Property HumanoidDescription.AccessoryRigidAndLayeredBlob
+Removed Property StarterPlayer.AvatarJointUpgrade_Serialized
 
-Changed the parameters of Event CommerceService.PromptCommerceProductPurchaseFinished
-from:(user: Player, productId: number)
-to:(user: Player, productId: string)
+Removed Function EditableImage:DrawProjectionImage
+Removed Function GuiService:NotificationDismissed
+Removed Function GuiService:NotificationDisplayed
+Removed Function GuiService:UserInteractedWithNotification
 
-Changed the security and parameters of Event CommerceService.PromptCommerceProductPurchaseRequested
-from:{RobloxSecurity}(commerceProductId: number)
-to:{RobloxScriptSecurity}(commerceProductId: string)
+Removed Enum AvatarJointUpgrade
+Removed EnumItem AvatarJointUpgrade.Default
+Removed EnumItem AvatarJointUpgrade.Enabled
+Removed EnumItem AvatarJointUpgrade.Disabled
 
-Removed Property Workspace.DecreaseMinimumPartDensityMode
-Removed Property WorkspaceAnnotation.Position
-
-Removed Function EditableImage:GetContent
-Removed Function EditableMesh:GetContent
-Removed Function StreamingService:RegisterCommand
-Removed Function StreamingService:RegisterSequentialCommand
-
-Removed Enum DecreaseMinimumPartDensityMode
-Removed EnumItem DecreaseMinimumPartDensityMode.Default
-Removed EnumItem DecreaseMinimumPartDensityMode.Disabled
-Removed EnumItem DecreaseMinimumPartDensityMode.Enabled
-
-Removed Tag [Hidden] from Event CommerceService.PromptCommerceProductPurchaseRequested
-Removed Tag [NotBrowsable] from Class FluidForceSensor
-Removed Tag [NotScriptable] from Property PackageLink.AutoUpdate
-Removed Tag [NotScriptable] from Property PackageLink.ModifiedState
+Removed Tag [NotBrowsable] from Class UIDragDetector
