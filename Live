@@ -1,55 +1,70 @@
-Version 0.650.0.6500743
-Added Property AudioEcho.RampTime: number
-Added Property ScrollingFrame.DraggingScrollBar: Enum.DraggingScrollBar {RobloxScriptSecurity} [Hidden] [ReadOnly]
-Added Property StarterPlayer.AvatarJointUpgrade_SerializedRollout: Enum.RolloutState [Hidden] [NotScriptable]
-Added Property Workspace.TouchEventsUseCollisionGroups: Enum.RolloutState [NotScriptable]
+Version 0.651.1.6510840
+Added Class TelemetryService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function TelemetryService:LogCounter(config: { [string]: any }, data: { [string]: any }?, value: number? = 1) -> any {RobloxScriptSecurity}
+Added Function TelemetryService:LogDurationEvent(key: string) -> any {RobloxScriptSecurity}
+Added Function TelemetryService:LogDurationEventWithTimestamp(key: string, timestamp: number) -> any {RobloxScriptSecurity}
+Added Function TelemetryService:LogEvent(config: { [string]: any }, data: { [string]: any }?) -> any {RobloxScriptSecurity}
+Added Function TelemetryService:LogStat(config: { [string]: any }, data: { [string]: any }?, value: number) -> any {RobloxScriptSecurity}
 
-Added Function EditableImage:DrawImageProjected(mesh: Object, projection: { [string]: any }, brushConfig: { [string]: any }) -> ()
-Added Function EditableImage:DrawImageTransformed(position: Vector2, scale: Vector2, rotation: number, image: Object, options: { [string]: any }?) -> ()
-Added Function EditableMesh:GetCenter() -> Vector3
-Added Function EditableMesh:GetSize() -> Vector3
-Added Function GuiService:OnNotificationDisplayed(notificationId: string) -> () {RobloxScriptSecurity}
-Added Function GuiService:OnNotificationInteraction(notificationId: string, buttonIndex: number) -> () {RobloxScriptSecurity}
-Added Function TextChatService:CanUsersDirectChatAsync(requesterUserId: number, userIds: { any }) -> { any } [Yields]
+Added Property Players.BanningEnabled: boolean [NotReplicated] [NotScriptable]
+Added Property TextChannel.DirectChatRequester: Player? [ReadOnly]
 
-Added Event TeamCreatePublishService.TeamCreateErrorStatus(result: Enum.TeamCreateErrorState) {RobloxScriptSecurity}
+Added Function Annotation:GetRequests() -> { [string]: any } {RobloxScriptSecurity}
+Added Function GuiService:GetRawScreenScale() -> number {RobloxScriptSecurity}
+Added Function StreamingService:SearchForAssets(body: any) -> any {RobloxScriptSecurity} [Yields]
+Added Function TextChannel:SetDirectChatRequester(requester: Player) -> ()
+Added Function UGCValidationService:CalculateAverageCageMeshDistance(innerCageMeshId: string, outerCageMeshId: string, refMeshId: string, innerTransform: CFrame, outerTransform: CFrame) -> number {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:CalculateAverageEditableCageMeshDistance(innerCage: Object, outerCage: Object, refMesh: Object, innerTransform: CFrame, outerTransform: CFrame) -> number {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateFacialBounds(meshId: string, boundsScale: number, partSize: Vector3) -> boolean {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:ValidateFacialExpressiveness(meshId: string, minDelta: number, partSize: Vector3) -> number {RobloxScriptSecurity} [Yields]
 
-Added Enum DraggingScrollBar
-Added EnumItem DraggingScrollBar.None : 0
-Added EnumItem DraggingScrollBar.Horizontal : 1
-Added EnumItem DraggingScrollBar.Vertical : 2
+Added Event Annotation.RequestCompleted(requestId: string, requestType: Enum.AnnotationRequestType, result: Enum.AnnotationRequestResult) {RobloxScriptSecurity}
+Added Event Annotation.RequestInitiated(requestId: string, requestType: Enum.AnnotationRequestType) {RobloxScriptSecurity}
+Added Event PluginGui.InputBegan(input: InputObject, gameProcessedEvent: boolean) {RobloxScriptSecurity}
+Added Event PluginGui.InputChanged(input: InputObject, gameProcessedEvent: boolean) {RobloxScriptSecurity}
+Added Event PluginGui.InputEnded(input: InputObject, gameProcessedEvent: boolean) {RobloxScriptSecurity}
+Added Event PluginGui.MouseEnter() {RobloxScriptSecurity}
+Added Event PluginGui.MouseLeave() {RobloxScriptSecurity}
 
-Added Enum TeamCreateErrorState
-Added EnumItem TeamCreateErrorState.PlaceSizeTooLarge : 0
-Added EnumItem TeamCreateErrorState.PlaceSizeApproachingLimit : 1
-Added EnumItem TeamCreateErrorState.NoError : 2
+Added Enum AnnotationRequestResult
+Added EnumItem AnnotationRequestResult.Success : 0
+Added EnumItem AnnotationRequestResult.ErrorInternalFailure : 1
+Added EnumItem AnnotationRequestResult.ErrorNotFound : 2
 
-Added EnumItem PromptCreateAvatarResult.PurchaseFailure : 10
+Added Enum AnnotationRequestType
+Added EnumItem AnnotationRequestType.Unknown : 0
+Added EnumItem AnnotationRequestType.Create : 1
+Added EnumItem AnnotationRequestType.Resolve : 2
+Added EnumItem AnnotationRequestType.Delete : 3
+Added EnumItem AnnotationRequestType.Edit : 4
 
-Added Tag [NotReplicated] to Property ScreenGui.IgnoreGuiInset
-Added Tag [NotScriptable] to Property StarterPlayer.AvatarJointUpgrade
+Added EnumItem TextChatMessageStatus.ModerationTimeout : 9
 
-Changed the value-type of Property StarterPlayer.AvatarJointUpgrade
-from:Enum.AvatarJointUpgrade
-to:Enum.RolloutState
+Added Tag [NotReplicated] to Property PluginAction.Text
 
-Changed the security of Event UserInputService.TouchDrag
-from:{RobloxScriptSecurity}
-to:{None}
+Changed the write permissions and serialization of Property PluginAction.Text
+from:{✏️None}[🚫 None]
+to:{✏️RobloxScriptSecurity}[📁 LoadOnly]
 
-Changed the value of EnumItem PromptCreateAvatarResult.UnknownFailure from 10 to 11
+Changed the return-type of Function Plugin:GetPluginComponent
+from:{ [string]: any }
+to:any
 
-Removed Property HumanoidDescription.AccessoryRigidAndLayeredBlob
-Removed Property StarterPlayer.AvatarJointUpgrade_Serialized
+Changed the parameters of Event AnnotationsService.AnnotationAdded
+from:(annotation: Annotation, parentId: string)
+to:(requestId: string, annotation: Annotation, parentId: string)
 
-Removed Function EditableImage:DrawProjectionImage
-Removed Function GuiService:NotificationDismissed
-Removed Function GuiService:NotificationDisplayed
-Removed Function GuiService:UserInteractedWithNotification
+Changed the parameters of Event AnnotationsService.AnnotationDeleted
+from:(annotation: Annotation)
+to:(requestId: string, annotation: Annotation)
 
-Removed Enum AvatarJointUpgrade
-Removed EnumItem AvatarJointUpgrade.Default
-Removed EnumItem AvatarJointUpgrade.Enabled
-Removed EnumItem AvatarJointUpgrade.Disabled
+Changed the parameters of Event AnnotationsService.AnnotationResolved
+from:(annotation: Annotation, resolved: boolean)
+to:(requestId: string, annotation: Annotation, resolved: boolean)
 
-Removed Tag [NotBrowsable] from Class UIDragDetector
+Removed Function CaptureService:PostToFeedAsync
+
+Removed EnumItem CompletionItemTag.ElideLeftOverride
+Removed EnumItem CompletionItemTag.UseTextEditForAutocompleteScore
+
+Removed Tag [ReadOnly] from Property PluginAction.Text
