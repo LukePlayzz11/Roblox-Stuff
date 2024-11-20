@@ -1,70 +1,64 @@
-Version 0.651.1.6510840
-Added Class TelemetryService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function TelemetryService:LogCounter(config: { [string]: any }, data: { [string]: any }?, value: number? = 1) -> any {RobloxScriptSecurity}
-Added Function TelemetryService:LogDurationEvent(key: string) -> any {RobloxScriptSecurity}
-Added Function TelemetryService:LogDurationEventWithTimestamp(key: string, timestamp: number) -> any {RobloxScriptSecurity}
-Added Function TelemetryService:LogEvent(config: { [string]: any }, data: { [string]: any }?) -> any {RobloxScriptSecurity}
-Added Function TelemetryService:LogStat(config: { [string]: any }, data: { [string]: any }?, value: number) -> any {RobloxScriptSecurity}
+Version 0.652.0.6520762
+Added Class ActivityHistoryEventService : Instance [NotCreatable] [Service]
+Added Event ActivityHistoryEventService.WriteActivityHistoryEventFromStudio(eventType: number, resourceId: number, metadata: string) {RobloxScriptSecurity}
 
-Added Property Players.BanningEnabled: boolean [NotReplicated] [NotScriptable]
-Added Property TextChannel.DirectChatRequester: Player? [ReadOnly]
+Added Class AvatarPreloader : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function AvatarPreloader:PreloadModelAssets(models: Instances) -> { any } {RobloxScriptSecurity}
 
-Added Function Annotation:GetRequests() -> { [string]: any } {RobloxScriptSecurity}
-Added Function GuiService:GetRawScreenScale() -> number {RobloxScriptSecurity}
-Added Function StreamingService:SearchForAssets(body: any) -> any {RobloxScriptSecurity} [Yields]
-Added Function TextChannel:SetDirectChatRequester(requester: Player) -> ()
-Added Function UGCValidationService:CalculateAverageCageMeshDistance(innerCageMeshId: string, outerCageMeshId: string, refMeshId: string, innerTransform: CFrame, outerTransform: CFrame) -> number {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:CalculateAverageEditableCageMeshDistance(innerCage: Object, outerCage: Object, refMesh: Object, innerTransform: CFrame, outerTransform: CFrame) -> number {RobloxScriptSecurity}
-Added Function UGCValidationService:ValidateFacialBounds(meshId: string, boundsScale: number, partSize: Vector3) -> boolean {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:ValidateFacialExpressiveness(meshId: string, minDelta: number, partSize: Vector3) -> number {RobloxScriptSecurity} [Yields]
+Added Class ExplorerServiceVisibilityService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function ExplorerServiceVisibilityService:GetServiceVisibility(service: Instance) -> boolean
 
-Added Event Annotation.RequestCompleted(requestId: string, requestType: Enum.AnnotationRequestType, result: Enum.AnnotationRequestResult) {RobloxScriptSecurity}
-Added Event Annotation.RequestInitiated(requestId: string, requestType: Enum.AnnotationRequestType) {RobloxScriptSecurity}
-Added Event PluginGui.InputBegan(input: InputObject, gameProcessedEvent: boolean) {RobloxScriptSecurity}
-Added Event PluginGui.InputChanged(input: InputObject, gameProcessedEvent: boolean) {RobloxScriptSecurity}
-Added Event PluginGui.InputEnded(input: InputObject, gameProcessedEvent: boolean) {RobloxScriptSecurity}
-Added Event PluginGui.MouseEnter() {RobloxScriptSecurity}
-Added Event PluginGui.MouseLeave() {RobloxScriptSecurity}
+Added Class MLModelDeliveryService : Instance [NotCreatable] [Service]
 
-Added Enum AnnotationRequestResult
-Added EnumItem AnnotationRequestResult.Success : 0
-Added EnumItem AnnotationRequestResult.ErrorInternalFailure : 1
-Added EnumItem AnnotationRequestResult.ErrorNotFound : 2
+Added Property AudioEmitter.SimulationFidelity: Enum.AudioSimulationFidelity
+Added Property AudioListener.SimulationFidelity: Enum.AudioSimulationFidelity
+Added Property BasePart.AudioCanCollide: boolean
 
-Added Enum AnnotationRequestType
-Added EnumItem AnnotationRequestType.Unknown : 0
-Added EnumItem AnnotationRequestType.Create : 1
-Added EnumItem AnnotationRequestType.Resolve : 2
-Added EnumItem AnnotationRequestType.Delete : 3
-Added EnumItem AnnotationRequestType.Edit : 4
+Added Function AssetService:CreateAssetAsync(object: Object, assetType: Enum.AssetType, requestParameters: { [string]: any }?) -> ...any [Yields]
+Added Function AssetService:CreateAssetVersionAsync(object: Object, assetType: Enum.AssetType, assetId: number, requestParameters: { [string]: any }?) -> ...any [Yields]
+Added Function DataStore:GetVersionAtTimeAsync(key: string, timestamp: number) -> ...any [Yields]
+Added Function PolicyService:CanViewBrandProjectAsync(player: Player, brandProjectId: string) -> boolean [Yields]
+Added Function ServiceVisibilityService:SetServiceVisibilityPreference(service: Instance, visible: boolean) -> () {RobloxScriptSecurity}
+Added Function StartPageService:getTutorialVersionForUser() -> string {RobloxScriptSecurity}
+Added Function StreamingService:GetRequiredScripts(script: Instance) -> any {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:ValidateEditableMeshUVDuplicates(referenceValues: { any }, editableMesh: Object) -> number {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateUVDuplicates(referenceValues: { any }, meshId: string) -> number {RobloxScriptSecurity} [Yields]
 
-Added EnumItem TextChatMessageStatus.ModerationTimeout : 9
+Added Event AudioAnalyzer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioChorus.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioCompressor.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioDeviceInput.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioDeviceOutput.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioDistortion.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioEcho.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioEmitter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioEqualizer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioFader.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioFilter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioFlanger.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioLimiter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioListener.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioPitchShifter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioPlayer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event AudioReverb.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event Chat.TimeoutChatAttempt(isPermanentTimeout: boolean, endTime: number) {RobloxScriptSecurity} [Hidden]
 
-Added Tag [NotReplicated] to Property PluginAction.Text
+Added Enum AudioSimulationFidelity
+Added EnumItem AudioSimulationFidelity.None : 0
+Added EnumItem AudioSimulationFidelity.Automatic : 1
 
-Changed the write permissions and serialization of Property PluginAction.Text
-from:{✏️None}[🚫 None]
-to:{✏️RobloxScriptSecurity}[📁 LoadOnly]
+Added Enum CreateAssetResult
+Added EnumItem CreateAssetResult.Success : 1
+Added EnumItem CreateAssetResult.PermissionDenied : 2
+Added EnumItem CreateAssetResult.UploadFailed : 3
+Added EnumItem CreateAssetResult.Unknown : 4
 
-Changed the return-type of Function Plugin:GetPluginComponent
-from:{ [string]: any }
-to:any
+Changed the parameters of Event TeamCreatePublishService.TeamCreateErrorStatus
+from:(result: Enum.TeamCreateErrorState)
+to:(result: Enum.TeamCreateErrorState, teamCreateSaveData: { [string]: any })
 
-Changed the parameters of Event AnnotationsService.AnnotationAdded
-from:(annotation: Annotation, parentId: string)
-to:(requestId: string, annotation: Annotation, parentId: string)
+Removed Function GeometryService:StitchMeshesAsync
 
-Changed the parameters of Event AnnotationsService.AnnotationDeleted
-from:(annotation: Annotation)
-to:(requestId: string, annotation: Annotation)
+Removed Event TeamCreateService.ToggleManageCollaborators
 
-Changed the parameters of Event AnnotationsService.AnnotationResolved
-from:(annotation: Annotation, resolved: boolean)
-to:(requestId: string, annotation: Annotation, resolved: boolean)
-
-Removed Function CaptureService:PostToFeedAsync
-
-Removed EnumItem CompletionItemTag.ElideLeftOverride
-Removed EnumItem CompletionItemTag.UseTextEditForAutocompleteScore
-
-Removed Tag [ReadOnly] from Property PluginAction.Text
+Removed Tag [NotBrowsable] from Property Workspace.PathfindingUseImprovedSearch
