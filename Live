@@ -1,64 +1,67 @@
-Version 0.652.0.6520762
-Added Class ActivityHistoryEventService : Instance [NotCreatable] [Service]
-Added Event ActivityHistoryEventService.WriteActivityHistoryEventFromStudio(eventType: number, resourceId: number, metadata: string) {RobloxScriptSecurity}
+Version 0.653.0.6530693
+Added Class PerformanceControlService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function PerformanceControlService:IsCrossExperienceLaunchFeasible(type: string) -> boolean {RobloxScriptSecurity}
 
-Added Class AvatarPreloader : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function AvatarPreloader:PreloadModelAssets(models: Instances) -> { any } {RobloxScriptSecurity}
+Added Class VideoPlayer : Instance [NotBrowsable]
+Added Property VideoPlayer.Asset: ContentId
+Added Property VideoPlayer.AutoLoad: boolean
+Added Property VideoPlayer.IsReady: boolean [ReadOnly]
+Added Property VideoPlayer.Resolution: Vector2 [ReadOnly]
+Added Property VideoPlayer.Thumbnail: ContentId
+Added Property VideoPlayer.TimeLength: number [ReadOnly]
+Added Property VideoPlayer.IsPlaying: boolean {✏️RobloxSecurity}
+Added Property VideoPlayer.Looping: boolean
+Added Property VideoPlayer.PlaybackSpeed: number
+Added Property VideoPlayer.TimePosition: number
+Added Property VideoPlayer.Volume: number
+Added Function VideoPlayer:GetConnectedWires(pin: string) -> Instances
+Added Function VideoPlayer:Play() -> ()
+Added Function VideoPlayer:SetStudioPreview(isPreview: boolean) -> () {RobloxScriptSecurity}
+Added Function VideoPlayer:Stop() -> ()
+Added Event VideoPlayer.Ended()
+Added Event VideoPlayer.Looped()
 
-Added Class ExplorerServiceVisibilityService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function ExplorerServiceVisibilityService:GetServiceVisibility(service: Instance) -> boolean
+Added Property Lighting.LightingStyle: Enum.LightingStyle [NotScriptable]
+Added Property Lighting.PrioritizeLightingQuality: boolean [NotScriptable]
 
-Added Class MLModelDeliveryService : Instance [NotCreatable] [Service]
+Added Function UGCValidationService:ReportUGCValidationCounter(success: boolean, validationType: string) -> () {RobloxScriptSecurity}
+Added Function UGCValidationService:ReportUGCValidationFailureTelemetry(errorType: string) -> () {RobloxScriptSecurity}
+Added Function VoiceChatService:rejoinVoice() -> () {RobloxScriptSecurity}
 
-Added Property AudioEmitter.SimulationFidelity: Enum.AudioSimulationFidelity
-Added Property AudioListener.SimulationFidelity: Enum.AudioSimulationFidelity
-Added Property BasePart.AudioCanCollide: boolean
+Added Event Selection.SelectionChangedThisFrame() {RobloxScriptSecurity}
 
-Added Function AssetService:CreateAssetAsync(object: Object, assetType: Enum.AssetType, requestParameters: { [string]: any }?) -> ...any [Yields]
-Added Function AssetService:CreateAssetVersionAsync(object: Object, assetType: Enum.AssetType, assetId: number, requestParameters: { [string]: any }?) -> ...any [Yields]
-Added Function DataStore:GetVersionAtTimeAsync(key: string, timestamp: number) -> ...any [Yields]
-Added Function PolicyService:CanViewBrandProjectAsync(player: Player, brandProjectId: string) -> boolean [Yields]
-Added Function ServiceVisibilityService:SetServiceVisibilityPreference(service: Instance, visible: boolean) -> () {RobloxScriptSecurity}
-Added Function StartPageService:getTutorialVersionForUser() -> string {RobloxScriptSecurity}
-Added Function StreamingService:GetRequiredScripts(script: Instance) -> any {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:ValidateEditableMeshUVDuplicates(referenceValues: { any }, editableMesh: Object) -> number {RobloxScriptSecurity}
-Added Function UGCValidationService:ValidateUVDuplicates(referenceValues: { any }, meshId: string) -> number {RobloxScriptSecurity} [Yields]
+Added Enum DeviceForm
+Added EnumItem DeviceForm.Console : 0
+Added EnumItem DeviceForm.Phone : 1
+Added EnumItem DeviceForm.Tablet : 2
+Added EnumItem DeviceForm.Desktop : 3
+Added EnumItem DeviceForm.VR : 4
 
-Added Event AudioAnalyzer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioChorus.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioCompressor.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioDeviceInput.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioDeviceOutput.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioDistortion.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioEcho.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioEmitter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioEqualizer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioFader.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioFilter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioFlanger.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioLimiter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioListener.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioPitchShifter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioPlayer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event AudioReverb.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event Chat.TimeoutChatAttempt(isPermanentTimeout: boolean, endTime: number) {RobloxScriptSecurity} [Hidden]
+Added Enum LightingStyle
+Added EnumItem LightingStyle.Realistic : 0
+Added EnumItem LightingStyle.Soft : 1
 
-Added Enum AudioSimulationFidelity
-Added EnumItem AudioSimulationFidelity.None : 0
-Added EnumItem AudioSimulationFidelity.Automatic : 1
+Added Tag [NotReplicated] to Class DebugSettings
+Added Tag [NotReplicated] to Class GameSettings
+Added Tag [NotReplicated] to Class LuaSettings
+Added Tag [NotReplicated] to Class NetworkSettings
+Added Tag [NotReplicated] to Class PhysicsSettings
+Added Tag [NotReplicated] to Class RenderSettings
+Added Tag [NotReplicated] to Class TaskScheduler
 
-Added Enum CreateAssetResult
-Added EnumItem CreateAssetResult.Success : 1
-Added EnumItem CreateAssetResult.PermissionDenied : 2
-Added EnumItem CreateAssetResult.UploadFailed : 3
-Added EnumItem CreateAssetResult.Unknown : 4
+Changed the parameters of Function OpenCloudService:InvokeAsync
+from:(version: string, methodName: string, arguments: { [string]: any })
+to:(version: string, methodName: string, arguments: { [string]: any }, headers: { [string]: any }?)
 
-Changed the parameters of Event TeamCreatePublishService.TeamCreateErrorStatus
-from:(result: Enum.TeamCreateErrorState)
-to:(result: Enum.TeamCreateErrorState, teamCreateSaveData: { [string]: any })
+Removed Property Lighting.Intent
+Removed Property Lighting.Quality
 
-Removed Function GeometryService:StitchMeshesAsync
+Removed Function StartPageService:getStartPageVersionForUser
 
-Removed Event TeamCreateService.ToggleManageCollaborators
+Removed Enum Intent
+Removed EnumItem Intent.Realistic
+Removed EnumItem Intent.Flat
 
-Removed Tag [NotBrowsable] from Property Workspace.PathfindingUseImprovedSearch
+Removed Enum Quality
+Removed EnumItem Quality.Performance
+Removed EnumItem Quality.Quality
