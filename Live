@@ -1,28 +1,64 @@
-Version 0.654.1.6540477
-Added Class AuroraService : Instance [NotCreatable] [Preliminary] [Service]
-Added Function AuroraService:GetServerView(target: Instance) -> Instance? [Preliminary]
-Added Function AuroraService:IsDesynced(target: Instance) -> boolean [Preliminary]
-Added Function AuroraService:NetDesync(target: Instance) -> () [Preliminary]
-Added Function AuroraService:NetSync(target: Instance) -> () [Preliminary]
-Added Function AuroraService:SetIncomingReplicationLag(seconds: number) -> () [Preliminary]
-Added Function AuroraService:UpdateProperties(target: Instance) -> () [Preliminary]
+Version 0.655.0.6551095
+Added Property AudioCompressor.Editor: boolean {RobloxScriptSecurity} [📁 LoadOnly] [NotReplicated]
+Added Property AudioLimiter.Editor: boolean {RobloxScriptSecurity} [📁 LoadOnly] [NotReplicated]
+Added Property TextBox.ShouldEmitUpAndDownArrowEvents: boolean {RobloxScriptSecurity}
+Added Property Workspace.FallHeightEnabled: boolean {✏️PluginSecurity}
 
-Added Class FeatureRestrictionManager : Instance [NotCreatable] [Service]
-Added Event FeatureRestrictionManager.TimeoutChatAttempt(isPermanentTimeout: boolean, endTime: number) {RobloxScriptSecurity} [Hidden]
+Added Function AdService:CreateAdRewardFromDevProductId(devProductId: number) -> AdReward
+Added Function AdService:GetAdAvailability(adFormat: Enum.AdFormat) -> any
+Added Function AdService:ShowRewardedVideoAdAsync(player: Player, reward: AdReward) -> Enum.ShowAdResult [Yields]
+Added Function AuroraService:GetDesyncedInstances() -> { any } [Preliminary]
+Added Function AuroraService:GetRemoteWorldStepId() -> number [Preliminary]
+Added Function AuroraService:GetWorldStepId() -> number [Preliminary]
+Added Function AuroraService:StepPhysics(worldSteps: number, parts: Instances? = Instances.new()) -> () [Preliminary]
+Added Function HapticEffect:SetWaveformKeys(keys: { any }) -> ()
+Added Function Stats:GetMemoryCategoryNames() -> { any } {RobloxScriptSecurity}
+Added Function Stats:GetMemoryUsageMbAllCategories() -> { any } {RobloxScriptSecurity}
 
-Added Class RelativeGui : GuiObject [NotReplicated]
+Added Event AdService.AdAvailabilityChanged(adFormat: Enum.AdFormat, adAvailabilityResult: any)
+Added Event AdService.ShowReportAdPopup(adInfo: { [string]: any }) {RobloxScriptSecurity}
+Added Event AdService.rewardedVideoAdPlayServerToClient(rewardDetails: string) {RobloxSecurity} [Hidden]
+Added Event AdService.rewardedVideoAdResultClientToServer(result: Enum.ShowAdResult, encryptedAdTrackingData: string, encryptionMetadata: string) {RobloxSecurity} [Hidden]
+Added Event AuroraService.Desynced(target: Instance) [Preliminary]
+Added Event AuroraService.Synced(target: Instance) [Preliminary]
+Added Event SoundService.OpenAudioCompressorEditorSignal(selectedCompressorObjects: Instances) {RobloxScriptSecurity}
 
-Added Function TeleportService:GetThirdPartyTeleportInfo(goForth: boolean) -> ...any {RobloxScriptSecurity}
-Added Function TeleportService:TeleportTrustedBackForth(goForth: boolean) -> () {RobloxScriptSecurity}
+Added Enum AdFormat
+Added EnumItem AdFormat.RewardedVideo : 0
 
-Removed Property Workspace.CSGAsyncDynamicCollision
+Added Enum ShowAdResult
+Added EnumItem ShowAdResult.PlayerIneligible : 0
+Added EnumItem ShowAdResult.ExperienceIneligible : 1
+Added EnumItem ShowAdResult.NotShown : 2
+Added EnumItem ShowAdResult.ShowCompleted : 3
+Added EnumItem ShowAdResult.ShowInterrupted : 4
 
-Removed Function StartPageService:refreshRegistryDataInStartPage
-Removed Function StudioService:RequestClose
+Added EnumItem HapticEffectType.Custom : 0
+Added EnumItem PromptCreateAvatarResult.TokenInvalid : 12
 
-Removed Enum CSGAsyncDynamicCollision
-Removed EnumItem CSGAsyncDynamicCollision.Default
-Removed EnumItem CSGAsyncDynamicCollision.Disabled
-Removed EnumItem CSGAsyncDynamicCollision.Enabled
+Changed the security of Property HapticEffect.Position
+from:{RobloxScriptSecurity}
+to:{None}
 
-Removed Tag [NotBrowsable] from Class WrapDeformer
+Changed the security of Property HapticEffect.Radius
+from:{RobloxScriptSecurity}
+to:{None}
+
+Changed the parameters of Function WebViewService:MutateWindow
+from:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?)
+to:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?, showDomainAsTitle: boolean?)
+
+Changed the parameters of Function WebViewService:OpenWindow
+from:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?)
+to:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?, showDomainAsTitle: boolean?)
+
+Changed the thread safety of Function TweenService:SmoothDamp
+from:{🧬Unsafe}
+to:{🧬Safe}
+
+Removed Function HapticEffect:SetKeys
+Removed Function StreamingService:DEPRECATED_RegisterCommand
+Removed Function StreamingService:DEPRECATED_RegisterSequentialCommand
+Removed Function StudioWidgetsService:AttachPluginGui
+
+Removed Event AdService.ShowStaticEudsaDisclosure
