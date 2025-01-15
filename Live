@@ -1,64 +1,36 @@
-Version 0.655.0.6551095
-Added Property AudioCompressor.Editor: boolean {RobloxScriptSecurity} [📁 LoadOnly] [NotReplicated]
-Added Property AudioLimiter.Editor: boolean {RobloxScriptSecurity} [📁 LoadOnly] [NotReplicated]
-Added Property TextBox.ShouldEmitUpAndDownArrowEvents: boolean {RobloxScriptSecurity}
-Added Property Workspace.FallHeightEnabled: boolean {✏️PluginSecurity}
+Version 0.656.0.6560679
+Added Property Decal.TextureContent: string [Hidden]
+Added Property Studio.AutocompleteAcceptanceBehavior: Enum.CompletionAcceptanceBehavior {RobloxScriptSecurity}
+Added Property Studio.TypeColor: Color3 [Hidden] [NotReplicated] [NotScriptable]
 
-Added Function AdService:CreateAdRewardFromDevProductId(devProductId: number) -> AdReward
-Added Function AdService:GetAdAvailability(adFormat: Enum.AdFormat) -> any
-Added Function AdService:ShowRewardedVideoAdAsync(player: Player, reward: AdReward) -> Enum.ShowAdResult [Yields]
-Added Function AuroraService:GetDesyncedInstances() -> { any } [Preliminary]
-Added Function AuroraService:GetRemoteWorldStepId() -> number [Preliminary]
-Added Function AuroraService:GetWorldStepId() -> number [Preliminary]
-Added Function AuroraService:StepPhysics(worldSteps: number, parts: Instances? = Instances.new()) -> () [Preliminary]
-Added Function HapticEffect:SetWaveformKeys(keys: { any }) -> ()
-Added Function Stats:GetMemoryCategoryNames() -> { any } {RobloxScriptSecurity}
-Added Function Stats:GetMemoryUsageMbAllCategories() -> { any } {RobloxScriptSecurity}
+Added Function Humanoid:ComputeOriginalSizeForPart(part: Instance) -> Vector3? {RobloxScriptSecurity}
+Added Function PackageUIService:ConvertToMockPackage(instance: Instance) -> () {RobloxScriptSecurity}
+Added Function StartPageService:shouldShowMacOSDeprecationWarning() -> boolean {RobloxScriptSecurity}
+Added Function StartPageService:shouldShowWinOSDeprecationWarning() -> boolean {RobloxScriptSecurity}
 
-Added Event AdService.AdAvailabilityChanged(adFormat: Enum.AdFormat, adAvailabilityResult: any)
-Added Event AdService.ShowReportAdPopup(adInfo: { [string]: any }) {RobloxScriptSecurity}
-Added Event AdService.rewardedVideoAdPlayServerToClient(rewardDetails: string) {RobloxSecurity} [Hidden]
-Added Event AdService.rewardedVideoAdResultClientToServer(result: Enum.ShowAdResult, encryptedAdTrackingData: string, encryptionMetadata: string) {RobloxSecurity} [Hidden]
-Added Event AuroraService.Desynced(target: Instance) [Preliminary]
-Added Event AuroraService.Synced(target: Instance) [Preliminary]
-Added Event SoundService.OpenAudioCompressorEditorSignal(selectedCompressorObjects: Instances) {RobloxScriptSecurity}
+Added Enum CompletionAcceptanceBehavior
+Added EnumItem CompletionAcceptanceBehavior.Insert : 0
+Added EnumItem CompletionAcceptanceBehavior.Replace : 1
+Added EnumItem CompletionAcceptanceBehavior.ReplaceOnEnterInsertOnTab : 2
+Added EnumItem CompletionAcceptanceBehavior.InsertOnEnterReplaceOnTab : 3
 
-Added Enum AdFormat
-Added EnumItem AdFormat.RewardedVideo : 0
+Added EnumItem StudioScriptEditorColorCategories.Type : 32
 
-Added Enum ShowAdResult
-Added EnumItem ShowAdResult.PlayerIneligible : 0
-Added EnumItem ShowAdResult.ExperienceIneligible : 1
-Added EnumItem ShowAdResult.NotShown : 2
-Added EnumItem ShowAdResult.ShowCompleted : 3
-Added EnumItem ShowAdResult.ShowInterrupted : 4
+Added Tag [NotReplicated] to Property PackageLink.HasNewVersion
 
-Added EnumItem HapticEffectType.Custom : 0
-Added EnumItem PromptCreateAvatarResult.TokenInvalid : 12
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuPrimaryText from 32 to 33
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuSecondaryText from 33 to 34
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuSelectedText from 34 to 35
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuBackground from 35 to 36
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuSelectedBackground from 36 to 37
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuScrollbarBackground from 37 to 38
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuScrollbarHandle from 38 to 39
+Changed the value of EnumItem StudioScriptEditorColorCategories.MenuBorder from 39 to 40
+Changed the value of EnumItem StudioScriptEditorColorCategories.DocViewCodeBackground from 40 to 41
+Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayText from 41 to 42
+Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayButtonBackground from 42 to 43
+Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayButtonBackgroundHover from 43 to 44
+Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayButtonBackgroundPressed from 44 to 45
+Changed the value of EnumItem StudioScriptEditorColorCategories.IndentationRuler from 45 to 46
 
-Changed the security of Property HapticEffect.Position
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the security of Property HapticEffect.Radius
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the parameters of Function WebViewService:MutateWindow
-from:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?)
-to:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?, showDomainAsTitle: boolean?)
-
-Changed the parameters of Function WebViewService:OpenWindow
-from:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?)
-to:(url: string, title: string?, isVisible: boolean?, searchType: string?, transitionAnimation: string?, showDomainAsTitle: boolean?)
-
-Changed the thread safety of Function TweenService:SmoothDamp
-from:{🧬Unsafe}
-to:{🧬Safe}
-
-Removed Function HapticEffect:SetKeys
-Removed Function StreamingService:DEPRECATED_RegisterCommand
-Removed Function StreamingService:DEPRECATED_RegisterSequentialCommand
-Removed Function StudioWidgetsService:AttachPluginGui
-
-Removed Event AdService.ShowStaticEudsaDisclosure
+Removed Tag [ReadOnly] from Property PackageLink.HasNewVersion
