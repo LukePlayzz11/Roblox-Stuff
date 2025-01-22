@@ -1,36 +1,55 @@
-Version 0.656.0.6560679
-Added Property Decal.TextureContent: string [Hidden]
-Added Property Studio.AutocompleteAcceptanceBehavior: Enum.CompletionAcceptanceBehavior {RobloxScriptSecurity}
-Added Property Studio.TypeColor: Color3 [Hidden] [NotReplicated] [NotScriptable]
+Version 0.657.0.6570603
 
-Added Function Humanoid:ComputeOriginalSizeForPart(part: Instance) -> Vector3? {RobloxScriptSecurity}
-Added Function PackageUIService:ConvertToMockPackage(instance: Instance) -> () {RobloxScriptSecurity}
-Added Function StartPageService:shouldShowMacOSDeprecationWarning() -> boolean {RobloxScriptSecurity}
-Added Function StartPageService:shouldShowWinOSDeprecationWarning() -> boolean {RobloxScriptSecurity}
+Added Class LiveSyncService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Property LiveSyncService.HasSyncedInstances: boolean [ReadOnly]
+Added Function LiveSyncService:GetSyncState(instance: Instance) -> ...any
+Added Event LiveSyncService.SyncStatusChanged(instance: Instance)
 
-Added Enum CompletionAcceptanceBehavior
-Added EnumItem CompletionAcceptanceBehavior.Insert : 0
-Added EnumItem CompletionAcceptanceBehavior.Replace : 1
-Added EnumItem CompletionAcceptanceBehavior.ReplaceOnEnterInsertOnTab : 2
-Added EnumItem CompletionAcceptanceBehavior.InsertOnEnterReplaceOnTab : 3
+Added Property TextChatMessage.Verified: boolean {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property TextChatService.HasSeenDeprecationDialog: boolean {RobloxScriptSecurity}
 
-Added EnumItem StudioScriptEditorColorCategories.Type : 32
+Added Function AdService:GetAdAvailabilityNowAsync(adFormat: Enum.AdFormat) -> any [Yields]
+Added Function AdService:HandleWhyThisAdClicked(advertiserName: string, payerName: string) -> () {RobloxScriptSecurity}
+Added Function AdService:OnDemandVideoCompleteFromUI(result: Enum.ShowAdResult, encryptedAdTrackingData: string, encryptionMetadata: string, rewardDetails: string) -> () {RobloxScriptSecurity}
+Added Function AppLifecycleObserverService:TriggerOnLuaAppInteractive() -> () {RobloxScriptSecurity}
+Added Function Instance:GetStyledPropertyChangedSignal(property: string) -> RBXScriptSignal
 
-Added Tag [NotReplicated] to Property PackageLink.HasNewVersion
+Added Event Instance.StyledPropertiesChanged()
+Added Event TextChatService.ClientToServerMessageReplicateSignalV3(text: string, metadata: string, messageId: string, textSource: TextSource, textChannel: TextChannel, verified: boolean, isEscapedFlagEnabled: boolean) {RobloxSecurity} [Hidden]
 
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuPrimaryText from 32 to 33
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuSecondaryText from 33 to 34
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuSelectedText from 34 to 35
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuBackground from 35 to 36
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuSelectedBackground from 36 to 37
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuScrollbarBackground from 37 to 38
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuScrollbarHandle from 38 to 39
-Changed the value of EnumItem StudioScriptEditorColorCategories.MenuBorder from 39 to 40
-Changed the value of EnumItem StudioScriptEditorColorCategories.DocViewCodeBackground from 40 to 41
-Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayText from 41 to 42
-Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayButtonBackground from 42 to 43
-Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayButtonBackgroundHover from 43 to 44
-Changed the value of EnumItem StudioScriptEditorColorCategories.AICOOverlayButtonBackgroundPressed from 44 to 45
-Changed the value of EnumItem StudioScriptEditorColorCategories.IndentationRuler from 45 to 46
+Added Callback AdService.onDemandVideoPlayInUI(data: { [string]: any }) -> VideoFrame {RobloxScriptSecurity}
 
-Removed Tag [ReadOnly] from Property PackageLink.HasNewVersion
+Added Enum AdAvailabilityResult
+Added EnumItem AdAvailabilityResult.IsAvailable : 1
+Added EnumItem AdAvailabilityResult.DeviceIneligible : 2
+Added EnumItem AdAvailabilityResult.ExperienceIneligible : 3
+Added EnumItem AdAvailabilityResult.InternalError : 4
+Added EnumItem AdAvailabilityResult.NoFill : 5
+Added EnumItem AdAvailabilityResult.PlayerIneligible : 6
+Added EnumItem AdAvailabilityResult.PublisherIneligible : 7
+
+Added Enum BenefitType
+Added EnumItem BenefitType.DeveloperProduct : 0
+Added EnumItem BenefitType.AvatarAsset : 1
+Added EnumItem BenefitType.AvatarBundle : 2
+
+Added EnumItem ShowAdResult.AdNotReady : 2
+Added EnumItem ShowAdResult.AdAlreadyShowing : 3
+Added EnumItem ShowAdResult.InternalError : 4
+
+Added Tag [NotReplicated] to Class UserGameSettings
+
+Changed the value of EnumItem ShowAdResult.ShowCompleted from 3 to 1
+Changed the value of EnumItem ShowAdResult.ShowInterrupted from 4 to 5
+
+Removed Function AdService:GetAdAvailability
+
+Removed Event AdService.AdAvailabilityChanged
+Removed Event TextChatService.ClientToServerMessageReplicateSignal
+
+Removed EnumItem ShowAdResult.PlayerIneligible
+Removed EnumItem ShowAdResult.ExperienceIneligible
+Removed EnumItem ShowAdResult.NotShown
+
+Removed Tag [Hidden] from Event Chat.TimeoutChatAttempt
+Removed Tag [Hidden] from Event FeatureRestrictionManager.TimeoutChatAttempt
