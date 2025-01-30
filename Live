@@ -1,55 +1,26 @@
-Version 0.657.0.6570603
+Version 0.658.0.6580461
 
-Added Class LiveSyncService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Property LiveSyncService.HasSyncedInstances: boolean [ReadOnly]
-Added Function LiveSyncService:GetSyncState(instance: Instance) -> ...any
-Added Event LiveSyncService.SyncStatusChanged(instance: Instance)
+Added Class BugReporterService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function BugReporterService:IsAvailable() -> boolean {RobloxScriptSecurity} [Yields]
+Added Event BugReporterService.BugReportRequested(message: string) {RobloxScriptSecurity}
 
-Added Property TextChatMessage.Verified: boolean {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property TextChatService.HasSeenDeprecationDialog: boolean {RobloxScriptSecurity}
+Added Property Chat.IsAutoMigrated: boolean {RobloxScriptSecurity} [Hidden] [NotReplicated]
 
-Added Function AdService:GetAdAvailabilityNowAsync(adFormat: Enum.AdFormat) -> any [Yields]
-Added Function AdService:HandleWhyThisAdClicked(advertiserName: string, payerName: string) -> () {RobloxScriptSecurity}
-Added Function AdService:OnDemandVideoCompleteFromUI(result: Enum.ShowAdResult, encryptedAdTrackingData: string, encryptionMetadata: string, rewardDetails: string) -> () {RobloxScriptSecurity}
-Added Function AppLifecycleObserverService:TriggerOnLuaAppInteractive() -> () {RobloxScriptSecurity}
-Added Function Instance:GetStyledPropertyChangedSignal(property: string) -> RBXScriptSignal
+Added Function CreatorStoreService:PerformCreatorStorePurchase(productTargetId: number, assetType: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+Added Function PublishService:CreateAssetOrAssetVersionAndPollAssetWithTelemetryAsyncWithAddParamErrorJson(serializedInstance: string, publishInfo: { [string]: any }) -> { [string]: any } {RobloxScriptSecurity} [Yields]
 
-Added Event Instance.StyledPropertiesChanged()
-Added Event TextChatService.ClientToServerMessageReplicateSignalV3(text: string, metadata: string, messageId: string, textSource: TextSource, textChannel: TextChannel, verified: boolean, isEscapedFlagEnabled: boolean) {RobloxSecurity} [Hidden]
+Added Event AuroraService.FixedRateTick(deltaTime: number, worldStepId: number) [Preliminary]
 
-Added Callback AdService.onDemandVideoPlayInUI(data: { [string]: any }) -> VideoFrame {RobloxScriptSecurity}
+Added Enum ProductPurchaseChannel
+Added EnumItem ProductPurchaseChannel.InExperience : 1
+Added EnumItem ProductPurchaseChannel.ExperienceDetailsPage : 2
 
-Added Enum AdAvailabilityResult
-Added EnumItem AdAvailabilityResult.IsAvailable : 1
-Added EnumItem AdAvailabilityResult.DeviceIneligible : 2
-Added EnumItem AdAvailabilityResult.ExperienceIneligible : 3
-Added EnumItem AdAvailabilityResult.InternalError : 4
-Added EnumItem AdAvailabilityResult.NoFill : 5
-Added EnumItem AdAvailabilityResult.PlayerIneligible : 6
-Added EnumItem AdAvailabilityResult.PublisherIneligible : 7
+Changed the parameters of Event ChangeHistoryService.OnRecordingFinished
+from:(name: string, displayName: string?, identifier: string?, operationn: Enum.FinishRecordingOperation, finalOptions: { [string]: any }?)
+to:(name: string, displayName: string?, identifier: string?, operation: Enum.FinishRecordingOperation, finalOptions: { [string]: any }?)
 
-Added Enum BenefitType
-Added EnumItem BenefitType.DeveloperProduct : 0
-Added EnumItem BenefitType.AvatarAsset : 1
-Added EnumItem BenefitType.AvatarBundle : 2
+Removed Function StartPageService:getTutorialVersionForUser
+Removed Function TutorialService:GetStudioWidgetFromLabel
+Removed Function TutorialService:GetTutorialIDToLaunch
 
-Added EnumItem ShowAdResult.AdNotReady : 2
-Added EnumItem ShowAdResult.AdAlreadyShowing : 3
-Added EnumItem ShowAdResult.InternalError : 4
-
-Added Tag [NotReplicated] to Class UserGameSettings
-
-Changed the value of EnumItem ShowAdResult.ShowCompleted from 3 to 1
-Changed the value of EnumItem ShowAdResult.ShowInterrupted from 4 to 5
-
-Removed Function AdService:GetAdAvailability
-
-Removed Event AdService.AdAvailabilityChanged
-Removed Event TextChatService.ClientToServerMessageReplicateSignal
-
-Removed EnumItem ShowAdResult.PlayerIneligible
-Removed EnumItem ShowAdResult.ExperienceIneligible
-Removed EnumItem ShowAdResult.NotShown
-
-Removed Tag [Hidden] from Event Chat.TimeoutChatAttempt
-Removed Tag [Hidden] from Event FeatureRestrictionManager.TimeoutChatAttempt
+Removed Tag [NotReplicated] from Property StarterPlayer.GameSettingsAvatar
