@@ -1,26 +1,42 @@
-Version 0.658.0.6580461
+Version 0.659.0.6590474 (week 4)
 
-Added Class BugReporterService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function BugReporterService:IsAvailable() -> boolean {RobloxScriptSecurity} [Yields]
-Added Event BugReporterService.BugReportRequested(message: string) {RobloxScriptSecurity}
 
-Added Property Chat.IsAutoMigrated: boolean {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property AudioAnalyzer.WindowSize: Enum.AudioWindowSize
+Added Property AudioPitchShifter.WindowSize: Enum.AudioWindowSize
+Added Property PartOperation.SolidMeshData: NetAssetRef [Hidden] [NotScriptable]
+Added Property SoundService.CharacterSoundsUseNewApi: Enum.RolloutState {✏️PluginSecurity}
+Added Property Studio.AutoResumeSyncOnPlaceOpen: boolean {RobloxSecurity}
 
-Added Function CreatorStoreService:PerformCreatorStorePurchase(productTargetId: number, assetType: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
-Added Function PublishService:CreateAssetOrAssetVersionAndPollAssetWithTelemetryAsyncWithAddParamErrorJson(serializedInstance: string, publishInfo: { [string]: any }) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+Added Function AnnotationsService:EditAnnotation(uniqueId: string, contents: string) -> () {RobloxScriptSecurity}
+Added Function AudioEcho:Reset() -> () {RobloxScriptSecurity}
+Added Function AudioListener:Reset() -> () {RobloxScriptSecurity}
+Added Function AudioReverb:Reset() -> () {RobloxScriptSecurity}
+Added Function GlobalSettings:GetFFlagOverrides() -> string {RobloxScriptSecurity}
+Added Function GlobalSettings:GetFFlags() -> string {RobloxScriptSecurity}
+Added Function GlobalSettings:SetFFlagOverrides(overrides: string) -> boolean {RobloxScriptSecurity}
+Added Function Stats:ResetHarmonyMemoryTarget() -> () {RobloxScriptSecurity}
+Added Function Stats:SetHarmonyMemoryTarget(targetMB: number) -> () {RobloxScriptSecurity}
+Added Function UGCValidationService:CreateEditableImageFromBinaryStringRobloxOnly(value: BinaryStringValue) -> Object {RobloxScriptSecurity}
+Added Function UGCValidationService:CreateEditableMeshFromBinaryStringRobloxOnly(value: BinaryStringValue) -> Object {RobloxScriptSecurity}
+Added Function UGCValidationService:GetEditableImageData(editableImage: Object) -> BinaryStringValue {RobloxScriptSecurity}
+Added Function UGCValidationService:GetMeshDataBinaryString(meshId: string) -> BinaryStringValue {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:RegisterAlternateMesh(alternateId: string, binaryStringValue: BinaryStringValue) -> () {RobloxScriptSecurity}
+Added Function VoiceChatService:leaveVoice() -> () {RobloxScriptSecurity}
 
-Added Event AuroraService.FixedRateTick(deltaTime: number, worldStepId: number) [Preliminary]
+Added Event AnnotationsService.AnnotationEdited(requestId: string, uniqueId: string, contents: string) {RobloxScriptSecurity}
 
-Added Enum ProductPurchaseChannel
-Added EnumItem ProductPurchaseChannel.InExperience : 1
-Added EnumItem ProductPurchaseChannel.ExperienceDetailsPage : 2
+Added EnumItem ProductPurchaseChannel.AdReward : 3
+Added EnumItem ProductPurchaseChannel.CommerceProduct : 4
 
-Changed the parameters of Event ChangeHistoryService.OnRecordingFinished
-from:(name: string, displayName: string?, identifier: string?, operationn: Enum.FinishRecordingOperation, finalOptions: { [string]: any }?)
-to:(name: string, displayName: string?, identifier: string?, operation: Enum.FinishRecordingOperation, finalOptions: { [string]: any }?)
+Added Tags [Deprecated] [Hidden] [NotReplicated] to Property AudioPlayer.AssetId
+Added Tags [Hidden] [NotReplicated] to Property TextChatService.HasSeenDeprecationDialog
 
-Removed Function StartPageService:getTutorialVersionForUser
-Removed Function TutorialService:GetStudioWidgetFromLabel
-Removed Function TutorialService:GetTutorialIDToLaunch
+Changed the serialization of Property AudioPlayer.Asset
+from:[📁 LoadOnly]
+to:[💾|📁 Serialized]
 
-Removed Tag [NotReplicated] from Property StarterPlayer.GameSettingsAvatar
+Changed the serialization of Property AudioPlayer.AssetId
+from:[💾|📁 Serialized]
+to:[📁 LoadOnly]
+
+Removed Tags [Hidden] [NotScriptable] from Property AudioPlayer.Asset
