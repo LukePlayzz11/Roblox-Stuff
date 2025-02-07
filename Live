@@ -2,7 +2,7 @@ Version 0.659.1.6590477 (week 4)
 
 Added Property AudioAnalyzer.WindowSize: Enum.AudioWindowSize
 Added Property AudioPitchShifter.WindowSize: Enum.AudioWindowSize
-Added Property AudioPlayer.Asset: ContentId
+Added Property PartOperation.SolidMeshData: NetAssetRef [Hidden] [NotScriptable]
 Added Property SoundService.CharacterSoundsUseNewApi: Enum.RolloutState {✏️PluginSecurity}
 Added Property Studio.AutoResumeSyncOnPlaceOpen: boolean {RobloxSecurity}
 
@@ -30,6 +30,12 @@ Added EnumItem ProductPurchaseChannel.CommerceProduct : 4
 Added Tags [Deprecated] [Hidden] [NotReplicated] to Property AudioPlayer.AssetId
 Added Tags [Hidden] [NotReplicated] to Property TextChatService.HasSeenDeprecationDialog
 
+Changed the serialization of Property AudioPlayer.Asset
+from:[📁 LoadOnly]
+to:[💾|📁 Serialized]
+
 Changed the serialization of Property AudioPlayer.AssetId
 from:[💾|📁 Serialized]
 to:[📁 LoadOnly]
+
+Removed Tags [Hidden] [NotScriptable] from Property AudioPlayer.Asset
