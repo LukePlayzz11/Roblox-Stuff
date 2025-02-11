@@ -1,41 +1,107 @@
-Version 0.659.1.6590477 (week 4)
+Version 0.660.0.6600646
 
-Added Property AudioAnalyzer.WindowSize: Enum.AudioWindowSize
-Added Property AudioPitchShifter.WindowSize: Enum.AudioWindowSize
-Added Property PartOperation.SolidMeshData: NetAssetRef [Hidden] [NotScriptable]
-Added Property SoundService.CharacterSoundsUseNewApi: Enum.RolloutState {✏️PluginSecurity}
-Added Property Studio.AutoResumeSyncOnPlaceOpen: boolean {RobloxSecurity}
+Added Class AudioChannelMixer : Instance [NotBrowsable]
+Added Property AudioChannelMixer.Layout: Enum.AudioChannelLayout
+Added Function AudioChannelMixer:GetConnectedWires(pin: string) -> Instances
+Added Event AudioChannelMixer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
 
-Added Function AnnotationsService:EditAnnotation(uniqueId: string, contents: string) -> () {RobloxScriptSecurity}
-Added Function AudioEcho:Reset() -> () {RobloxScriptSecurity}
-Added Function AudioListener:Reset() -> () {RobloxScriptSecurity}
-Added Function AudioReverb:Reset() -> () {RobloxScriptSecurity}
-Added Function GlobalSettings:GetFFlagOverrides() -> string {RobloxScriptSecurity}
-Added Function GlobalSettings:GetFFlags() -> string {RobloxScriptSecurity}
-Added Function GlobalSettings:SetFFlagOverrides(overrides: string) -> boolean {RobloxScriptSecurity}
-Added Function Stats:ResetHarmonyMemoryTarget() -> () {RobloxScriptSecurity}
-Added Function Stats:SetHarmonyMemoryTarget(targetMB: number) -> () {RobloxScriptSecurity}
-Added Function UGCValidationService:CreateEditableImageFromBinaryStringRobloxOnly(value: BinaryStringValue) -> Object {RobloxScriptSecurity}
-Added Function UGCValidationService:CreateEditableMeshFromBinaryStringRobloxOnly(value: BinaryStringValue) -> Object {RobloxScriptSecurity}
-Added Function UGCValidationService:GetEditableImageData(editableImage: Object) -> BinaryStringValue {RobloxScriptSecurity}
-Added Function UGCValidationService:GetMeshDataBinaryString(meshId: string) -> BinaryStringValue {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:RegisterAlternateMesh(alternateId: string, binaryStringValue: BinaryStringValue) -> () {RobloxScriptSecurity}
-Added Function VoiceChatService:leaveVoice() -> () {RobloxScriptSecurity}
+Added Class AudioChannelSplitter : Instance [NotBrowsable]
+Added Property AudioChannelSplitter.Layout: Enum.AudioChannelLayout
+Added Function AudioChannelSplitter:GetConnectedWires(pin: string) -> Instances
+Added Event AudioChannelSplitter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
 
-Added Event AnnotationsService.AnnotationEdited(requestId: string, uniqueId: string, contents: string) {RobloxScriptSecurity}
+Added Class StudioCameraService : Instance [NotCreatable] [NotReplicated] [Service]
 
-Added EnumItem ProductPurchaseChannel.AdReward : 3
-Added EnumItem ProductPurchaseChannel.CommerceProduct : 4
+Added Class UniqueIdLookupService : Instance [NotCreatable] [Service]
+Added Function UniqueIdLookupService:GetInstanceByRfc4122String(id: string) -> Instance? {RobloxScriptSecurity}
 
-Added Tags [Deprecated] [Hidden] [NotReplicated] to Property AudioPlayer.AssetId
-Added Tags [Hidden] [NotReplicated] to Property TextChatService.HasSeenDeprecationDialog
+Added Property AuroraService.RollbackEnabled: boolean [Preliminary]
+Added Property SoundService.AudioApiByDefault: Enum.RolloutState {RobloxScriptSecurity} [Hidden]
+Added Property SoundService.IsNewExpForAudioApiByDefault: boolean {RobloxScriptSecurity} [Hidden]
+Added Property TestService.ThrottlePhysicsToRealtime: boolean
 
-Changed the serialization of Property AudioPlayer.Asset
-from:[📁 LoadOnly]
-to:[💾|📁 Serialized]
+Added Function AudioAnalyzer:GetInputPins() -> { any }
+Added Function AudioAnalyzer:GetOutputPins() -> { any }
+Added Function AudioChorus:GetInputPins() -> { any }
+Added Function AudioChorus:GetOutputPins() -> { any }
+Added Function AudioCompressor:GetInputPins() -> { any }
+Added Function AudioCompressor:GetOutputPins() -> { any }
+Added Function AudioDeviceInput:GetInputPins() -> { any }
+Added Function AudioDeviceInput:GetOutputPins() -> { any }
+Added Function AudioDeviceOutput:GetInputPins() -> { any }
+Added Function AudioDeviceOutput:GetOutputPins() -> { any }
+Added Function AudioDistortion:GetInputPins() -> { any }
+Added Function AudioDistortion:GetOutputPins() -> { any }
+Added Function AudioEcho:GetInputPins() -> { any }
+Added Function AudioEcho:GetOutputPins() -> { any }
+Added Function AudioEmitter:GetInputPins() -> { any }
+Added Function AudioEmitter:GetOutputPins() -> { any }
+Added Function AudioEqualizer:GetInputPins() -> { any }
+Added Function AudioEqualizer:GetOutputPins() -> { any }
+Added Function AudioFader:GetInputPins() -> { any }
+Added Function AudioFader:GetOutputPins() -> { any }
+Added Function AudioFilter:GetInputPins() -> { any }
+Added Function AudioFilter:GetOutputPins() -> { any }
+Added Function AudioFlanger:GetInputPins() -> { any }
+Added Function AudioFlanger:GetOutputPins() -> { any }
+Added Function AudioLimiter:GetInputPins() -> { any }
+Added Function AudioLimiter:GetOutputPins() -> { any }
+Added Function AudioListener:GetAudibilityFor(emitter: AudioEmitter) -> number
+Added Function AudioListener:GetInputPins() -> { any }
+Added Function AudioListener:GetOutputPins() -> { any }
+Added Function AudioPitchShifter:GetInputPins() -> { any }
+Added Function AudioPitchShifter:GetOutputPins() -> { any }
+Added Function AudioPlayer:GetInputPins() -> { any }
+Added Function AudioPlayer:GetOutputPins() -> { any }
+Added Function AudioReverb:GetInputPins() -> { any }
+Added Function AudioReverb:GetOutputPins() -> { any }
+Added Function AuroraService:StartPrediction(target: Instance) -> () [Preliminary]
+Added Function AuroraService:StopPrediction(target: Instance) -> () [Preliminary]
+Added Function GuiService:GetErrorDetails() -> { [string]: any } {RobloxScriptSecurity}
+Added Function Player:AddReplicationFocus(part: BasePart) -> ()
+Added Function Player:RemoveReplicationFocus(part: BasePart) -> ()
+Added Function SafetyService:ReportMenuTabClose() -> () {RobloxScriptSecurity}
+Added Function SafetyService:ReportMenuTabOpen() -> () {RobloxScriptSecurity}
+Added Function SoundService:GetAudioApiByDefault() -> boolean {RobloxScriptSecurity}
+Added Function SoundService:InsertAsset(assetId: ContentId, assetName: string, useSelection: boolean? = true) -> Instances {RobloxScriptSecurity}
+Added Function SoundService:SetAudioApiByDefault(enabled: boolean) -> () {RobloxScriptSecurity}
+Added Function StudioAssetService:CancelAutoSetupAvatarAsync(jobId: string) -> () {RobloxScriptSecurity} [Yields]
+Added Function Wire:RenameToDefault() -> () {RobloxScriptSecurity}
 
-Changed the serialization of Property AudioPlayer.AssetId
+Added Event AuroraService.Rollback() [Preliminary]
+Added Event AuroraService.Step() [Preliminary]
+Added Event VoiceChatService.RuppInitialToken(sessionId: string, token: string, destinationIpAddress: string, destinationPort: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.RuppPeriodicToken(sessionId: string, token: string, destinationIpAddress: string, destinationPort: number, sourceIpAddress: string, sourcePort: number) {RobloxSecurity} [Hidden]
+
+Added Enum AudioChannelLayout
+Added EnumItem AudioChannelLayout.Mono : 0
+Added EnumItem AudioChannelLayout.Stereo : 1
+Added EnumItem AudioChannelLayout.Quad : 2
+Added EnumItem AudioChannelLayout.Surround_5 : 3
+Added EnumItem AudioChannelLayout.Surround_5_1 : 4
+Added EnumItem AudioChannelLayout.Surround_7_1 : 5
+Added EnumItem AudioChannelLayout.Surround_7_1_4 : 6
+
+Added EnumItem ConnectionError.PhantomFreeze : 303
+
+Added Tags [Deprecated] [NotReplicated] to Property TestService.Is30FpsThrottleEnabled
+
+Changed the serialization of Property TestService.Is30FpsThrottleEnabled
 from:[💾|📁 Serialized]
 to:[📁 LoadOnly]
 
-Removed Tags [Hidden] [NotScriptable] from Property AudioPlayer.Asset
+Changed the parameters of Function WrapDeformer:SetCageMeshContent
+from:(content: string)
+to:(content: string, cageOrigin: CFrame?)
+
+Changed the security of Function AudioEmitter:GetAudibilityFor
+from:{RobloxScriptSecurity}
+to:{None}
+
+Changed the parameters of Event ScriptContext.ErrorDetailed
+from:(message: string, stackTrace: string, script: Instance, details: string, securityLevel: number)
+to:(message: string, stackTrace: string, script: Instance, details: string, securityLevel: number, messageId: string)
+
+Removed Function AssetService:CreateEditableMeshFromPartAsync
+Removed Function AudioListener:GetAudibilityOf
+Removed Function EditableMesh:CreateMeshPartAsync
