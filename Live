@@ -1,107 +1,163 @@
-Version 0.660.0.6600646
+Version 0.661.0.6610708
 
-Added Class AudioChannelMixer : Instance [NotBrowsable]
-Added Property AudioChannelMixer.Layout: Enum.AudioChannelLayout
-Added Function AudioChannelMixer:GetConnectedWires(pin: string) -> Instances
-Added Event AudioChannelMixer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Class AuroraScriptService : Instance [NotCreatable] [Preliminary] [Service]
+Added Property AuroraScriptService.BufferSize: number {✏️PluginSecurity} [Preliminary]
+Added Property AuroraScriptService.LocalFrameId: number {✏️RobloxSecurity} [NotReplicated] [Preliminary]
+Added Property AuroraScriptService.RemoteFrameId: number {✏️RobloxSecurity} [Preliminary]
+Added Function AuroraScriptService:GetProperty(instance: Instance, name: string) -> any [Preliminary] {🧬Safe}
+Added Function AuroraScriptService:GetTime() -> number [Preliminary] {🧬Safe}
+Added Function AuroraScriptService:SendMessage(instance: Instance, behaviorName: string, functionName: string, ...: any) -> () [Preliminary] {🧬Safe}
+Added Function AuroraScriptService:SetProperty(instance: Instance, name: string, value: any) -> () [Preliminary] {🧬Safe}
 
-Added Class AudioChannelSplitter : Instance [NotBrowsable]
-Added Property AudioChannelSplitter.Layout: Enum.AudioChannelLayout
-Added Function AudioChannelSplitter:GetConnectedWires(pin: string) -> Instances
-Added Event AudioChannelSplitter.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Class CustomLog : Instance [NotReplicated]
+Added Function CustomLog:Close() -> ()
+Added Function CustomLog:GetLogPath() -> string
+Added Function CustomLog:Open() -> ()
+Added Function CustomLog:WriteAppend(append: string) -> ()
 
-Added Class StudioCameraService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Class GenerationService : Instance [NotCreatable] [Service]
+Added Function GenerationService:GenerateMeshAsync(inputs: { [string]: any }, player: Player, options: { [string]: any }, intermediateResultCallback: ((...any) -> ...any)?) -> ...any [Yields]
+Added Function GenerationService:LoadGeneratedMeshAsync(generationId: string) -> MeshPart [Yields]
+Added Event GenerationService.ReplicateGeneration(id: string, success: boolean, serializedModel: string) {RobloxSecurity} [Hidden]
+Added Event GenerationService.RequestGenerationReplication(id: string) {RobloxSecurity} [Hidden]
 
-Added Class UniqueIdLookupService : Instance [NotCreatable] [Service]
-Added Function UniqueIdLookupService:GetInstanceByRfc4122String(id: string) -> Instance? {RobloxScriptSecurity}
+Added Class HeapProfilerService : Instance [NotCreatable] [Service]
+Added Function HeapProfilerService:ClientRequestDataAsync(player: Player) -> string {PluginSecurity} [Yields]
+Added Function HeapProfilerService:ServerRequestDataAsync() -> string {PluginSecurity} [Yields]
+Added Event HeapProfilerService.OnNewData(player: Player, jsonString: buffer, id: number, compressedLength: number, uncompressedLength: number) {PluginSecurity}
+Added Event HeapProfilerService.RequestData(id: number) {RobloxSecurity} [Hidden]
 
-Added Property AuroraService.RollbackEnabled: boolean [Preliminary]
-Added Property SoundService.AudioApiByDefault: Enum.RolloutState {RobloxScriptSecurity} [Hidden]
-Added Property SoundService.IsNewExpForAudioApiByDefault: boolean {RobloxScriptSecurity} [Hidden]
-Added Property TestService.ThrottlePhysicsToRealtime: boolean
+Added Class InputAction : Instance [NotBrowsable]
+Added Property InputAction.Enabled: boolean
+Added Property InputAction.Type: Enum.InputActionType
+Added Function InputAction:Fire(value: any) -> ()
+Added Function InputAction:GetState() -> any
+Added Event InputAction.Pressed()
+Added Event InputAction.Released()
+Added Event InputAction.StateChanged(value: any)
 
-Added Function AudioAnalyzer:GetInputPins() -> { any }
-Added Function AudioAnalyzer:GetOutputPins() -> { any }
-Added Function AudioChorus:GetInputPins() -> { any }
-Added Function AudioChorus:GetOutputPins() -> { any }
-Added Function AudioCompressor:GetInputPins() -> { any }
-Added Function AudioCompressor:GetOutputPins() -> { any }
-Added Function AudioDeviceInput:GetInputPins() -> { any }
-Added Function AudioDeviceInput:GetOutputPins() -> { any }
-Added Function AudioDeviceOutput:GetInputPins() -> { any }
-Added Function AudioDeviceOutput:GetOutputPins() -> { any }
-Added Function AudioDistortion:GetInputPins() -> { any }
-Added Function AudioDistortion:GetOutputPins() -> { any }
-Added Function AudioEcho:GetInputPins() -> { any }
-Added Function AudioEcho:GetOutputPins() -> { any }
-Added Function AudioEmitter:GetInputPins() -> { any }
-Added Function AudioEmitter:GetOutputPins() -> { any }
-Added Function AudioEqualizer:GetInputPins() -> { any }
-Added Function AudioEqualizer:GetOutputPins() -> { any }
-Added Function AudioFader:GetInputPins() -> { any }
-Added Function AudioFader:GetOutputPins() -> { any }
-Added Function AudioFilter:GetInputPins() -> { any }
-Added Function AudioFilter:GetOutputPins() -> { any }
-Added Function AudioFlanger:GetInputPins() -> { any }
-Added Function AudioFlanger:GetOutputPins() -> { any }
-Added Function AudioLimiter:GetInputPins() -> { any }
-Added Function AudioLimiter:GetOutputPins() -> { any }
-Added Function AudioListener:GetAudibilityFor(emitter: AudioEmitter) -> number
-Added Function AudioListener:GetInputPins() -> { any }
-Added Function AudioListener:GetOutputPins() -> { any }
-Added Function AudioPitchShifter:GetInputPins() -> { any }
-Added Function AudioPitchShifter:GetOutputPins() -> { any }
-Added Function AudioPlayer:GetInputPins() -> { any }
-Added Function AudioPlayer:GetOutputPins() -> { any }
-Added Function AudioReverb:GetInputPins() -> { any }
-Added Function AudioReverb:GetOutputPins() -> { any }
-Added Function AuroraService:StartPrediction(target: Instance) -> () [Preliminary]
-Added Function AuroraService:StopPrediction(target: Instance) -> () [Preliminary]
-Added Function GuiService:GetErrorDetails() -> { [string]: any } {RobloxScriptSecurity}
-Added Function Player:AddReplicationFocus(part: BasePart) -> ()
-Added Function Player:RemoveReplicationFocus(part: BasePart) -> ()
-Added Function SafetyService:ReportMenuTabClose() -> () {RobloxScriptSecurity}
-Added Function SafetyService:ReportMenuTabOpen() -> () {RobloxScriptSecurity}
-Added Function SoundService:GetAudioApiByDefault() -> boolean {RobloxScriptSecurity}
-Added Function SoundService:InsertAsset(assetId: ContentId, assetName: string, useSelection: boolean? = true) -> Instances {RobloxScriptSecurity}
-Added Function SoundService:SetAudioApiByDefault(enabled: boolean) -> () {RobloxScriptSecurity}
-Added Function StudioAssetService:CancelAutoSetupAvatarAsync(jobId: string) -> () {RobloxScriptSecurity} [Yields]
-Added Function Wire:RenameToDefault() -> () {RobloxScriptSecurity}
+Added Class InputBinding : Instance [NotBrowsable]
+Added Property InputBinding.KeyCode: Enum.KeyCode
+Added Property InputBinding.UIButton: GuiButton?
 
-Added Event AuroraService.Rollback() [Preliminary]
-Added Event AuroraService.Step() [Preliminary]
-Added Event VoiceChatService.RuppInitialToken(sessionId: string, token: string, destinationIpAddress: string, destinationPort: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.RuppPeriodicToken(sessionId: string, token: string, destinationIpAddress: string, destinationPort: number, sourceIpAddress: string, sourcePort: number) {RobloxSecurity} [Hidden]
+Added Class InputContext : Instance [NotBrowsable]
+Added Property InputContext.Enabled: boolean
+Added Property InputContext.Priority: number
+Added Property InputContext.Sink: boolean
 
-Added Enum AudioChannelLayout
-Added EnumItem AudioChannelLayout.Mono : 0
-Added EnumItem AudioChannelLayout.Stereo : 1
-Added EnumItem AudioChannelLayout.Quad : 2
-Added EnumItem AudioChannelLayout.Surround_5 : 3
-Added EnumItem AudioChannelLayout.Surround_5_1 : 4
-Added EnumItem AudioChannelLayout.Surround_7_1 : 5
-Added EnumItem AudioChannelLayout.Surround_7_1_4 : 6
+Added Class PlayerData : Instance [NotCreatable] [NotReplicated]
+Added Function PlayerData:GetPlayer() -> Player
+Added Function PlayerData:GetRecord(recordName: string? = "Default") -> PlayerDataRecord
 
-Added EnumItem ConnectionError.PhantomFreeze : 303
+Added Class PlayerDataRecord : Instance [NotCreatable] [NotReplicated]
+Added Property PlayerDataRecord.CreatedTime: number [ReadOnly]
+Added Property PlayerDataRecord.DefaultRecordName: boolean [ReadOnly]
+Added Property PlayerDataRecord.Dirty: boolean [ReadOnly]
+Added Property PlayerDataRecord.Error: Enum.PlayerDataErrorState [ReadOnly]
+Added Property PlayerDataRecord.FlushedTime: number [ReadOnly]
+Added Property PlayerDataRecord.LoadedTime: number [ReadOnly]
+Added Property PlayerDataRecord.ModifiedTime: number [ReadOnly]
+Added Property PlayerDataRecord.NewRecord: boolean [ReadOnly]
+Added Property PlayerDataRecord.Readable: boolean [ReadOnly]
+Added Property PlayerDataRecord.RecordName: string [ReadOnly]
+Added Property PlayerDataRecord.Writable: boolean [ReadOnly]
+Added Function PlayerDataRecord:GetPlayer() -> Player
+Added Function PlayerDataRecord:GetValue(key: string) -> any
+Added Function PlayerDataRecord:GetValueChangedSignal(key: string) -> RBXScriptSignal
+Added Function PlayerDataRecord:Release() -> ()
+Added Function PlayerDataRecord:RemoveValue(key: string) -> ()
+Added Function PlayerDataRecord:RequestFlushAsync() -> () [Yields]
+Added Function PlayerDataRecord:SetValue(key: string, value: any) -> ()
+Added Function PlayerDataRecord:WaitForLoadAsync() -> () [Yields]
+Added Event PlayerDataRecord.Changed(key: string, value: any)
+Added Event PlayerDataRecord.Flushed(flushState: boolean, error: string?)
+Added Event PlayerDataRecord.Loaded(success: boolean, error: string?)
 
-Added Tags [Deprecated] [NotReplicated] to Property TestService.Is30FpsThrottleEnabled
+Added Class PlayerDataRecordConfig : Instance [NotCreatable] [NotReplicated]
+Added Property PlayerDataRecordConfig.RecordName: string [ReadOnly]
+Added Function PlayerDataRecordConfig:GetDefaultValue(key: string) -> any
+Added Function PlayerDataRecordConfig:SetDefaultValue(key: string, value: any) -> ()
 
-Changed the serialization of Property TestService.Is30FpsThrottleEnabled
-from:[💾|📁 Serialized]
-to:[📁 LoadOnly]
+Added Class PlayerDataService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Property PlayerDataService.LoadFailureBehavior: Enum.PlayerDataLoadFailureBehavior
+Added Function PlayerDataService:GetRecordConfig(recordName: string? = "Default") -> PlayerDataRecordConfig
 
-Changed the parameters of Function WrapDeformer:SetCageMeshContent
-from:(content: string)
-to:(content: string, cageOrigin: CFrame?)
+Added Class AuroraScript : LuaSourceContainer [Preliminary]
+Added Property AuroraScript.DumpMispredictions: boolean {PluginSecurity} [Preliminary]
+Added Property AuroraScript.EnableLOD: boolean {PluginSecurity} [Preliminary]
+Added Property AuroraScript.LODDistanceFactor: number {PluginSecurity} [Preliminary]
+Added Property AuroraScript.LODFrequencyFactor: number {PluginSecurity} [Preliminary]
+Added Property AuroraScript.Priority: number {PluginSecurity} [Preliminary]
+Added Property AuroraScript.RunInParallel: boolean {PluginSecurity} [Preliminary]
+Added Property AuroraScript.Source: string {PluginSecurity} [Preliminary]
+Added Property AuroraScript.Tag: string {✏️PluginSecurity} [Preliminary]
+Added Event AuroraScript.LODUpdate(frameId: number, instance: Instance, lodLevel: number) {RobloxSecurity} [Hidden] [Preliminary]
+Added Event AuroraScript.SynchronizeState(frameId: number, instance: Instance, state: { [string]: any }, ingressHeaders: string, ingressArgs: { any }, egressHeaders: string, egressArgs: { any }) {RobloxSecurity} [Hidden] [Preliminary]
 
-Changed the security of Function AudioEmitter:GetAudibilityFor
-from:{RobloxScriptSecurity}
-to:{None}
+Added Class VideoDisplay : GuiObject [NotBrowsable]
+Added Property VideoDisplay.ResampleMode: Enum.ResamplerMode
+Added Property VideoDisplay.ScaleType: Enum.ScaleType
+Added Property VideoDisplay.TileSize: UDim2
+Added Property VideoDisplay.VideoColor3: Color3
+Added Property VideoDisplay.VideoRectOffset: Vector2
+Added Property VideoDisplay.VideoRectSize: Vector2
+Added Property VideoDisplay.VideoTransparency: number
+Added Function VideoDisplay:GetConnectedWires(pin: string) -> Instances
+Added Event VideoDisplay.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
 
-Changed the parameters of Event ScriptContext.ErrorDetailed
-from:(message: string, stackTrace: string, script: Instance, details: string, securityLevel: number)
-to:(message: string, stackTrace: string, script: Instance, details: string, securityLevel: number, messageId: string)
+Added Property StarterGui.StudioInsertWidgetLayerCollectorAutoLinkStyleSheet: StyleSheet? {RobloxScriptSecurity} [Hidden]
 
-Removed Function AssetService:CreateEditableMeshFromPartAsync
-Removed Function AudioListener:GetAudibilityOf
-Removed Function EditableMesh:CreateMeshPartAsync
+Added Function AnnotationsService:DEPRECATED_EditAnnotation(uniqueId: string, contents: string) -> ()
+Added Function AvatarCreationService:GenerateAvatar2DPreviewAsync(avatarGeneration2dPreviewParams: { [string]: any }) -> string [Yields]
+Added Function AvatarCreationService:LoadAvatar2DPreviewAsync(previewId: string) -> Object [Yields]
+Added Function AvatarCreationService:LoadGeneratedAvatarAsync(generationId: string) -> HumanoidDescription [Yields]
+Added Function CreatorStoreService:GetAssetInfoAsync(assetId: number) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+Added Function CreatorStoreService:GetCreatorStoreProductInfoAsync(productTargetId: number, assetType: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+
+Added Event AnnotationsService.DEPRECATED_AnnotationEdited(requestId: string, uniqueId: string, contents: string) {RobloxScriptSecurity}
+Added Event VideoPlayer.DidEnd()
+Added Event VideoPlayer.DidLoop()
+
+Added Enum InputActionType
+Added EnumItem InputActionType.Bool : 0
+Added EnumItem InputActionType.Float : 1
+Added EnumItem InputActionType.Direction2D : 2
+
+Added Enum IntermediateMeshGenerationResult
+Added EnumItem IntermediateMeshGenerationResult.HighQualityMesh : 0
+
+Added Enum PlayerDataErrorState
+Added EnumItem PlayerDataErrorState.LoadFailed : 0
+Added EnumItem PlayerDataErrorState.FlushFailed : 1
+Added EnumItem PlayerDataErrorState.None : 2
+
+Added Enum PlayerDataLoadFailureBehavior
+Added EnumItem PlayerDataLoadFailureBehavior.Failure : 0
+Added EnumItem PlayerDataLoadFailureBehavior.FallbackToDefault : 1
+Added EnumItem PlayerDataLoadFailureBehavior.Kick : 2
+
+Added EnumItem ShowAdResult.InsufficientMemory : 6
+
+Changed the parameters of Function AnnotationsService:EditAnnotation
+from:(uniqueId: string, contents: string)
+to:(uniqueId: string, contents: string, taggedUsers: string)
+
+Changed the parameters of Function AvatarCreationService:GenerateAvatarAsync
+from:(sessionId: string, previewId: string)
+to:(avatarGenerationParams: { [string]: any })
+
+Changed the parameters of Event AnnotationsService.AnnotationEdited
+from:(requestId: string, uniqueId: string, contents: string)
+to:(requestId: string, uniqueId: string, contents: string, taggedUsers: string)
+
+Removed Function AvatarCreationService:GenerateAvatarModelAsync
+Removed Function AvatarCreationService:GenerateAvatarPreviewAsync
+Removed Function AvatarCreationService:GenerateAvatarPreviewAsync2
+Removed Function AvatarCreationService:LoadAvatarHumanoidDescriptionAsync
+Removed Function AvatarCreationService:LoadAvatarModelAsync
+Removed Function AvatarCreationService:LoadAvatarPreviewImageAsync
+
+Removed Event VideoPlayer.Ended
+Removed Event VideoPlayer.Looped
+
+Removed Tag [NotReplicated] from Property Chat.IsAutoMigrated
