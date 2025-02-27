@@ -1,163 +1,199 @@
-Version 0.661.0.6610708
+Version 0.662.0.6620538
 
-Added Class AuroraScriptService : Instance [NotCreatable] [Preliminary] [Service]
-Added Property AuroraScriptService.BufferSize: number {✏️PluginSecurity} [Preliminary]
-Added Property AuroraScriptService.LocalFrameId: number {✏️RobloxSecurity} [NotReplicated] [Preliminary]
-Added Property AuroraScriptService.RemoteFrameId: number {✏️RobloxSecurity} [Preliminary]
-Added Function AuroraScriptService:GetProperty(instance: Instance, name: string) -> any [Preliminary] {🧬Safe}
-Added Function AuroraScriptService:GetTime() -> number [Preliminary] {🧬Safe}
-Added Function AuroraScriptService:SendMessage(instance: Instance, behaviorName: string, functionName: string, ...: any) -> () [Preliminary] {🧬Safe}
-Added Function AuroraScriptService:SetProperty(instance: Instance, name: string, value: any) -> () [Preliminary] {🧬Safe}
+Added Class Capture : Object [NotCreatable] [NotReplicated]
+Added Class AudioTextToSpeech : Instance
 
-Added Class CustomLog : Instance [NotReplicated]
-Added Function CustomLog:Close() -> ()
-Added Function CustomLog:GetLogPath() -> string
-Added Function CustomLog:Open() -> ()
-Added Function CustomLog:WriteAppend(append: string) -> ()
+Added Class HumanoidRigDescription : Instance
+Added Property HumanoidRigDescription.Chest: Instance?
+Added Property HumanoidRigDescription.Head: Instance?
+Added Property HumanoidRigDescription.LeftAnkle: Instance?
+Added Property HumanoidRigDescription.LeftClavicle: Instance?
+Added Property HumanoidRigDescription.LeftElbow: Instance?
+Added Property HumanoidRigDescription.LeftHip: Instance?
+Added Property HumanoidRigDescription.LeftKnee: Instance?
+Added Property HumanoidRigDescription.LeftShoulder: Instance?
+Added Property HumanoidRigDescription.LeftToes: Instance?
+Added Property HumanoidRigDescription.LeftWrist: Instance?
+Added Property HumanoidRigDescription.Neck: Instance?
+Added Property HumanoidRigDescription.Pelvis: Instance?
+Added Property HumanoidRigDescription.RightAnkle: Instance?
+Added Property HumanoidRigDescription.RightClavicle: Instance?
+Added Property HumanoidRigDescription.RightElbow: Instance?
+Added Property HumanoidRigDescription.RightHip: Instance?
+Added Property HumanoidRigDescription.RightKnee: Instance?
+Added Property HumanoidRigDescription.RightShoulder: Instance?
+Added Property HumanoidRigDescription.RightToes: Instance?
+Added Property HumanoidRigDescription.RightWrist: Instance?
+Added Property HumanoidRigDescription.Root: Instance?
+Added Property HumanoidRigDescription.Waist: Instance?
+Added Property HumanoidRigDescription.ChestRangeMax: Vector3
+Added Property HumanoidRigDescription.ChestRangeMin: Vector3
+Added Property HumanoidRigDescription.HeadRangeMax: Vector3
+Added Property HumanoidRigDescription.HeadRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftAnkleRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftAnkleRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftClavicleRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftClavicleRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftElbowRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftElbowRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftHipRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftHipRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftKneeRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftKneeRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftShoulderRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftShoulderRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftToesRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftToesRangeMin: Vector3
+Added Property HumanoidRigDescription.LeftWristRangeMax: Vector3
+Added Property HumanoidRigDescription.LeftWristRangeMin: Vector3
+Added Property HumanoidRigDescription.NeckRangeMax: Vector3
+Added Property HumanoidRigDescription.NeckRangeMin: Vector3
+Added Property HumanoidRigDescription.PelvisRangeMax: Vector3
+Added Property HumanoidRigDescription.PelvisRangeMin: Vector3
+Added Property HumanoidRigDescription.RightAnkleRangeMax: Vector3
+Added Property HumanoidRigDescription.RightAnkleRangeMin: Vector3
+Added Property HumanoidRigDescription.RightClavicleRangeMax: Vector3
+Added Property HumanoidRigDescription.RightClavicleRangeMin: Vector3
+Added Property HumanoidRigDescription.RightElbowRangeMax: Vector3
+Added Property HumanoidRigDescription.RightElbowRangeMin: Vector3
+Added Property HumanoidRigDescription.RightHipRangeMax: Vector3
+Added Property HumanoidRigDescription.RightHipRangeMin: Vector3
+Added Property HumanoidRigDescription.RightKneeRangeMax: Vector3
+Added Property HumanoidRigDescription.RightKneeRangeMin: Vector3
+Added Property HumanoidRigDescription.RightShoulderRangeMax: Vector3
+Added Property HumanoidRigDescription.RightShoulderRangeMin: Vector3
+Added Property HumanoidRigDescription.RightToesRangeMax: Vector3
+Added Property HumanoidRigDescription.RightToesRangeMin: Vector3
+Added Property HumanoidRigDescription.RightWristRangeMax: Vector3
+Added Property HumanoidRigDescription.RightWristRangeMin: Vector3
+Added Property HumanoidRigDescription.RootRangeMax: Vector3
+Added Property HumanoidRigDescription.RootRangeMin: Vector3
+Added Property HumanoidRigDescription.WaistRangeMax: Vector3
+Added Property HumanoidRigDescription.WaistRangeMin: Vector3
+Added Property HumanoidRigDescription.ChestSize: number
+Added Property HumanoidRigDescription.HeadSize: number
+Added Property HumanoidRigDescription.LeftAnkleSize: number
+Added Property HumanoidRigDescription.LeftClavicleSize: number
+Added Property HumanoidRigDescription.LeftElbowSize: number
+Added Property HumanoidRigDescription.LeftHipSize: number
+Added Property HumanoidRigDescription.LeftKneeSize: number
+Added Property HumanoidRigDescription.LeftShoulderSize: number
+Added Property HumanoidRigDescription.LeftToesSize: number
+Added Property HumanoidRigDescription.LeftWristSize: number
+Added Property HumanoidRigDescription.NeckSize: number
+Added Property HumanoidRigDescription.PelvisSize: number
+Added Property HumanoidRigDescription.RightAnkleSize: number
+Added Property HumanoidRigDescription.RightClavicleSize: number
+Added Property HumanoidRigDescription.RightElbowSize: number
+Added Property HumanoidRigDescription.RightHipSize: number
+Added Property HumanoidRigDescription.RightKneeSize: number
+Added Property HumanoidRigDescription.RightShoulderSize: number
+Added Property HumanoidRigDescription.RightToesSize: number
+Added Property HumanoidRigDescription.RightWristSize: number
+Added Property HumanoidRigDescription.RootSize: number
+Added Property HumanoidRigDescription.WaistSize: number
+Added Property HumanoidRigDescription.ChestTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.HeadTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftAnkleTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftClavicleTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftElbowTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftHipTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftKneeTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftShoulderTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftToesTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.LeftWristTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.NeckTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.PelvisTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightAnkleTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightClavicleTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightElbowTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightHipTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightKneeTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightShoulderTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightToesTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RightWristTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.RootTposeAdjustment: CFrame
+Added Property HumanoidRigDescription.WaistTposeAdjustment: CFrame
+Added Function HumanoidRigDescription:Automap(character: Instance) -> () {🧬Safe}
+Added Function HumanoidRigDescription:GetJointNames() -> { any } {🧬Safe}
+Added Function HumanoidRigDescription:GetR15JointNames() -> { any } {🧬Safe}
+Added Function HumanoidRigDescription:GetR6JointNames() -> { any } {🧬Safe}
 
-Added Class GenerationService : Instance [NotCreatable] [Service]
-Added Function GenerationService:GenerateMeshAsync(inputs: { [string]: any }, player: Player, options: { [string]: any }, intermediateResultCallback: ((...any) -> ...any)?) -> ...any [Yields]
-Added Function GenerationService:LoadGeneratedMeshAsync(generationId: string) -> MeshPart [Yields]
-Added Event GenerationService.ReplicateGeneration(id: string, success: boolean, serializedModel: string) {RobloxSecurity} [Hidden]
-Added Event GenerationService.RequestGenerationReplication(id: string) {RobloxSecurity} [Hidden]
+Added Class ScreenshotCapture : Capture [NotCreatable] [NotReplicated]
 
-Added Class HeapProfilerService : Instance [NotCreatable] [Service]
-Added Function HeapProfilerService:ClientRequestDataAsync(player: Player) -> string {PluginSecurity} [Yields]
-Added Function HeapProfilerService:ServerRequestDataAsync() -> string {PluginSecurity} [Yields]
-Added Event HeapProfilerService.OnNewData(player: Player, jsonString: buffer, id: number, compressedLength: number, uncompressedLength: number) {PluginSecurity}
-Added Event HeapProfilerService.RequestData(id: number) {RobloxSecurity} [Hidden]
+Added Property Annotation.ChannelId: string {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property Annotation.MessageId: string {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property DataModel.MatchmakingType: Enum.MatchmakingType [ReadOnly]
+Added Property TextBox.ShouldEmitReturnEvents: boolean {RobloxScriptSecurity}
+Added Property TriangleMeshPart.ConvexDecompData: NetAssetRef {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property Workspace.PhysicsImprovedSleep: Enum.RolloutState [NotScriptable]
 
-Added Class InputAction : Instance [NotBrowsable]
-Added Property InputAction.Enabled: boolean
-Added Property InputAction.Type: Enum.InputActionType
-Added Function InputAction:Fire(value: any) -> ()
-Added Function InputAction:GetState() -> any
-Added Event InputAction.Pressed()
-Added Event InputAction.Released()
-Added Event InputAction.StateChanged(value: any)
+Added Function Annotation:IsThreadParent() -> boolean {RobloxScriptSecurity}
+Added Function AppLifecycleObserverService:TriggerOnLandingPageMount() -> () {RobloxScriptSecurity}
+Added Function AudioChannelMixer:GetInputPins() -> { any }
+Added Function AudioChannelMixer:GetOutputPins() -> { any }
+Added Function AudioChannelSplitter:GetInputPins() -> { any }
+Added Function AudioChannelSplitter:GetOutputPins() -> { any }
+Added Function CaptureService:TakeCapture(onCaptureReady: (...any) -> ...any, captureParams: { [string]: any }?) -> ()
+Added Function GenerationService:InternalGenerateMeshAsync(inputs: { [string]: any }, userId: number, options: { [string]: any }, intermediateResultCallback: ((...any) -> ...any)?) -> ...any {RobloxScriptSecurity} [Yields]
+Added Function Player:AddReplicationFocusPosition(center: Vector3, radius: number) -> () {RobloxSecurity}
+Added Function Player:RemoveReplicationFocusPosition(center: Vector3, radius: number) -> () {RobloxSecurity}
+Added Function Plugin:OnInvokeSuspendOverride(key: string, callback: (...any) -> ...any) -> Instance? {RobloxScriptSecurity}
+Added Function UGCValidationService:DoesMeshHaveSkinningData(meshId: string) -> boolean {RobloxScriptSecurity} [Yields]
+Added Function VirtualInputManager:SendScroll(x: number, y: number, deltaX: number, deltaY: number, options: { [string]: any }, layerCollector: Instance) -> () {RobloxScriptSecurity}
 
-Added Class InputBinding : Instance [NotBrowsable]
-Added Property InputBinding.KeyCode: Enum.KeyCode
-Added Property InputBinding.UIButton: GuiButton?
+Added Event ServiceVisibilityService.ServiceVisibilityChanged(serviceName: string) {RobloxScriptSecurity}
 
-Added Class InputContext : Instance [NotBrowsable]
-Added Property InputContext.Enabled: boolean
-Added Property InputContext.Priority: number
-Added Property InputContext.Sink: boolean
+Added Enum CaptureUIHideMode
+Added EnumItem CaptureUIHideMode.All : 0
+Added EnumItem CaptureUIHideMode.None : 1
+Added EnumItem CaptureUIHideMode.Core : 2
 
-Added Class PlayerData : Instance [NotCreatable] [NotReplicated]
-Added Function PlayerData:GetPlayer() -> Player
-Added Function PlayerData:GetRecord(recordName: string? = "Default") -> PlayerDataRecord
+Added Enum MatchmakingType
+Added EnumItem MatchmakingType.Default : 1
+Added EnumItem MatchmakingType.XboxOnly : 2
+Added EnumItem MatchmakingType.PlayStationOnly : 3
 
-Added Class PlayerDataRecord : Instance [NotCreatable] [NotReplicated]
-Added Property PlayerDataRecord.CreatedTime: number [ReadOnly]
-Added Property PlayerDataRecord.DefaultRecordName: boolean [ReadOnly]
-Added Property PlayerDataRecord.Dirty: boolean [ReadOnly]
-Added Property PlayerDataRecord.Error: Enum.PlayerDataErrorState [ReadOnly]
-Added Property PlayerDataRecord.FlushedTime: number [ReadOnly]
-Added Property PlayerDataRecord.LoadedTime: number [ReadOnly]
-Added Property PlayerDataRecord.ModifiedTime: number [ReadOnly]
-Added Property PlayerDataRecord.NewRecord: boolean [ReadOnly]
-Added Property PlayerDataRecord.Readable: boolean [ReadOnly]
-Added Property PlayerDataRecord.RecordName: string [ReadOnly]
-Added Property PlayerDataRecord.Writable: boolean [ReadOnly]
-Added Function PlayerDataRecord:GetPlayer() -> Player
-Added Function PlayerDataRecord:GetValue(key: string) -> any
-Added Function PlayerDataRecord:GetValueChangedSignal(key: string) -> RBXScriptSignal
-Added Function PlayerDataRecord:Release() -> ()
-Added Function PlayerDataRecord:RemoveValue(key: string) -> ()
-Added Function PlayerDataRecord:RequestFlushAsync() -> () [Yields]
-Added Function PlayerDataRecord:SetValue(key: string, value: any) -> ()
-Added Function PlayerDataRecord:WaitForLoadAsync() -> () [Yields]
-Added Event PlayerDataRecord.Changed(key: string, value: any)
-Added Event PlayerDataRecord.Flushed(flushState: boolean, error: string?)
-Added Event PlayerDataRecord.Loaded(success: boolean, error: string?)
+Added EnumItem ConnectionError.AndroidAnticheatKick : 304
+Added EnumItem ConnectionError.AndroidEmulatorKick : 305
 
-Added Class PlayerDataRecordConfig : Instance [NotCreatable] [NotReplicated]
-Added Property PlayerDataRecordConfig.RecordName: string [ReadOnly]
-Added Function PlayerDataRecordConfig:GetDefaultValue(key: string) -> any
-Added Function PlayerDataRecordConfig:SetDefaultValue(key: string, value: any) -> ()
+Added Tag [CustomLuaState] to Function CaptureService:OnSavePromptFinished
+Added Tag [Deprecated] to EnumItem KeyCode.MouseLeftButton
+Added Tag [Deprecated] to EnumItem KeyCode.MouseRightButton
+Added Tag [Deprecated] to EnumItem KeyCode.MouseMiddleButton
+Added Tag [Deprecated] to EnumItem KeyCode.MouseBackButton
+Added Tag [Deprecated] to EnumItem KeyCode.MouseNoButton
+Added Tag [Deprecated] to EnumItem KeyCode.MouseX
+Added Tag [Deprecated] to EnumItem KeyCode.MouseY
 
-Added Class PlayerDataService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Property PlayerDataService.LoadFailureBehavior: Enum.PlayerDataLoadFailureBehavior
-Added Function PlayerDataService:GetRecordConfig(recordName: string? = "Default") -> PlayerDataRecordConfig
+Changed the parameters of Function CaptureService:GetCaptureFilePathAsync
+from:(captureContentId: ContentId)
+to:(captureContent: string)
 
-Added Class AuroraScript : LuaSourceContainer [Preliminary]
-Added Property AuroraScript.DumpMispredictions: boolean {PluginSecurity} [Preliminary]
-Added Property AuroraScript.EnableLOD: boolean {PluginSecurity} [Preliminary]
-Added Property AuroraScript.LODDistanceFactor: number {PluginSecurity} [Preliminary]
-Added Property AuroraScript.LODFrequencyFactor: number {PluginSecurity} [Preliminary]
-Added Property AuroraScript.Priority: number {PluginSecurity} [Preliminary]
-Added Property AuroraScript.RunInParallel: boolean {PluginSecurity} [Preliminary]
-Added Property AuroraScript.Source: string {PluginSecurity} [Preliminary]
-Added Property AuroraScript.Tag: string {✏️PluginSecurity} [Preliminary]
-Added Event AuroraScript.LODUpdate(frameId: number, instance: Instance, lodLevel: number) {RobloxSecurity} [Hidden] [Preliminary]
-Added Event AuroraScript.SynchronizeState(frameId: number, instance: Instance, state: { [string]: any }, ingressHeaders: string, ingressArgs: { any }, egressHeaders: string, egressArgs: { any }) {RobloxSecurity} [Hidden] [Preliminary]
+Changed the parameters of Function CaptureService:GetCaptureSizeAsync
+from:(captureContentId: ContentId)
+to:(captureContent: string)
 
-Added Class VideoDisplay : GuiObject [NotBrowsable]
-Added Property VideoDisplay.ResampleMode: Enum.ResamplerMode
-Added Property VideoDisplay.ScaleType: Enum.ScaleType
-Added Property VideoDisplay.TileSize: UDim2
-Added Property VideoDisplay.VideoColor3: Color3
-Added Property VideoDisplay.VideoRectOffset: Vector2
-Added Property VideoDisplay.VideoRectSize: Vector2
-Added Property VideoDisplay.VideoTransparency: number
-Added Function VideoDisplay:GetConnectedWires(pin: string) -> Instances
-Added Event VideoDisplay.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Changed the parameters of Function CaptureService:PromptSaveCapturesToGallery
+from:(contentIds: { any }, resultCallback: (...any) -> ...any)
+to:(captures: { any }, resultCallback: (...any) -> ...any)
 
-Added Property StarterGui.StudioInsertWidgetLayerCollectorAutoLinkStyleSheet: StyleSheet? {RobloxScriptSecurity} [Hidden]
+Changed the parameters of Function CaptureService:PromptShareCapture
+from:(contentId: ContentId, launchData: string, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any)
+to:(captureContent: string, launchData: string, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any)
 
-Added Function AnnotationsService:DEPRECATED_EditAnnotation(uniqueId: string, contents: string) -> ()
-Added Function AvatarCreationService:GenerateAvatar2DPreviewAsync(avatarGeneration2dPreviewParams: { [string]: any }) -> string [Yields]
-Added Function AvatarCreationService:LoadAvatar2DPreviewAsync(previewId: string) -> Object [Yields]
-Added Function AvatarCreationService:LoadGeneratedAvatarAsync(generationId: string) -> HumanoidDescription [Yields]
-Added Function CreatorStoreService:GetAssetInfoAsync(assetId: number) -> { [string]: any } {RobloxScriptSecurity} [Yields]
-Added Function CreatorStoreService:GetCreatorStoreProductInfoAsync(productTargetId: number, assetType: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+Changed the parameters of Event AnnotationsService.AnnotationAdded
+from:(requestId: string, annotation: Annotation, parentId: string)
+to:(requestId: string, annotation: Annotation, channelId: string)
 
-Added Event AnnotationsService.DEPRECATED_AnnotationEdited(requestId: string, uniqueId: string, contents: string) {RobloxScriptSecurity}
-Added Event VideoPlayer.DidEnd()
-Added Event VideoPlayer.DidLoop()
+Changed the parameters of Event AuroraService.Rollback
+from:()
+to:(worldStepId: number)
 
-Added Enum InputActionType
-Added EnumItem InputActionType.Bool : 0
-Added EnumItem InputActionType.Float : 1
-Added EnumItem InputActionType.Direction2D : 2
+Changed the parameters of Event CaptureService.OpenSaveCapturesPrompt
+from:(promptId: number, contentIds: { any })
+to:(promptId: number, captures: { any })
 
-Added Enum IntermediateMeshGenerationResult
-Added EnumItem IntermediateMeshGenerationResult.HighQualityMesh : 0
-
-Added Enum PlayerDataErrorState
-Added EnumItem PlayerDataErrorState.LoadFailed : 0
-Added EnumItem PlayerDataErrorState.FlushFailed : 1
-Added EnumItem PlayerDataErrorState.None : 2
-
-Added Enum PlayerDataLoadFailureBehavior
-Added EnumItem PlayerDataLoadFailureBehavior.Failure : 0
-Added EnumItem PlayerDataLoadFailureBehavior.FallbackToDefault : 1
-Added EnumItem PlayerDataLoadFailureBehavior.Kick : 2
-
-Added EnumItem ShowAdResult.InsufficientMemory : 6
-
-Changed the parameters of Function AnnotationsService:EditAnnotation
-from:(uniqueId: string, contents: string)
-to:(uniqueId: string, contents: string, taggedUsers: string)
-
-Changed the parameters of Function AvatarCreationService:GenerateAvatarAsync
-from:(sessionId: string, previewId: string)
-to:(avatarGenerationParams: { [string]: any })
-
-Changed the parameters of Event AnnotationsService.AnnotationEdited
-from:(requestId: string, uniqueId: string, contents: string)
-to:(requestId: string, uniqueId: string, contents: string, taggedUsers: string)
-
-Removed Function AvatarCreationService:GenerateAvatarModelAsync
-Removed Function AvatarCreationService:GenerateAvatarPreviewAsync
-Removed Function AvatarCreationService:GenerateAvatarPreviewAsync2
-Removed Function AvatarCreationService:LoadAvatarHumanoidDescriptionAsync
-Removed Function AvatarCreationService:LoadAvatarModelAsync
-Removed Function AvatarCreationService:LoadAvatarPreviewImageAsync
-
-Removed Event VideoPlayer.Ended
-Removed Event VideoPlayer.Looped
-
-Removed Tag [NotReplicated] from Property Chat.IsAutoMigrated
+Changed the parameters of Event CaptureService.OpenShareCapturePrompt
+from:(promptId: number, contentId: ContentId, launchData: string)
+to:(promptId: number, captureContent: any, launchData: string)
