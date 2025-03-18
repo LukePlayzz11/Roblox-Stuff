@@ -1,102 +1,81 @@
-Version 0.664.0.6640713
-Added Class AudioTextToSpeech : Instance
-Added Property AudioTextToSpeech.IsLoaded: boolean [ReadOnly]
-Added Property AudioTextToSpeech.Pitch: number
-Added Property AudioTextToSpeech.Speed: number
-Added Property AudioTextToSpeech.Text: string
-Added Property AudioTextToSpeech.TimeLength: number [ReadOnly]
-Added Property AudioTextToSpeech.VoiceId: string
-Added Property AudioTextToSpeech.IsPlaying: boolean {✏️RobloxSecurity}
-Added Property AudioTextToSpeech.Looping: boolean
-Added Property AudioTextToSpeech.PlaybackSpeed: number
-Added Property AudioTextToSpeech.TimePosition: number
-Added Property AudioTextToSpeech.Volume: number
-Added Function AudioTextToSpeech:GetConnectedWires(pin: string) -> Instances
-Added Function AudioTextToSpeech:GetWaveformAsync(timeRange: NumberRange, samples: number) -> { any } [Yields]
-Added Function AudioTextToSpeech:LoadAsync() -> Enum.AssetFetchStatus [Yields]
-Added Function AudioTextToSpeech:Pause() -> ()
-Added Function AudioTextToSpeech:Play() -> ()
-Added Function AudioTextToSpeech:Unload() -> ()
-Added Event AudioTextToSpeech.Ended()
-Added Event AudioTextToSpeech.Looped()
-Added Event AudioTextToSpeech.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Version 0.665.0.6650685
+Added Class WebSocketClient : Instance [NotCreatable] [NotReplicated]
+Added Property WebSocketClient.ConnectionState: Enum.WebSocketState [ReadOnly]
+Added Function WebSocketClient:Close() -> ()
+Added Function WebSocketClient:Send(data: string) -> ()
+Added Event WebSocketClient.Closed()
+Added Event WebSocketClient.MessageReceived(data: string)
+Added Event WebSocketClient.Opened()
 
-Added Class MatchmakingService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function MatchmakingService:GetServerAttribute(name: string) -> ...any
-Added Function MatchmakingService:InitializeServerAttributesForStudio(serverAttributes: { [string]: any }) -> ...any
-Added Function MatchmakingService:SetServerAttribute(name: string, value: any) -> ...any
+Added Class WebSocketService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function WebSocketService:CreateClient(uri: string) -> WebSocketClient
 
-Added Property Player.PartyId: string [Hidden] [NotReplicated]
-Added Property StarterGui.StudioDefaultStyleSheet: StyleSheet? {RobloxScriptSecurity} [Hidden]
+Added Property GuiButton.HoverHapticEffect: HapticEffect?
+Added Property GuiButton.PressHapticEffect: HapticEffect?
+Added Property InputBinding.PressedThreshold: number
+Added Property InputBinding.ReleasedThreshold: number
+Added Property InputBinding.Scale: number
+Added Property ScrollingFrame.ScrollRate: number {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property ScrollingFrame.SmoothScroll: boolean {RobloxScriptSecurity} [Hidden] [NotReplicated]
 
-Added Function AssetService:CanEditAssetAsync(content: string) -> boolean {RobloxScriptSecurity} [Yields]
-Added Function ConversationalAIAcceptanceService:SendMeshGenActivatedTelemetry() -> () {RobloxScriptSecurity}
-Added Function ConversationalAIAcceptanceService:SendMeshGenCompletedTelemetry(requestId: string, generationId: string, success: boolean, errorMessage: string, prompt: string) -> () {RobloxScriptSecurity}
-Added Function Player:GetData() -> PlayerData
-Added Function PlayerData:GetRecordAsync(recordName: string? = "Default") -> PlayerDataRecord [Yields]
-Added Function Stats:GetHarmonyQualityLevel() -> number {RobloxScriptSecurity}
-Added Function ThirdPartyUserService:GetVoiceChatRestrictionStatus() -> Enum.ChatRestrictionStatus {RobloxScriptSecurity}
-Added Function UGCValidationService:CalculateEditableMeshModifiedCageBoundingBox(referenceUVValues: { any }, innerCage: Object, innerTransform: CFrame, outerCage: Object, outerTransform: CFrame) -> ...any {RobloxScriptSecurity}
-Added Function UGCValidationService:CalculateEditableMeshNumModifiedCageUVsInSet(referenceUVValues: { any }, innerCage: Object, innerTransform: CFrame, outerCage: Object, outerTransform: CFrame) -> ...any {RobloxScriptSecurity}
-Added Function VoiceChatService:getInternalChannelId() -> string {RobloxScriptSecurity}
-Added Function VoiceChatService:getInternalGroupId() -> string {RobloxScriptSecurity}
-Added Function VoiceChatService:getInternalPublishPause() -> boolean {RobloxScriptSecurity}
-Added Function VoiceChatService:getInternalSessionId() -> string {RobloxScriptSecurity}
-Added Function VoiceChatService:getInternalSubscribePause(userId: number) -> boolean {RobloxScriptSecurity}
-Added Function VoiceChatService:getInternalSubscribePauseAll() -> boolean {RobloxScriptSecurity}
-Added Function VoiceChatService:getInternalVoiceChatApiVersion() -> number {RobloxScriptSecurity}
-Added Function VoiceChatService:isInternalPublishPaused() -> boolean {RobloxScriptSecurity}
+Added Function AnimationTrack:GetTargetInstance(name: string) -> Instance?
+Added Function AnimationTrack:GetTargetNames() -> { any }
+Added Function AnimationTrack:SetTargetInstance(name: string, target: Instance) -> ()
+Added Function AnnotationsService:DEPRECATED_LoadAnnotationReplies(annotation: Annotation) -> () {RobloxScriptSecurity}
+Added Function AuroraScriptService:GetLocalFrameId() -> number [Preliminary] {🧬Safe}
+Added Function PlayerDataRecord:ReleaseAsync() -> () [Yields]
+Added Function SocialService:GetPlayersByPartyId(partyId: string) -> Instances
 
-Added EnumItem AnnotationRequestResult.ErrorModerated : 3
-Added EnumItem SecurityCapability.Players : 21
+Added Event AnnotationsService.DEPRECATED_ServerLoadAnnotationReplies(annotation: Annotation) {RobloxSecurity}
+Added Event FeatureRestrictionManager.UpdateExperienceChatTimeout(startTime: number, duration: number) {RobloxSecurity} [Hidden]
+Added Event SocialService.PlayerPartyDataChanged(partyId: string) {RobloxScriptSecurity}
 
-Changed the parameters of Function ConversationalAIAcceptanceService:SendMeshGenMeshInsertedTelemetry
-from:()
-to:(requestId: string, generationId: string, success: boolean, errorMessage: string)
+Added Enum StateObjectFieldType
+Added EnumItem StateObjectFieldType.Boolean : 0
+Added EnumItem StateObjectFieldType.CFrame : 1
+Added EnumItem StateObjectFieldType.Float : 2
+Added EnumItem StateObjectFieldType.Instance : 3
+Added EnumItem StateObjectFieldType.Random : 4
+Added EnumItem StateObjectFieldType.Vector2 : 5
+Added EnumItem StateObjectFieldType.Vector3 : 6
+Added EnumItem StateObjectFieldType.INVALID : 7
 
-Changed the parameters of Function ConversationalAIAcceptanceService:SendMeshGenPublishedAssetsTelemetry
-from:()
-to:(requestId: string, generationId: string, success: boolean, errorMessage: string, meshId: number?, imageId: number?)
+Added Enum UICaptureMode
+Added EnumItem UICaptureMode.All : 0
+Added EnumItem UICaptureMode.None : 1
+Added EnumItem UICaptureMode.PlayerGui : 2
 
-Changed the parameters of Function Instance:IsPropertyModified
-from:(name: string)
-to:(property: string)
+Added Enum WebSocketState
+Added EnumItem WebSocketState.Connecting : 0
+Added EnumItem WebSocketState.Open : 1
+Added EnumItem WebSocketState.Closing : 2
+Added EnumItem WebSocketState.Closed : 3
 
-Changed the parameters of Function Instance:ResetPropertyToDefault
-from:(name: string)
-to:(property: string)
+Added EnumItem AlphaMode.TintMask : 2 [NotBrowsable]
+Added EnumItem PlayerDataErrorState.ReleaseFailed : 2
 
-Changed the parameters of Function StudioAssetService:AutoSetupAvatarAsync
-from:(modelId: ContentId, progressCallback: (...any) -> ...any)
-to:(modelId: ContentId, progressCallback: (...any) -> ...any, notificationCallback: ((...any) -> ...any)?)
+Added Tag [NotBrowsable] to Class AudioTextToSpeech
+Added Tag [NotBrowsable] to Class HapticEffect
 
-Changed the parameters of Function StyleBase:InsertStyleRule
-from:(rule: StyleRule, index: number?)
-to:(rule: StyleRule, priority: number?)
+Changed the parameters of Function AnnotationsService:LoadAnnotationReplies
+from:(annotation: Annotation)
+to:(annotation: Annotation, reverseOrder: boolean, loadAll: boolean)
 
-Changed the parameters of Function StyleRule:SetProperties
-from:(table: { [string]: any })
-to:(styleProperties: { [string]: any })
+Changed the parameters of Event AnnotationsService.ServerLoadAnnotationReplies
+from:(annotation: Annotation)
+to:(annotation: Annotation, reverseOrder: boolean, loadAll: boolean)
 
-Changed the return-type of Function OrderedDataStore:GetSortedAsync
-from:Instance?
-to:DataStorePages
+Changed the value of EnumItem PlayerDataErrorState.None from 2 to 3
 
-Removed Property VoiceChatService.UseRME
+Removed Property AuroraScriptService.LocalFrameId
+Removed Property AuroraScriptService.RemoteFrameId
+Removed Property AuroraService.RollbackEnabled
 
-Removed Function ConversationalAIAcceptanceService:SendMeshGenResultTelemetry
-Removed Function PlayerData:GetRecord
-Removed Function PlayerDataRecord:WaitForLoadAsync
+Removed Function AuroraService:NetDesync
+Removed Function AuroraService:NetSync
+Removed Function PlayerDataRecord:Release
 
-Removed Event VoiceChatService.SubscriptionInitialClientDescriptor
-Removed Event VoiceChatService.SubscriptionInitialClientDescriptorRequested
-Removed Event VoiceChatService.TurnServerInfoAcked
-Removed Event VoiceChatService.TurnServerInfoRequested
-
-Removed Tag [Hidden] from Property BaseWrap.CageMeshContent
-Removed Tag [Hidden] from Property Decal.TextureContent
-Removed Tag [Hidden] from Property ImageButton.ImageContent
-Removed Tag [Hidden] from Property ImageLabel.ImageContent
-Removed Tag [Hidden] from Property MeshPart.MeshContent
-Removed Tag [Hidden] from Property MeshPart.TextureContent
-Removed Tag [Hidden] from Property WrapLayer.ReferenceMeshContent
+Removed Enum CaptureUIHideMode
+Removed EnumItem CaptureUIHideMode.All
+Removed EnumItem CaptureUIHideMode.None
+Removed EnumItem CaptureUIHideMode.Core
