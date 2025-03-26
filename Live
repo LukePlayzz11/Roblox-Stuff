@@ -1,81 +1,128 @@
-Version 0.665.0.6650685
-Added Class WebSocketClient : Instance [NotCreatable] [NotReplicated]
-Added Property WebSocketClient.ConnectionState: Enum.WebSocketState [ReadOnly]
-Added Function WebSocketClient:Close() -> ()
-Added Function WebSocketClient:Send(data: string) -> ()
-Added Event WebSocketClient.Closed()
-Added Event WebSocketClient.MessageReceived(data: string)
-Added Event WebSocketClient.Opened()
+Version 0.666.1.6660608
 
-Added Class WebSocketService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function WebSocketService:CreateClient(uri: string) -> WebSocketClient
+Added Class ConfigSnapshot : Object [NotCreatable] [NotReplicated]
+Added Property ConfigSnapshot.Error: Enum.ConfigSnapshotErrorState [ReadOnly]
+Added Property ConfigSnapshot.Outdated: boolean [ReadOnly]
+Added Function ConfigSnapshot:GetValue(key: string, defaultValue: any) -> any
+Added Function ConfigSnapshot:GetValueChangedSignal(key: string) -> RBXScriptSignal
+Added Function ConfigSnapshot:Refresh() -> ()
+Added Event ConfigSnapshot.UpdateAvailable()
 
-Added Property GuiButton.HoverHapticEffect: HapticEffect?
-Added Property GuiButton.PressHapticEffect: HapticEffect?
-Added Property InputBinding.PressedThreshold: number
-Added Property InputBinding.ReleasedThreshold: number
-Added Property InputBinding.Scale: number
-Added Property ScrollingFrame.ScrollRate: number {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property ScrollingFrame.SmoothScroll: boolean {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Class ConfigService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function ConfigService:GetConfigAsync() -> Object [Yields]
+Added Function ConfigService:GetConfigForPlayerAsync(player: Player) -> Object [Yields]
 
-Added Function AnimationTrack:GetTargetInstance(name: string) -> Instance?
-Added Function AnimationTrack:GetTargetNames() -> { any }
-Added Function AnimationTrack:SetTargetInstance(name: string, target: Instance) -> ()
-Added Function AnnotationsService:DEPRECATED_LoadAnnotationReplies(annotation: Annotation) -> () {RobloxScriptSecurity}
-Added Function AuroraScriptService:GetLocalFrameId() -> number [Preliminary] {🧬Safe}
-Added Function PlayerDataRecord:ReleaseAsync() -> () [Yields]
-Added Function SocialService:GetPlayersByPartyId(partyId: string) -> Instances
+Added Function AuroraService:GetPredictedInstances() -> { any } [Preliminary]
+Added Function AuroraService:IsPredicted(target: Instance) -> boolean [Preliminary]
+Added Function AvatarChatService:DebugCounterGet(label: string, playerId: number) -> number {RobloxScriptSecurity}
+Added Function Player:OverrideStreamingRadii(minRadius: number, targetRadius: number) -> () {RobloxSecurity}
+Added Function SocialService:UpdatePlayerPartyData(partyId: string) -> () {RobloxScriptSecurity}
 
-Added Event AnnotationsService.DEPRECATED_ServerLoadAnnotationReplies(annotation: Annotation) {RobloxSecurity}
-Added Event FeatureRestrictionManager.UpdateExperienceChatTimeout(startTime: number, duration: number) {RobloxSecurity} [Hidden]
-Added Event SocialService.PlayerPartyDataChanged(partyId: string) {RobloxScriptSecurity}
+Added Event Player.OverrideStreamRadii(minRadius: number, targetRadius: number) {RobloxSecurity} [Hidden]
 
-Added Enum StateObjectFieldType
-Added EnumItem StateObjectFieldType.Boolean : 0
-Added EnumItem StateObjectFieldType.CFrame : 1
-Added EnumItem StateObjectFieldType.Float : 2
-Added EnumItem StateObjectFieldType.Instance : 3
-Added EnumItem StateObjectFieldType.Random : 4
-Added EnumItem StateObjectFieldType.Vector2 : 5
-Added EnumItem StateObjectFieldType.Vector3 : 6
-Added EnumItem StateObjectFieldType.INVALID : 7
+Added Enum ConfigSnapshotErrorState
+Added EnumItem ConfigSnapshotErrorState.None : 0
+Added EnumItem ConfigSnapshotErrorState.LoadFailed : 1
 
-Added Enum UICaptureMode
-Added EnumItem UICaptureMode.All : 0
-Added EnumItem UICaptureMode.None : 1
-Added EnumItem UICaptureMode.PlayerGui : 2
+Added Tag [Deprecated] to EnumItem KeyCode.World0
+Added Tag [Deprecated] to EnumItem KeyCode.World1
+Added Tag [Deprecated] to EnumItem KeyCode.World2
+Added Tag [Deprecated] to EnumItem KeyCode.World3
+Added Tag [Deprecated] to EnumItem KeyCode.World4
+Added Tag [Deprecated] to EnumItem KeyCode.World5
+Added Tag [Deprecated] to EnumItem KeyCode.World6
+Added Tag [Deprecated] to EnumItem KeyCode.World7
+Added Tag [Deprecated] to EnumItem KeyCode.World8
+Added Tag [Deprecated] to EnumItem KeyCode.World9
+Added Tag [Deprecated] to EnumItem KeyCode.World10
+Added Tag [Deprecated] to EnumItem KeyCode.World11
+Added Tag [Deprecated] to EnumItem KeyCode.World12
+Added Tag [Deprecated] to EnumItem KeyCode.World13
+Added Tag [Deprecated] to EnumItem KeyCode.World14
+Added Tag [Deprecated] to EnumItem KeyCode.World15
+Added Tag [Deprecated] to EnumItem KeyCode.World16
+Added Tag [Deprecated] to EnumItem KeyCode.World17
+Added Tag [Deprecated] to EnumItem KeyCode.World18
+Added Tag [Deprecated] to EnumItem KeyCode.World19
+Added Tag [Deprecated] to EnumItem KeyCode.World20
+Added Tag [Deprecated] to EnumItem KeyCode.World21
+Added Tag [Deprecated] to EnumItem KeyCode.World22
+Added Tag [Deprecated] to EnumItem KeyCode.World23
+Added Tag [Deprecated] to EnumItem KeyCode.World24
+Added Tag [Deprecated] to EnumItem KeyCode.World25
+Added Tag [Deprecated] to EnumItem KeyCode.World26
+Added Tag [Deprecated] to EnumItem KeyCode.World27
+Added Tag [Deprecated] to EnumItem KeyCode.World28
+Added Tag [Deprecated] to EnumItem KeyCode.World29
+Added Tag [Deprecated] to EnumItem KeyCode.World30
+Added Tag [Deprecated] to EnumItem KeyCode.World31
+Added Tag [Deprecated] to EnumItem KeyCode.World32
+Added Tag [Deprecated] to EnumItem KeyCode.World33
+Added Tag [Deprecated] to EnumItem KeyCode.World34
+Added Tag [Deprecated] to EnumItem KeyCode.World35
+Added Tag [Deprecated] to EnumItem KeyCode.World36
+Added Tag [Deprecated] to EnumItem KeyCode.World37
+Added Tag [Deprecated] to EnumItem KeyCode.World38
+Added Tag [Deprecated] to EnumItem KeyCode.World39
+Added Tag [Deprecated] to EnumItem KeyCode.World40
+Added Tag [Deprecated] to EnumItem KeyCode.World41
+Added Tag [Deprecated] to EnumItem KeyCode.World42
+Added Tag [Deprecated] to EnumItem KeyCode.World43
+Added Tag [Deprecated] to EnumItem KeyCode.World44
+Added Tag [Deprecated] to EnumItem KeyCode.World45
+Added Tag [Deprecated] to EnumItem KeyCode.World46
+Added Tag [Deprecated] to EnumItem KeyCode.World47
+Added Tag [Deprecated] to EnumItem KeyCode.World48
+Added Tag [Deprecated] to EnumItem KeyCode.World49
+Added Tag [Deprecated] to EnumItem KeyCode.World50
+Added Tag [Deprecated] to EnumItem KeyCode.World51
+Added Tag [Deprecated] to EnumItem KeyCode.World52
+Added Tag [Deprecated] to EnumItem KeyCode.World53
+Added Tag [Deprecated] to EnumItem KeyCode.World54
+Added Tag [Deprecated] to EnumItem KeyCode.World55
+Added Tag [Deprecated] to EnumItem KeyCode.World56
+Added Tag [Deprecated] to EnumItem KeyCode.World57
+Added Tag [Deprecated] to EnumItem KeyCode.World58
+Added Tag [Deprecated] to EnumItem KeyCode.World59
+Added Tag [Deprecated] to EnumItem KeyCode.World60
+Added Tag [Deprecated] to EnumItem KeyCode.World61
+Added Tag [Deprecated] to EnumItem KeyCode.World62
+Added Tag [Deprecated] to EnumItem KeyCode.World63
+Added Tag [Deprecated] to EnumItem KeyCode.World64
+Added Tag [Deprecated] to EnumItem KeyCode.World65
+Added Tag [Deprecated] to EnumItem KeyCode.World66
+Added Tag [Deprecated] to EnumItem KeyCode.World67
+Added Tag [Deprecated] to EnumItem KeyCode.World68
+Added Tag [Deprecated] to EnumItem KeyCode.World69
+Added Tag [Deprecated] to EnumItem KeyCode.World70
+Added Tag [Deprecated] to EnumItem KeyCode.World71
+Added Tag [Deprecated] to EnumItem KeyCode.World72
+Added Tag [Deprecated] to EnumItem KeyCode.World73
+Added Tag [Deprecated] to EnumItem KeyCode.World74
+Added Tag [Deprecated] to EnumItem KeyCode.World75
+Added Tag [Deprecated] to EnumItem KeyCode.World76
+Added Tag [Deprecated] to EnumItem KeyCode.World77
+Added Tag [Deprecated] to EnumItem KeyCode.World78
+Added Tag [Deprecated] to EnumItem KeyCode.World79
+Added Tag [Deprecated] to EnumItem KeyCode.World80
+Added Tag [Deprecated] to EnumItem KeyCode.World81
+Added Tag [Deprecated] to EnumItem KeyCode.World82
+Added Tag [Deprecated] to EnumItem KeyCode.World83
+Added Tag [Deprecated] to EnumItem KeyCode.World84
+Added Tag [Deprecated] to EnumItem KeyCode.World85
+Added Tag [Deprecated] to EnumItem KeyCode.World86
+Added Tag [Deprecated] to EnumItem KeyCode.World87
+Added Tag [Deprecated] to EnumItem KeyCode.World88
+Added Tag [Deprecated] to EnumItem KeyCode.World89
+Added Tag [Deprecated] to EnumItem KeyCode.World90
+Added Tag [Deprecated] to EnumItem KeyCode.World91
+Added Tag [Deprecated] to EnumItem KeyCode.World92
+Added Tag [Deprecated] to EnumItem KeyCode.World93
+Added Tag [Deprecated] to EnumItem KeyCode.World94
+Added Tag [Deprecated] to EnumItem KeyCode.World95
 
-Added Enum WebSocketState
-Added EnumItem WebSocketState.Connecting : 0
-Added EnumItem WebSocketState.Open : 1
-Added EnumItem WebSocketState.Closing : 2
-Added EnumItem WebSocketState.Closed : 3
+Removed Function AuroraService:GetDesyncedInstances
+Removed Function AuroraService:IsDesynced
 
-Added EnumItem AlphaMode.TintMask : 2 [NotBrowsable]
-Added EnumItem PlayerDataErrorState.ReleaseFailed : 2
-
-Added Tag [NotBrowsable] to Class AudioTextToSpeech
-Added Tag [NotBrowsable] to Class HapticEffect
-
-Changed the parameters of Function AnnotationsService:LoadAnnotationReplies
-from:(annotation: Annotation)
-to:(annotation: Annotation, reverseOrder: boolean, loadAll: boolean)
-
-Changed the parameters of Event AnnotationsService.ServerLoadAnnotationReplies
-from:(annotation: Annotation)
-to:(annotation: Annotation, reverseOrder: boolean, loadAll: boolean)
-
-Changed the value of EnumItem PlayerDataErrorState.None from 2 to 3
-
-Removed Property AuroraScriptService.LocalFrameId
-Removed Property AuroraScriptService.RemoteFrameId
-Removed Property AuroraService.RollbackEnabled
-
-Removed Function AuroraService:NetDesync
-Removed Function AuroraService:NetSync
-Removed Function PlayerDataRecord:Release
-
-Removed Enum CaptureUIHideMode
-Removed EnumItem CaptureUIHideMode.All
-Removed EnumItem CaptureUIHideMode.None
-Removed EnumItem CaptureUIHideMode.Core
+Removed Event AuroraService.Desynced
+Removed Event AuroraService.Synced
