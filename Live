@@ -1,128 +1,256 @@
-Version 0.666.1.6660608
+Version 0.667.0.6670665
 
-Added Class ConfigSnapshot : Object [NotCreatable] [NotReplicated]
-Added Property ConfigSnapshot.Error: Enum.ConfigSnapshotErrorState [ReadOnly]
-Added Property ConfigSnapshot.Outdated: boolean [ReadOnly]
-Added Function ConfigSnapshot:GetValue(key: string, defaultValue: any) -> any
-Added Function ConfigSnapshot:GetValueChangedSignal(key: string) -> RBXScriptSignal
-Added Function ConfigSnapshot:Refresh() -> ()
-Added Event ConfigSnapshot.UpdateAvailable()
+Added Property InputBinding.Vector2Scale: Vector2
+Added Property InputBinding.Down: Enum.KeyCode
+Added Property InputBinding.Left: Enum.KeyCode
+Added Property InputBinding.Right: Enum.KeyCode
+Added Property InputBinding.Up: Enum.KeyCode
+Added Property VoiceChatService.DefaultDistanceAttenuation: Enum.VoiceChatDistanceAttenuationType {PluginSecurity}
 
-Added Class ConfigService : Instance [NotCreatable] [NotReplicated] [Service]
-Added Function ConfigService:GetConfigAsync() -> Object [Yields]
-Added Function ConfigService:GetConfigForPlayerAsync(player: Player) -> Object [Yields]
+Added Function EditableMesh:GetFacesWithColor(colorId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetFacesWithNormal(normalId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetFacesWithUV(uvId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetVertexColors(vertexId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetVertexFaceColor(vertexId: number, faceId: number) -> number
+Added Function EditableMesh:GetVertexFaceNormal(vertexId: number, faceId: number) -> number
+Added Function EditableMesh:GetVertexFaceUV(vertexId: number, faceId: number) -> number
+Added Function EditableMesh:GetVertexFaces(vertexId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetVertexNormals(vertexId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetVertexUVs(vertexId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetVerticesWithColor(colorId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetVerticesWithNormal(normalId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:GetVerticesWithUV(uvId: number) -> { any } [CustomLuaState]
+Added Function EditableMesh:SetVertexFaceColor(vertexId: number, faceId: number, colorId: number) -> ()
+Added Function EditableMesh:SetVertexFaceNormal(vertexId: number, faceId: number, normalId: number) -> ()
+Added Function EditableMesh:SetVertexFaceUV(vertexId: number, faceId: number, uvId: number) -> ()
+Added Function IKControl:Solve() -> () {RobloxScriptSecurity}
 
-Added Function AuroraService:GetPredictedInstances() -> { any } [Preliminary]
-Added Function AuroraService:IsPredicted(target: Instance) -> boolean [Preliminary]
-Added Function AvatarChatService:DebugCounterGet(label: string, playerId: number) -> number {RobloxScriptSecurity}
-Added Function Player:OverrideStreamingRadii(minRadius: number, targetRadius: number) -> () {RobloxSecurity}
-Added Function SocialService:UpdatePlayerPartyData(partyId: string) -> () {RobloxScriptSecurity}
+Added Enum VoiceChatDistanceAttenuationType
+Added EnumItem VoiceChatDistanceAttenuationType.Inverse : 0
+Added EnumItem VoiceChatDistanceAttenuationType.Legacy : 1
 
-Added Event Player.OverrideStreamRadii(minRadius: number, targetRadius: number) {RobloxSecurity} [Hidden]
+Added Tag [Deprecated] to Function EditableMesh:GetFacesWithAttribute
+Added Tag [Deprecated] to Function EditableMesh:GetVerticesWithAttribute
 
-Added Enum ConfigSnapshotErrorState
-Added EnumItem ConfigSnapshotErrorState.None : 0
-Added EnumItem ConfigSnapshotErrorState.LoadFailed : 1
+Changed the superclass of Class Camera
+from:"Instance"
+to:"PVInstance"
 
-Added Tag [Deprecated] to EnumItem KeyCode.World0
-Added Tag [Deprecated] to EnumItem KeyCode.World1
-Added Tag [Deprecated] to EnumItem KeyCode.World2
-Added Tag [Deprecated] to EnumItem KeyCode.World3
-Added Tag [Deprecated] to EnumItem KeyCode.World4
-Added Tag [Deprecated] to EnumItem KeyCode.World5
-Added Tag [Deprecated] to EnumItem KeyCode.World6
-Added Tag [Deprecated] to EnumItem KeyCode.World7
-Added Tag [Deprecated] to EnumItem KeyCode.World8
-Added Tag [Deprecated] to EnumItem KeyCode.World9
-Added Tag [Deprecated] to EnumItem KeyCode.World10
-Added Tag [Deprecated] to EnumItem KeyCode.World11
-Added Tag [Deprecated] to EnumItem KeyCode.World12
-Added Tag [Deprecated] to EnumItem KeyCode.World13
-Added Tag [Deprecated] to EnumItem KeyCode.World14
-Added Tag [Deprecated] to EnumItem KeyCode.World15
-Added Tag [Deprecated] to EnumItem KeyCode.World16
-Added Tag [Deprecated] to EnumItem KeyCode.World17
-Added Tag [Deprecated] to EnumItem KeyCode.World18
-Added Tag [Deprecated] to EnumItem KeyCode.World19
-Added Tag [Deprecated] to EnumItem KeyCode.World20
-Added Tag [Deprecated] to EnumItem KeyCode.World21
-Added Tag [Deprecated] to EnumItem KeyCode.World22
-Added Tag [Deprecated] to EnumItem KeyCode.World23
-Added Tag [Deprecated] to EnumItem KeyCode.World24
-Added Tag [Deprecated] to EnumItem KeyCode.World25
-Added Tag [Deprecated] to EnumItem KeyCode.World26
-Added Tag [Deprecated] to EnumItem KeyCode.World27
-Added Tag [Deprecated] to EnumItem KeyCode.World28
-Added Tag [Deprecated] to EnumItem KeyCode.World29
-Added Tag [Deprecated] to EnumItem KeyCode.World30
-Added Tag [Deprecated] to EnumItem KeyCode.World31
-Added Tag [Deprecated] to EnumItem KeyCode.World32
-Added Tag [Deprecated] to EnumItem KeyCode.World33
-Added Tag [Deprecated] to EnumItem KeyCode.World34
-Added Tag [Deprecated] to EnumItem KeyCode.World35
-Added Tag [Deprecated] to EnumItem KeyCode.World36
-Added Tag [Deprecated] to EnumItem KeyCode.World37
-Added Tag [Deprecated] to EnumItem KeyCode.World38
-Added Tag [Deprecated] to EnumItem KeyCode.World39
-Added Tag [Deprecated] to EnumItem KeyCode.World40
-Added Tag [Deprecated] to EnumItem KeyCode.World41
-Added Tag [Deprecated] to EnumItem KeyCode.World42
-Added Tag [Deprecated] to EnumItem KeyCode.World43
-Added Tag [Deprecated] to EnumItem KeyCode.World44
-Added Tag [Deprecated] to EnumItem KeyCode.World45
-Added Tag [Deprecated] to EnumItem KeyCode.World46
-Added Tag [Deprecated] to EnumItem KeyCode.World47
-Added Tag [Deprecated] to EnumItem KeyCode.World48
-Added Tag [Deprecated] to EnumItem KeyCode.World49
-Added Tag [Deprecated] to EnumItem KeyCode.World50
-Added Tag [Deprecated] to EnumItem KeyCode.World51
-Added Tag [Deprecated] to EnumItem KeyCode.World52
-Added Tag [Deprecated] to EnumItem KeyCode.World53
-Added Tag [Deprecated] to EnumItem KeyCode.World54
-Added Tag [Deprecated] to EnumItem KeyCode.World55
-Added Tag [Deprecated] to EnumItem KeyCode.World56
-Added Tag [Deprecated] to EnumItem KeyCode.World57
-Added Tag [Deprecated] to EnumItem KeyCode.World58
-Added Tag [Deprecated] to EnumItem KeyCode.World59
-Added Tag [Deprecated] to EnumItem KeyCode.World60
-Added Tag [Deprecated] to EnumItem KeyCode.World61
-Added Tag [Deprecated] to EnumItem KeyCode.World62
-Added Tag [Deprecated] to EnumItem KeyCode.World63
-Added Tag [Deprecated] to EnumItem KeyCode.World64
-Added Tag [Deprecated] to EnumItem KeyCode.World65
-Added Tag [Deprecated] to EnumItem KeyCode.World66
-Added Tag [Deprecated] to EnumItem KeyCode.World67
-Added Tag [Deprecated] to EnumItem KeyCode.World68
-Added Tag [Deprecated] to EnumItem KeyCode.World69
-Added Tag [Deprecated] to EnumItem KeyCode.World70
-Added Tag [Deprecated] to EnumItem KeyCode.World71
-Added Tag [Deprecated] to EnumItem KeyCode.World72
-Added Tag [Deprecated] to EnumItem KeyCode.World73
-Added Tag [Deprecated] to EnumItem KeyCode.World74
-Added Tag [Deprecated] to EnumItem KeyCode.World75
-Added Tag [Deprecated] to EnumItem KeyCode.World76
-Added Tag [Deprecated] to EnumItem KeyCode.World77
-Added Tag [Deprecated] to EnumItem KeyCode.World78
-Added Tag [Deprecated] to EnumItem KeyCode.World79
-Added Tag [Deprecated] to EnumItem KeyCode.World80
-Added Tag [Deprecated] to EnumItem KeyCode.World81
-Added Tag [Deprecated] to EnumItem KeyCode.World82
-Added Tag [Deprecated] to EnumItem KeyCode.World83
-Added Tag [Deprecated] to EnumItem KeyCode.World84
-Added Tag [Deprecated] to EnumItem KeyCode.World85
-Added Tag [Deprecated] to EnumItem KeyCode.World86
-Added Tag [Deprecated] to EnumItem KeyCode.World87
-Added Tag [Deprecated] to EnumItem KeyCode.World88
-Added Tag [Deprecated] to EnumItem KeyCode.World89
-Added Tag [Deprecated] to EnumItem KeyCode.World90
-Added Tag [Deprecated] to EnumItem KeyCode.World91
-Added Tag [Deprecated] to EnumItem KeyCode.World92
-Added Tag [Deprecated] to EnumItem KeyCode.World93
-Added Tag [Deprecated] to EnumItem KeyCode.World94
-Added Tag [Deprecated] to EnumItem KeyCode.World95
+Changed the category of Property InputBinding.Scale
+from:"Data"
+to:"Behavior"
 
-Removed Function AuroraService:GetDesyncedInstances
-Removed Function AuroraService:IsDesynced
+Changed the parameters of Function EditableImage:DrawImage
+from:(position: Vector2, image: Object, combineType: Enum.ImageCombineType)
+to:(position: Vector2, image: EditableImage, combineType: Enum.ImageCombineType)
 
-Removed Event AuroraService.Desynced
-Removed Event AuroraService.Synced
+Changed the parameters of Function EditableImage:DrawImageProjected
+from:(mesh: Object, projection: { [string]: any }, brushConfig: { [string]: any })
+to:(mesh: EditableMesh, projection: { [string]: any }, brushConfig: { [string]: any })
+
+Changed the parameters of Function EditableImage:DrawImageTransformed
+from:(position: Vector2, scale: Vector2, rotation: number, image: Object, options: { [string]: any }?)
+to:(position: Vector2, scale: Vector2, rotation: number, image: EditableImage, options: { [string]: any }?)
+
+Changed the parameters of Function UGCValidationService:CalculateAverageEditableCageMeshDistance
+from:(innerCage: Object, outerCage: Object, refMesh: Object, innerTransform: CFrame, outerTransform: CFrame)
+to:(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh, innerTransform: CFrame, outerTransform: CFrame)
+
+Changed the parameters of Function UGCValidationService:CalculateEditableMeshInsideMeshPercentage
+from:(editableMeshRoot: Object, editableMeshQuery: Object, meshQueryTransform: CFrame, meshQueryScale: Vector3)
+to:(editableMeshRoot: EditableMesh, editableMeshQuery: EditableMesh, meshQueryTransform: CFrame, meshQueryScale: Vector3)
+
+Changed the parameters of Function UGCValidationService:CalculateEditableMeshModifiedCageBoundingBox
+from:(referenceUVValues: { any }, innerCage: Object, innerTransform: CFrame, outerCage: Object, outerTransform: CFrame)
+to:(referenceUVValues: { any }, innerCage: EditableMesh, innerTransform: CFrame, outerCage: EditableMesh, outerTransform: CFrame)
+
+Changed the parameters of Function UGCValidationService:CalculateEditableMeshNumModifiedCageUVsInSet
+from:(referenceUVValues: { any }, innerCage: Object, innerTransform: CFrame, outerCage: Object, outerTransform: CFrame)
+to:(referenceUVValues: { any }, innerCage: EditableMesh, innerTransform: CFrame, outerCage: EditableMesh, outerTransform: CFrame)
+
+Changed the parameters of Function UGCValidationService:CalculateEditableMeshTotalSurfaceArea
+from:(editableMesh: Object, meshScale: Vector3)
+to:(editableMesh: EditableMesh, meshScale: Vector3)
+
+Changed the parameters of Function UGCValidationService:CalculateEditableMeshUniqueUVCount
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:CheckEditableMeshInCameraFrustum
+from:(editableMesh: Object, meshScale: Vector3, handleWorldCF: CFrame, cameraWorldCF: CFrame)
+to:(editableMesh: EditableMesh, meshScale: Vector3, handleWorldCF: CFrame, cameraWorldCF: CFrame)
+
+Changed the parameters of Function UGCValidationService:GetDynamicHeadEditableMeshInactiveControls
+from:(editableMesh: Object, controlNames: { any })
+to:(editableMesh: EditableMesh, controlNames: { any })
+
+Changed the parameters of Function UGCValidationService:GetEditableCagingRelevancyMetrics
+from:(innerCage: Object, outerCage: Object, refMesh: Object, offsetInner: Vector3, offsetOuter: Vector3)
+to:(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh, offsetInner: Vector3, offsetOuter: Vector3)
+
+Changed the parameters of Function UGCValidationService:GetEditableImageData
+from:(editableImage: Object)
+to:(editableImage: EditableImage)
+
+Changed the parameters of Function UGCValidationService:GetEditableImageSize
+from:(editableImage: Object)
+to:(editableImage: EditableImage)
+
+Changed the parameters of Function UGCValidationService:GetEditableMeshMaxNearbyVerticesCollisions
+from:(editableMesh: Object, meshScale: Vector3)
+to:(editableMesh: EditableMesh, meshScale: Vector3)
+
+Changed the parameters of Function UGCValidationService:GetEditableMeshTriCount
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:GetEditableMeshVertColors
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:GetEditableMeshVerticesSimilarityRate
+from:(editableMesh: Object, meshScale: Vector3)
+to:(editableMesh: EditableMesh, meshScale: Vector3)
+
+Changed the parameters of Function UGCValidationService:GetEditableMeshVerts
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:IsEditableMeshNumCoplanarIntersectionsOverLimit
+from:(editableMesh: Object, limit: number, meshScale: Vector3, intersectBackFaces: boolean)
+to:(editableMesh: EditableMesh, limit: number, meshScale: Vector3, intersectBackFaces: boolean)
+
+Changed the parameters of Function UGCValidationService:ResetCollisionFidelityWithEditableMeshDataLua
+from:(meshPart: MeshPart, editableMesh: Object, collisionFidelity: Enum.CollisionFidelity? = "Box")
+to:(meshPart: MeshPart, editableMesh: EditableMesh, collisionFidelity: Enum.CollisionFidelity? = "Box")
+
+Changed the parameters of Function UGCValidationService:ValidateDynamicHeadEditableMesh
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableImageNumTextureChannels
+from:(editableImage: Object, numTextureChannelsRequired: number)
+to:(editableImage: EditableImage, numTextureChannelsRequired: number)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableImageSize
+from:(editableImage: Object)
+to:(editableImage: EditableImage)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshBounds
+from:(editableMesh: Object, meshScale: Vector3, boundsOffset: Vector3, attachmentCF: CFrame, handleCF: CFrame)
+to:(editableMesh: EditableMesh, meshScale: Vector3, boundsOffset: Vector3, attachmentCF: CFrame, handleCF: CFrame)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageMeshIntersection
+from:(innerCage: Object, outerCage: Object, refMesh: Object)
+to:(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageNonManifoldAndHoles
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageUVCoincident
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageUVTriangleArea
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshFullBodyCageDeletion
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshMisMatchUV
+from:(innerCage: Object, outerCage: Object)
+to:(innerCage: EditableMesh, outerCage: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshOverlappingVertices
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshTriangleArea
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshTriangles
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVDuplicates
+from:(referenceValues: { any }, editableMesh: Object)
+to:(referenceValues: { any }, editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVSpace
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVValuesInReference
+from:(referenceValues: { any }, editableMesh: Object)
+to:(referenceValues: { any }, editableMesh: EditableMesh)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshUniqueUVCount
+from:(editableMesh: Object, numRequired: number)
+to:(editableMesh: EditableMesh, numRequired: number)
+
+Changed the parameters of Function UGCValidationService:ValidateEditableMeshVertColors
+from:(editableMesh: Object, includeAlpha: boolean? = true)
+to:(editableMesh: EditableMesh, includeAlpha: boolean? = true)
+
+Changed the parameters of Function UGCValidationService:ValidateSkinnedEditableMesh
+from:(editableMesh: Object)
+to:(editableMesh: EditableMesh)
+
+Changed the parameters of Function WorldRoot:SetInsertPoint
+from:(point: Vector3, ignoreGrid: boolean? = false)
+to:(point: Vector3)
+
+Changed the return-type of Function AssetService:CreateEditableImage
+from:Object
+to:EditableImage
+
+Changed the return-type of Function AssetService:CreateEditableImageAsync
+from:Object
+to:EditableImage
+
+Changed the return-type of Function AssetService:CreateEditableMesh
+from:Object
+to:EditableMesh
+
+Changed the return-type of Function AssetService:CreateEditableMeshAsync
+from:Object
+to:EditableMesh
+
+Changed the return-type of Function AssetService:CreateEditableMeshStripSkinningAsync
+from:Object
+to:EditableMesh
+
+Changed the return-type of Function AvatarCreationService:LoadAvatar2DPreviewAsync
+from:Object
+to:EditableImage
+
+Changed the return-type of Function ConfigService:GetConfigAsync
+from:Object
+to:ConfigSnapshot
+
+Changed the return-type of Function ConfigService:GetConfigForPlayerAsync
+from:Object
+to:ConfigSnapshot
+
+Changed the return-type of Function UGCValidationService:CreateEditableImageFromBinaryStringRobloxOnly
+from:Object
+to:EditableImage
+
+Changed the return-type of Function UGCValidationService:CreateEditableMeshFromBinaryStringRobloxOnly
+from:Object
+to:EditableMesh
+
+Changed the return-type of Function WrapDeformer:CreateEditableMeshAsync
+from:Object
+to:EditableMesh
+
+Changed the parameters of Event BugReporterService.BugReportRequested
+from:(message: string)
+to:(trigger: string)
+
+Removed Tag [NotBrowsable] from Class AudioChannelMixer
+Removed Tag [NotBrowsable] from Class AudioChannelSplitter
