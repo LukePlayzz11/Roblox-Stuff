@@ -1,256 +1,77 @@
-Version 0.667.0.6670665
+Version 0.668.0.6680659
 
-Added Property InputBinding.Vector2Scale: Vector2
-Added Property InputBinding.Down: Enum.KeyCode
-Added Property InputBinding.Left: Enum.KeyCode
-Added Property InputBinding.Right: Enum.KeyCode
-Added Property InputBinding.Up: Enum.KeyCode
-Added Property VoiceChatService.DefaultDistanceAttenuation: Enum.VoiceChatDistanceAttenuationType {PluginSecurity}
+Added Class ImportSession : Instance [NotCreatable] [NotReplicated]
+Added Function ImportSession:Cancel() -> () {RobloxScriptSecurity}
+Added Function ImportSession:GetFilename() -> string {RobloxScriptSecurity}
+Added Function ImportSession:GetStatuses() -> { [string]: any } {RobloxScriptSecurity}
+Added Function ImportSession:Upload() -> () {RobloxScriptSecurity}
+Added Event ImportSession.UploadComplete(results: { [string]: any })
+Added Event ImportSession.UploadProgress(progressRatio: number)
 
-Added Function EditableMesh:GetFacesWithColor(colorId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetFacesWithNormal(normalId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetFacesWithUV(uvId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetVertexColors(vertexId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetVertexFaceColor(vertexId: number, faceId: number) -> number
-Added Function EditableMesh:GetVertexFaceNormal(vertexId: number, faceId: number) -> number
-Added Function EditableMesh:GetVertexFaceUV(vertexId: number, faceId: number) -> number
-Added Function EditableMesh:GetVertexFaces(vertexId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetVertexNormals(vertexId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetVertexUVs(vertexId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetVerticesWithColor(colorId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetVerticesWithNormal(normalId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:GetVerticesWithUV(uvId: number) -> { any } [CustomLuaState]
-Added Function EditableMesh:SetVertexFaceColor(vertexId: number, faceId: number, colorId: number) -> ()
-Added Function EditableMesh:SetVertexFaceNormal(vertexId: number, faceId: number, normalId: number) -> ()
-Added Function EditableMesh:SetVertexFaceUV(vertexId: number, faceId: number, uvId: number) -> ()
-Added Function IKControl:Solve() -> () {RobloxScriptSecurity}
+Added Class SerializationService : Instance [NotCreatable] [Service]
+Added Function SerializationService:DeserializeInstancesAsync(buffer: buffer) -> Instances [Yields]
+Added Function SerializationService:SerializeInstancesAsync(inputInstances: Instances) -> buffer [Yields]
 
-Added Enum VoiceChatDistanceAttenuationType
-Added EnumItem VoiceChatDistanceAttenuationType.Inverse : 0
-Added EnumItem VoiceChatDistanceAttenuationType.Legacy : 1
+Added Property PartOperation.SolidMeshHolder: NetAssetRef [Hidden] [NotScriptable]
+Added Property Studio.ActionOnAutoResumeSync: Enum.ActionOnAutoResumeSync {RobloxScriptSecurity}
+Added Property SurfaceAppearance.ColorMapContent: string {✏️PluginSecurity} [Hidden]
+Added Property SurfaceAppearance.MetalnessMapContent: string {✏️PluginSecurity} [Hidden]
+Added Property SurfaceAppearance.NormalMapContent: string {✏️PluginSecurity} [Hidden]
+Added Property SurfaceAppearance.RoughnessMapContent: string {✏️PluginSecurity} [Hidden]
+Added Property VideoPlayer.IsLoaded: boolean [ReadOnly]
+Added Property VideoPlayer.AutoLoadInStudio: boolean {✏️RobloxScriptSecurity} [NotReplicated] [NotScriptable]
+Added Property VideoPlayer.AutoPlayInStudio: boolean {✏️RobloxScriptSecurity} [NotReplicated] [NotScriptable]
 
-Added Tag [Deprecated] to Function EditableMesh:GetFacesWithAttribute
-Added Tag [Deprecated] to Function EditableMesh:GetVerticesWithAttribute
+Added Function ReflectionService:GetStyledPropertyNames(name: string) -> { any } {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshFacialBounds(editableMesh: EditableMesh, boundsScale: number, partSize: Vector3) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshFacialExpressiveness(editableMesh: EditableMesh, minDelta: number, partSize: Vector3) -> number {RobloxScriptSecurity}
+Added Function VideoDisplay:GetInputPins() -> { any }
+Added Function VideoDisplay:GetOutputPins() -> { any }
+Added Function VideoPlayer:GetInputPins() -> { any }
+Added Function VideoPlayer:GetOutputPins() -> { any }
+Added Function VideoPlayer:LoadAsync() -> Enum.AssetFetchStatus [Yields]
+Added Function VideoPlayer:Pause() -> ()
+Added Function VideoPlayer:Unload() -> ()
 
-Changed the superclass of Class Camera
+Added Event VideoPlayer.PlayFailed(error: Enum.AssetFetchStatus)
+Added Event VideoPlayer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
+Added Event VoiceChatService.VoiceUdmuxVip(sessionId: string, udmuxVipAddress: string) {RobloxSecurity} [Hidden]
+
+Added Enum ActionOnAutoResumeSync
+Added EnumItem ActionOnAutoResumeSync.DontResume : 0
+Added EnumItem ActionOnAutoResumeSync.KeepStudio : 1
+Added EnumItem ActionOnAutoResumeSync.KeepLocal : 2
+
+Added Tag [ReadOnly] to Property VideoPlayer.IsPlaying
+
+Changed the superclass of Class AssetImportSession
 from:"Instance"
-to:"PVInstance"
+to:"ImportSession"
 
-Changed the category of Property InputBinding.Scale
-from:"Data"
-to:"Behavior"
+Changed the write permissions of Property VideoPlayer.IsPlaying
+from:{✏️RobloxSecurity}
+to:{✏️None}
 
-Changed the parameters of Function EditableImage:DrawImage
-from:(position: Vector2, image: Object, combineType: Enum.ImageCombineType)
-to:(position: Vector2, image: EditableImage, combineType: Enum.ImageCombineType)
+Removed Class ShorelineUpgraderService
+Removed Function ShorelineUpgraderService:Cancel
+Removed Function ShorelineUpgraderService:Start
+Removed Event ShorelineUpgraderService.Status
 
-Changed the parameters of Function EditableImage:DrawImageProjected
-from:(mesh: Object, projection: { [string]: any }, brushConfig: { [string]: any })
-to:(mesh: EditableMesh, projection: { [string]: any }, brushConfig: { [string]: any })
+Removed Property PartOperation.SolidMeshData
+Removed Property VideoPlayer.AutoLoad
+Removed Property VideoPlayer.IsReady
+Removed Property VideoPlayer.Thumbnail
 
-Changed the parameters of Function EditableImage:DrawImageTransformed
-from:(position: Vector2, scale: Vector2, rotation: number, image: Object, options: { [string]: any }?)
-to:(position: Vector2, scale: Vector2, rotation: number, image: EditableImage, options: { [string]: any }?)
+Removed Function AssetImportSession:Cancel
+Removed Function AssetImportSession:GetFilename
+Removed Function AssetImportSession:GetStatuses
+Removed Function AssetImportSession:Upload
+Removed Function Terrain:CanShorelinesBeUpgraded
+Removed Function VideoPlayer:Stop
 
-Changed the parameters of Function UGCValidationService:CalculateAverageEditableCageMeshDistance
-from:(innerCage: Object, outerCage: Object, refMesh: Object, innerTransform: CFrame, outerTransform: CFrame)
-to:(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh, innerTransform: CFrame, outerTransform: CFrame)
+Removed Event AssetImportSession.UploadComplete
+Removed Event AssetImportSession.UploadProgress
 
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshInsideMeshPercentage
-from:(editableMeshRoot: Object, editableMeshQuery: Object, meshQueryTransform: CFrame, meshQueryScale: Vector3)
-to:(editableMeshRoot: EditableMesh, editableMeshQuery: EditableMesh, meshQueryTransform: CFrame, meshQueryScale: Vector3)
+Removed EnumItem UICaptureMode.PlayerGui
 
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshModifiedCageBoundingBox
-from:(referenceUVValues: { any }, innerCage: Object, innerTransform: CFrame, outerCage: Object, outerTransform: CFrame)
-to:(referenceUVValues: { any }, innerCage: EditableMesh, innerTransform: CFrame, outerCage: EditableMesh, outerTransform: CFrame)
-
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshNumModifiedCageUVsInSet
-from:(referenceUVValues: { any }, innerCage: Object, innerTransform: CFrame, outerCage: Object, outerTransform: CFrame)
-to:(referenceUVValues: { any }, innerCage: EditableMesh, innerTransform: CFrame, outerCage: EditableMesh, outerTransform: CFrame)
-
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshTotalSurfaceArea
-from:(editableMesh: Object, meshScale: Vector3)
-to:(editableMesh: EditableMesh, meshScale: Vector3)
-
-Changed the parameters of Function UGCValidationService:CalculateEditableMeshUniqueUVCount
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:CheckEditableMeshInCameraFrustum
-from:(editableMesh: Object, meshScale: Vector3, handleWorldCF: CFrame, cameraWorldCF: CFrame)
-to:(editableMesh: EditableMesh, meshScale: Vector3, handleWorldCF: CFrame, cameraWorldCF: CFrame)
-
-Changed the parameters of Function UGCValidationService:GetDynamicHeadEditableMeshInactiveControls
-from:(editableMesh: Object, controlNames: { any })
-to:(editableMesh: EditableMesh, controlNames: { any })
-
-Changed the parameters of Function UGCValidationService:GetEditableCagingRelevancyMetrics
-from:(innerCage: Object, outerCage: Object, refMesh: Object, offsetInner: Vector3, offsetOuter: Vector3)
-to:(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh, offsetInner: Vector3, offsetOuter: Vector3)
-
-Changed the parameters of Function UGCValidationService:GetEditableImageData
-from:(editableImage: Object)
-to:(editableImage: EditableImage)
-
-Changed the parameters of Function UGCValidationService:GetEditableImageSize
-from:(editableImage: Object)
-to:(editableImage: EditableImage)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshMaxNearbyVerticesCollisions
-from:(editableMesh: Object, meshScale: Vector3)
-to:(editableMesh: EditableMesh, meshScale: Vector3)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshTriCount
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshVertColors
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshVerticesSimilarityRate
-from:(editableMesh: Object, meshScale: Vector3)
-to:(editableMesh: EditableMesh, meshScale: Vector3)
-
-Changed the parameters of Function UGCValidationService:GetEditableMeshVerts
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:IsEditableMeshNumCoplanarIntersectionsOverLimit
-from:(editableMesh: Object, limit: number, meshScale: Vector3, intersectBackFaces: boolean)
-to:(editableMesh: EditableMesh, limit: number, meshScale: Vector3, intersectBackFaces: boolean)
-
-Changed the parameters of Function UGCValidationService:ResetCollisionFidelityWithEditableMeshDataLua
-from:(meshPart: MeshPart, editableMesh: Object, collisionFidelity: Enum.CollisionFidelity? = "Box")
-to:(meshPart: MeshPart, editableMesh: EditableMesh, collisionFidelity: Enum.CollisionFidelity? = "Box")
-
-Changed the parameters of Function UGCValidationService:ValidateDynamicHeadEditableMesh
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableImageNumTextureChannels
-from:(editableImage: Object, numTextureChannelsRequired: number)
-to:(editableImage: EditableImage, numTextureChannelsRequired: number)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableImageSize
-from:(editableImage: Object)
-to:(editableImage: EditableImage)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshBounds
-from:(editableMesh: Object, meshScale: Vector3, boundsOffset: Vector3, attachmentCF: CFrame, handleCF: CFrame)
-to:(editableMesh: EditableMesh, meshScale: Vector3, boundsOffset: Vector3, attachmentCF: CFrame, handleCF: CFrame)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageMeshIntersection
-from:(innerCage: Object, outerCage: Object, refMesh: Object)
-to:(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageNonManifoldAndHoles
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageUVCoincident
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshCageUVTriangleArea
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshFullBodyCageDeletion
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshMisMatchUV
-from:(innerCage: Object, outerCage: Object)
-to:(innerCage: EditableMesh, outerCage: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshOverlappingVertices
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshTriangleArea
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshTriangles
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVDuplicates
-from:(referenceValues: { any }, editableMesh: Object)
-to:(referenceValues: { any }, editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVSpace
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshUVValuesInReference
-from:(referenceValues: { any }, editableMesh: Object)
-to:(referenceValues: { any }, editableMesh: EditableMesh)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshUniqueUVCount
-from:(editableMesh: Object, numRequired: number)
-to:(editableMesh: EditableMesh, numRequired: number)
-
-Changed the parameters of Function UGCValidationService:ValidateEditableMeshVertColors
-from:(editableMesh: Object, includeAlpha: boolean? = true)
-to:(editableMesh: EditableMesh, includeAlpha: boolean? = true)
-
-Changed the parameters of Function UGCValidationService:ValidateSkinnedEditableMesh
-from:(editableMesh: Object)
-to:(editableMesh: EditableMesh)
-
-Changed the parameters of Function WorldRoot:SetInsertPoint
-from:(point: Vector3, ignoreGrid: boolean? = false)
-to:(point: Vector3)
-
-Changed the return-type of Function AssetService:CreateEditableImage
-from:Object
-to:EditableImage
-
-Changed the return-type of Function AssetService:CreateEditableImageAsync
-from:Object
-to:EditableImage
-
-Changed the return-type of Function AssetService:CreateEditableMesh
-from:Object
-to:EditableMesh
-
-Changed the return-type of Function AssetService:CreateEditableMeshAsync
-from:Object
-to:EditableMesh
-
-Changed the return-type of Function AssetService:CreateEditableMeshStripSkinningAsync
-from:Object
-to:EditableMesh
-
-Changed the return-type of Function AvatarCreationService:LoadAvatar2DPreviewAsync
-from:Object
-to:EditableImage
-
-Changed the return-type of Function ConfigService:GetConfigAsync
-from:Object
-to:ConfigSnapshot
-
-Changed the return-type of Function ConfigService:GetConfigForPlayerAsync
-from:Object
-to:ConfigSnapshot
-
-Changed the return-type of Function UGCValidationService:CreateEditableImageFromBinaryStringRobloxOnly
-from:Object
-to:EditableImage
-
-Changed the return-type of Function UGCValidationService:CreateEditableMeshFromBinaryStringRobloxOnly
-from:Object
-to:EditableMesh
-
-Changed the return-type of Function WrapDeformer:CreateEditableMeshAsync
-from:Object
-to:EditableMesh
-
-Changed the parameters of Event BugReporterService.BugReportRequested
-from:(message: string)
-to:(trigger: string)
-
-Removed Tag [NotBrowsable] from Class AudioChannelMixer
-Removed Tag [NotBrowsable] from Class AudioChannelSplitter
+Removed Tag [NotBrowsable] from EnumItem AlphaMode.TintMask
