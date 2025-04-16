@@ -1,77 +1,70 @@
-Version 0.668.0.6680659
+Version 0.669.0.6690660
 
-Added Class ImportSession : Instance [NotCreatable] [NotReplicated]
-Added Function ImportSession:Cancel() -> () {RobloxScriptSecurity}
-Added Function ImportSession:GetFilename() -> string {RobloxScriptSecurity}
-Added Function ImportSession:GetStatuses() -> { [string]: any } {RobloxScriptSecurity}
-Added Function ImportSession:Upload() -> () {RobloxScriptSecurity}
-Added Event ImportSession.UploadComplete(results: { [string]: any })
-Added Event ImportSession.UploadProgress(progressRatio: number)
+Added Class FacialAgeEstimationService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function FacialAgeEstimationService:InquiryAsync(inquiryId: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+Added Function FacialAgeEstimationService:IsAvailable() -> boolean {RobloxScriptSecurity}
 
-Added Class SerializationService : Instance [NotCreatable] [Service]
-Added Function SerializationService:DeserializeInstancesAsync(buffer: buffer) -> Instances [Yields]
-Added Function SerializationService:SerializeInstancesAsync(inputInstances: Instances) -> buffer [Yields]
+Added Class SystemThemeService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function SystemThemeService:getSystemThemeAsync() -> Enum.SystemThemeValue {RobloxScriptSecurity} [Yields]
+Added Function SystemThemeService:isSystemThemeAvailable() -> boolean {RobloxScriptSecurity}
+Added Function SystemThemeService:setTheme(theme: Enum.SystemThemeValue) -> () {RobloxScriptSecurity}
+Added Event SystemThemeService.OnLuaThemeUpdated(theme: Enum.SystemThemeValue) {RobloxScriptSecurity}
 
-Added Property PartOperation.SolidMeshHolder: NetAssetRef [Hidden] [NotScriptable]
-Added Property Studio.ActionOnAutoResumeSync: Enum.ActionOnAutoResumeSync {RobloxScriptSecurity}
-Added Property SurfaceAppearance.ColorMapContent: string {✏️PluginSecurity} [Hidden]
-Added Property SurfaceAppearance.MetalnessMapContent: string {✏️PluginSecurity} [Hidden]
-Added Property SurfaceAppearance.NormalMapContent: string {✏️PluginSecurity} [Hidden]
-Added Property SurfaceAppearance.RoughnessMapContent: string {✏️PluginSecurity} [Hidden]
-Added Property VideoPlayer.IsLoaded: boolean [ReadOnly]
-Added Property VideoPlayer.AutoLoadInStudio: boolean {✏️RobloxScriptSecurity} [NotReplicated] [NotScriptable]
-Added Property VideoPlayer.AutoPlayInStudio: boolean {✏️RobloxScriptSecurity} [NotReplicated] [NotScriptable]
+Added Property AnnotationsService.annotationsLoadingStatus: Enum.AnnotationRequestStatus {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property AnnotationsService.resolvedLoadingStatus: Enum.AnnotationRequestStatus {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property AuroraScript.EnableCulling: boolean {PluginSecurity} [Preliminary]
+Added Property AuroraScript.LODCriticality: number {PluginSecurity} [Preliminary]
+Added Property DataModel.Environment: string {RobloxScriptSecurity} [ReadOnly]
+Added Property PartOperation.ComponentIndex: number {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property Studio.EnableSelectionTooltips: boolean {RobloxScriptSecurity}
 
-Added Function ReflectionService:GetStyledPropertyNames(name: string) -> { any } {RobloxScriptSecurity}
-Added Function UGCValidationService:ValidateEditableMeshFacialBounds(editableMesh: EditableMesh, boundsScale: number, partSize: Vector3) -> boolean {RobloxScriptSecurity}
-Added Function UGCValidationService:ValidateEditableMeshFacialExpressiveness(editableMesh: EditableMesh, minDelta: number, partSize: Vector3) -> number {RobloxScriptSecurity}
-Added Function VideoDisplay:GetInputPins() -> { any }
-Added Function VideoDisplay:GetOutputPins() -> { any }
-Added Function VideoPlayer:GetInputPins() -> { any }
-Added Function VideoPlayer:GetOutputPins() -> { any }
-Added Function VideoPlayer:LoadAsync() -> Enum.AssetFetchStatus [Yields]
-Added Function VideoPlayer:Pause() -> ()
-Added Function VideoPlayer:Unload() -> ()
+Added Function AssetService:CreateSurfaceAppearance(content: { [string]: any }) -> SurfaceAppearance
+Added Function SocialService:GetPartyAsync(partyId: string) -> { any } [Yields]
 
-Added Event VideoPlayer.PlayFailed(error: Enum.AssetFetchStatus)
-Added Event VideoPlayer.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
-Added Event VoiceChatService.VoiceUdmuxVip(sessionId: string, udmuxVipAddress: string) {RobloxSecurity} [Hidden]
+Added Event LocalizationService.DynamicTranslationServerToClientResponse(...: any) {RobloxSecurity} [Hidden]
 
-Added Enum ActionOnAutoResumeSync
-Added EnumItem ActionOnAutoResumeSync.DontResume : 0
-Added EnumItem ActionOnAutoResumeSync.KeepStudio : 1
-Added EnumItem ActionOnAutoResumeSync.KeepLocal : 2
+Added Enum AnnotationRequestStatus
+Added EnumItem AnnotationRequestStatus.Success : 0
+Added EnumItem AnnotationRequestStatus.Loading : 1
+Added EnumItem AnnotationRequestStatus.ErrorInternalFailure : 2
+Added EnumItem AnnotationRequestStatus.ErrorNotFound : 3
+Added EnumItem AnnotationRequestStatus.ErrorModerated : 4
 
-Added Tag [ReadOnly] to Property VideoPlayer.IsPlaying
+Added Enum FacialAgeEstimationResultType
+Added EnumItem FacialAgeEstimationResultType.Complete : 0
+Added EnumItem FacialAgeEstimationResultType.Cancel : 1
+Added EnumItem FacialAgeEstimationResultType.Error : 2
 
-Changed the superclass of Class AssetImportSession
-from:"Instance"
-to:"ImportSession"
+Added Enum SystemThemeValue
+Added EnumItem SystemThemeValue.error : 0
+Added EnumItem SystemThemeValue.light : 1
+Added EnumItem SystemThemeValue.dark : 2
+Added EnumItem SystemThemeValue.systemLight : 3
+Added EnumItem SystemThemeValue.systemDark : 4
 
-Changed the write permissions of Property VideoPlayer.IsPlaying
-from:{✏️RobloxSecurity}
-to:{✏️None}
+Changed the write permissions of Property Player.PartyId
+from:{✏️None}
+to:{✏️RobloxSecurity}
 
-Removed Class ShorelineUpgraderService
-Removed Function ShorelineUpgraderService:Cancel
-Removed Function ShorelineUpgraderService:Start
-Removed Event ShorelineUpgraderService.Status
+Changed the parameters of Function SocialService:UpdatePlayerPartyData
+from:(partyId: string)
+to:(partyId: string, isPartyDisabled: boolean? = false)
 
-Removed Property PartOperation.SolidMeshData
-Removed Property VideoPlayer.AutoLoad
-Removed Property VideoPlayer.IsReady
-Removed Property VideoPlayer.Thumbnail
+Changed the parameters of Event Annotation.RequestCompleted
+from:(requestId: string, requestType: Enum.AnnotationRequestType, result: Enum.AnnotationRequestResult)
+to:(requestId: string, requestType: Enum.AnnotationRequestType, result: Enum.AnnotationRequestStatus)
 
-Removed Function AssetImportSession:Cancel
-Removed Function AssetImportSession:GetFilename
-Removed Function AssetImportSession:GetStatuses
-Removed Function AssetImportSession:Upload
-Removed Function Terrain:CanShorelinesBeUpgraded
-Removed Function VideoPlayer:Stop
+Changed the parameters of Event SocialService.PlayerPartyDataChanged
+from:(partyId: string)
+to:(partyId: string, isPartyDisabled: boolean)
 
-Removed Event AssetImportSession.UploadComplete
-Removed Event AssetImportSession.UploadProgress
+Removed Property AuroraScript.DumpMispredictions
+Removed Property AuroraScript.LODDistanceFactor
+Removed Property AuroraScript.LODFrequencyFactor
+Removed Property RootImportData.UseSceneOriginAsCFrame
 
-Removed EnumItem UICaptureMode.PlayerGui
-
-Removed Tag [NotBrowsable] from EnumItem AlphaMode.TintMask
+Removed Enum AnnotationRequestResult
+Removed EnumItem AnnotationRequestResult.Success
+Removed EnumItem AnnotationRequestResult.ErrorInternalFailure
+Removed EnumItem AnnotationRequestResult.ErrorNotFound
+Removed EnumItem AnnotationRequestResult.ErrorModerated
