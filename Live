@@ -1,178 +1,60 @@
-Version 0.670.0.6700713
+Version 0.671.0.6710817
 
-Added Class FeedService : Instance [NotCreatable] [Service]
-Added Function FeedService:BatchRemoveFeedItemsAsync(feedItemIds: { any }) -> () [Yields]
-Added Function FeedService:GetFeedItemsAsync(getFeedRequest: { [string]: any }) -> FeedPages [Yields]
-Added Function FeedService:RegisterFeedItemsAsync(registerFeedItemsRequest: { [string]: any }) -> { [string]: any } [Yields]
+Added Class AudioRecorder : Instance [NotBrowsable]
+Added Property AudioRecorder.TimeLength: number [ReadOnly]
+Added Property AudioRecorder.IsRecording: boolean {✏️RobloxSecurity}
+Added Function AudioRecorder:CanRecordAsync() -> boolean [Yields]
+Added Function AudioRecorder:Clear() -> ()
+Added Function AudioRecorder:GetConnectedWires(pin: string) -> Instances
+Added Function AudioRecorder:GetInputPins() -> { any }
+Added Function AudioRecorder:GetOutputPins() -> { any }
+Added Function AudioRecorder:GetTemporaryContent() -> string
+Added Function AudioRecorder:GetUnrecordableInstancesAsync() -> Instances [Yields]
+Added Function AudioRecorder:RecordAsync() -> () [Yields]
+Added Function AudioRecorder:Stop() -> ()
+Added Event AudioRecorder.WiringChanged(connected: boolean, pin: string, wire: Wire, instance: Instance)
 
-Added Class PlaceAssetIdsService : Instance [NotCreatable] [Service]
-Added Class FeedPages : Pages [NotCreatable] [NotReplicated]
+Added Class AuroraScriptObject : Instance [NotCreatable] [Preliminary]
+Added Property AuroraScriptObject.BehaviorWeak: AuroraScript? {RobloxSecurity} [Preliminary]
+Added Property AuroraScriptObject.BoundInstanceWeak: Instance? {RobloxSecurity} [Preliminary]
 
-Added Property AnnotationsService.AnnotationsLoadingStatus: Enum.AnnotationRequestStatus {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property AnnotationsService.ResolvedLoadingStatus: Enum.AnnotationRequestStatus {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property ImageButton.HoverImageContent: string
-Added Property ImageButton.PressedImageContent: string
-Added Property StarterPlayer.RagdollDeath: boolean [NotBrowsable]
-Added Property Studio.CameraOrbitSensitivity: number {RobloxScriptSecurity}
-Added Property Studio.CameraPanSensitivity: number {RobloxScriptSecurity}
-Added Property Studio.CameraShiftFactor: number {RobloxScriptSecurity}
-Added Property Studio.CameraZoomSpeed: number {RobloxScriptSecurity}
-Added Property StudioCameraService.LockCameraSpeed: boolean
-Added Property WireframeHandleAdornment.Thickness: number
+Added Property LinearVelocity.ReactionForceEnabled: boolean
+Added Property Sky.SkyboxOrientation: Vector3
+Added Property StarterPlayer.ClassicDeath: boolean [NotBrowsable]
+Added Property Workspace.ConvexDecompCompressed: boolean {RobloxSecurity} [Hidden] [NotScriptable]
 
-Added Function CaptureService:StartVideoCaptureInternal() -> () {RobloxScriptSecurity}
-Added Function CaptureService:StopCapture() -> () {RobloxScriptSecurity}
-Added Function CaptureService:StopVideoCaptureInternal() -> () {RobloxScriptSecurity}
-Added Function ConfigService:ClearTestingValue(key: string) -> ()
-Added Function ConfigService:SetTestingValue(key: string, value: any) -> ()
-Added Function EditableMesh:AddBone(boneProperties: { [string]: any }) -> number
-Added Function EditableMesh:GetBoneByName(boneName: string) -> number
-Added Function EditableMesh:GetBoneCFrame(boneId: number) -> CFrame
-Added Function EditableMesh:GetBoneIsVirtual(boneId: number) -> boolean
-Added Function EditableMesh:GetBoneName(boneId: number) -> string
-Added Function EditableMesh:GetBoneParent(boneId: number) -> number
-Added Function EditableMesh:GetBones() -> { any }
-Added Function EditableMesh:GetFacsCorrectivePose(actions: { any }) -> ...any
-Added Function EditableMesh:GetFacsCorrectivePoses() -> { any }
-Added Function EditableMesh:GetFacsPose(action: Enum.FacsActionUnit) -> ...any
-Added Function EditableMesh:GetFacsPoses() -> { any }
-Added Function EditableMesh:GetVertexBoneWeights(vertexId: number) -> { any }
-Added Function EditableMesh:GetVertexBones(vertexId: number) -> { any }
-Added Function EditableMesh:RemoveBone(boneId: number) -> ()
-Added Function EditableMesh:SetBoneCFrame(boneId: number, cframe: CFrame) -> ()
-Added Function EditableMesh:SetBoneIsVirtual(boneId: number, virtual: boolean) -> ()
-Added Function EditableMesh:SetBoneName(boneId: number, name: string) -> ()
-Added Function EditableMesh:SetBoneParent(boneId: number, parentBoneId: number) -> ()
-Added Function EditableMesh:SetFacsBonePose(action: Enum.FacsActionUnit, boneId: number, cframe: CFrame) -> ()
-Added Function EditableMesh:SetFacsCorrectivePose(actions: { any }, boneIds: { any }, cframes: { any }) -> ()
-Added Function EditableMesh:SetFacsPose(action: Enum.FacsActionUnit, boneIds: { any }, cframes: { any }) -> ()
-Added Function EditableMesh:SetVertexBoneWeights(vertexId: number, boneWeights: { any }) -> ()
-Added Function EditableMesh:SetVertexBones(vertexId: number, boneIDs: { any }) -> ()
-Added Function LanguageService:GetCapabilitiesUsedInPackageAsync(instances: Instances) -> { [string]: any } [Yields]
-Added Function StudioAssetService:AutoSetupSerializedAvatarAsync(serializedInstance: string, publishInfo: { [string]: any }, progressCallback: (...any) -> ...any, notificationCallback: ((...any) -> ...any)?) -> Instance? {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:CalculateBodyPartMaxCageDistance(outerCage: EditableMesh, renderMesh: EditableMesh, outerTransform: CFrame, scale: Vector3) -> number {RobloxScriptSecurity}
+Added Function AnnotationsService:LoadAnnotations(resolved: boolean) -> () {RobloxScriptSecurity}
+Added Function AvatarCreationService:AutoSetupAvatarAsync(player: Player, model: Model) -> string {RobloxScriptSecurity} [Yields]
+Added Function ReflectionService:GetClass(className: string, filter: { [string]: any }?) -> { [string]: any }?
+Added Function ReflectionService:GetClasses(filter: { [string]: any }?) -> { any }
+Added Function ReflectionService:GetPropertiesOfClass(className: string, filter: { [string]: any }?) -> { any }
 
-Added Event StudioCameraService.ShowCameraSpeed(speed: number)
+Added Event AnnotationsService.ServerLoadAnnotations(resolved: boolean) {RobloxSecurity}
+Added Event AuroraService.Misprediction(worldStepId: number, mispredictedInstances: { any }) [Preliminary]
+Added Event CaptureService.RequestCaptureSignatureV2(content: string) {RobloxSecurity} [Hidden]
 
-Added Enum FacsActionUnit
-Added EnumItem FacsActionUnit.ChinRaiserUpperLip : 0
-Added EnumItem FacsActionUnit.ChinRaiser : 1
-Added EnumItem FacsActionUnit.FlatPucker : 2
-Added EnumItem FacsActionUnit.Funneler : 3
-Added EnumItem FacsActionUnit.LowerLipSuck : 4
-Added EnumItem FacsActionUnit.LipPresser : 5
-Added EnumItem FacsActionUnit.LipsTogether : 6
-Added EnumItem FacsActionUnit.MouthLeft : 7
-Added EnumItem FacsActionUnit.MouthRight : 8
-Added EnumItem FacsActionUnit.Pucker : 9
-Added EnumItem FacsActionUnit.UpperLipSuck : 10
-Added EnumItem FacsActionUnit.LeftCheekPuff : 11
-Added EnumItem FacsActionUnit.LeftDimpler : 12
-Added EnumItem FacsActionUnit.LeftLipCornerDown : 13
-Added EnumItem FacsActionUnit.LeftLowerLipDepressor : 14
-Added EnumItem FacsActionUnit.LeftLipCornerPuller : 15
-Added EnumItem FacsActionUnit.LeftLipStretcher : 16
-Added EnumItem FacsActionUnit.LeftUpperLipRaiser : 17
-Added EnumItem FacsActionUnit.RightCheekPuff : 18
-Added EnumItem FacsActionUnit.RightDimpler : 19
-Added EnumItem FacsActionUnit.RightLipCornerDown : 20
-Added EnumItem FacsActionUnit.RightLowerLipDepressor : 21
-Added EnumItem FacsActionUnit.RightLipCornerPuller : 22
-Added EnumItem FacsActionUnit.RightLipStretcher : 23
-Added EnumItem FacsActionUnit.RightUpperLipRaiser : 24
-Added EnumItem FacsActionUnit.JawDrop : 25
-Added EnumItem FacsActionUnit.JawLeft : 26
-Added EnumItem FacsActionUnit.JawRight : 27
-Added EnumItem FacsActionUnit.Corrugator : 28
-Added EnumItem FacsActionUnit.LeftBrowLowerer : 29
-Added EnumItem FacsActionUnit.LeftOuterBrowRaiser : 30
-Added EnumItem FacsActionUnit.LeftNoseWrinkler : 31
-Added EnumItem FacsActionUnit.LeftInnerBrowRaiser : 32
-Added EnumItem FacsActionUnit.RightBrowLowerer : 33
-Added EnumItem FacsActionUnit.RightOuterBrowRaiser : 34
-Added EnumItem FacsActionUnit.RightInnerBrowRaiser : 35
-Added EnumItem FacsActionUnit.RightNoseWrinkler : 36
-Added EnumItem FacsActionUnit.EyesLookDown : 37
-Added EnumItem FacsActionUnit.EyesLookLeft : 38
-Added EnumItem FacsActionUnit.EyesLookUp : 39
-Added EnumItem FacsActionUnit.EyesLookRight : 40
-Added EnumItem FacsActionUnit.LeftCheekRaiser : 41
-Added EnumItem FacsActionUnit.LeftEyeUpperLidRaiser : 42
-Added EnumItem FacsActionUnit.LeftEyeClosed : 43
-Added EnumItem FacsActionUnit.RightCheekRaiser : 44
-Added EnumItem FacsActionUnit.RightEyeUpperLidRaiser : 45
-Added EnumItem FacsActionUnit.RightEyeClosed : 46
-Added EnumItem FacsActionUnit.TongueDown : 47
-Added EnumItem FacsActionUnit.TongueOut : 48
-Added EnumItem FacsActionUnit.TongueUp : 49
+Added EnumItem InputActionType.Direction1D : 1
 
-Added Enum FeedRankingScoreType
-Added EnumItem FeedRankingScoreType.Content : 0
-Added EnumItem FeedRankingScoreType.Final : 1
-Added EnumItem FeedRankingScoreType.GameJoin : 2
-Added EnumItem FeedRankingScoreType.Interaction : 3
-Added EnumItem FeedRankingScoreType.Invalid : 4
-Added EnumItem FeedRankingScoreType.Sharing : 5
+Added Tag [Deprecated] to Function AnnotationsService:LoadResolvedAnnotations
 
-Added EnumItem AudioFilterType.Lowpass6dB : 11
-Added EnumItem SecurityCapability.CapabilityControl : 22
-Added EnumItem StateObjectFieldType.Color3 : 2
+Changed the write permissions of Property TextChatService.ChatVersion
+from:{✏️NotAccessibleSecurity}
+to:{✏️RobloxScriptSecurity}
 
-Added Tags [Hidden] [NotReplicated] to Property CanvasGroup.ResolutionScale
-Added Tags [Hidden] [NotReplicated] to Property TextBox.ShouldEmitReturnEvents
-Added Tags [Hidden] [NotReplicated] to Property TextBox.ShouldEmitUpAndDownArrowEvents
+Changed the value of EnumItem FeedRankingScoreType.Sharing from 5 to 4
 
-Changed the security of Property Instance.Capabilities
-from:{RobloxScriptSecurity}
-to:{None}
+Removed Property AuroraScript.Tag
+Removed Property AuroraScriptService.BufferSize
+Removed Property PartOperation.CSGMesh2KernelMap
+Removed Property PartOperation.CSGPropertyData
+Removed Property Studio.DefaultScriptFileDir
 
-Changed the security of Property Instance.Sandboxed
-from:{RobloxScriptSecurity}
-to:{None}
+Removed Function AuroraScriptService:GetProperty
+Removed Function AuroraScriptService:GetTime
+Removed Function AuroraScriptService:SetProperty
 
-Changed the serialization of Property CanvasGroup.ResolutionScale
-from:[💾|📁 Serialized]
-to:[🚫 None]
+Removed EnumItem FeedRankingScoreType.Invalid
+Removed EnumItem InputActionType.Float
 
-Changed the serialization of Property TextBox.ShouldEmitReturnEvents
-from:[💾|📁 Serialized]
-to:[🚫 None]
-
-Changed the serialization of Property TextBox.ShouldEmitUpAndDownArrowEvents
-from:[💾|📁 Serialized]
-to:[🚫 None]
-
-Changed the security of Function Stats:GetHarmonyQualityLevel
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the security of Function Stats:GetMemoryCategoryNames
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the security of Function Stats:GetMemoryUsageMbAllCategories
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the security of Function Stats:ResetHarmonyMemoryTarget
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the security of Function Stats:SetHarmonyMemoryTarget
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the value of EnumItem StateObjectFieldType.Float from 2 to 3
-Changed the value of EnumItem StateObjectFieldType.Instance from 3 to 4
-Changed the value of EnumItem StateObjectFieldType.Random from 4 to 5
-Changed the value of EnumItem StateObjectFieldType.Vector2 from 5 to 6
-Changed the value of EnumItem StateObjectFieldType.Vector3 from 6 to 7
-Changed the value of EnumItem StateObjectFieldType.INVALID from 7 to 8
-
-Removed Property AnnotationsService.annotationsLoadingStatus
-Removed Property AnnotationsService.resolvedLoadingStatus
-Removed Property AuroraScript.RunInParallel
-Removed Property LuaSourceContainer.OriginalScriptGuid
-
-Removed Function AvatarCreationService:GetAvatarGenerationConfig
-Removed Function AvatarCreationService:SendAnalyticsEvent
+Removed Tag [NotReplicated] from Property AnnotationsService.AnnotationsLoadingStatus
+Removed Tag [NotReplicated] from Property AnnotationsServ
