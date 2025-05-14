@@ -1,227 +1,97 @@
-Version 0.672.0.6720706
+Version 0.673.0.6730711
 
 
-Added Class AvatarAccessoryRules : Instance
-Added Property AvatarAccessoryRules.AccessoryMode: Enum.AvatarSettingsAccessoryMode {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomAccessoryMode: Enum.AvatarSettingsCustomAccessoryMode {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomBackAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomBackAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomFaceAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomFaceAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomFrontAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomFrontAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomHairAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomHairAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomHeadAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomHeadAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomNeckAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomNeckAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomShoulderAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomShoulderAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomWaistAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.CustomWaistAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.EnableSound: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.EnableVFX: boolean {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.LimitBounds: Vector3 {RobloxScriptSecurity}
-Added Property AvatarAccessoryRules.LimitMethod: Enum.AvatarSettingsAccessoryLimitMethod {RobloxScriptSecurity}
+Added Class HandRigDescription : Instance
+Added Property HandRigDescription.Side: Enum.HandRigDescriptionSide
+Added Property HandRigDescription.Index1: Instance?
+Added Property HandRigDescription.Index2: Instance?
+Added Property HandRigDescription.Index3: Instance?
+Added Property HandRigDescription.Middle1: Instance?
+Added Property HandRigDescription.Middle2: Instance?
+Added Property HandRigDescription.Middle3: Instance?
+Added Property HandRigDescription.Pinky1: Instance?
+Added Property HandRigDescription.Pinky2: Instance?
+Added Property HandRigDescription.Pinky3: Instance?
+Added Property HandRigDescription.Ring1: Instance?
+Added Property HandRigDescription.Ring2: Instance?
+Added Property HandRigDescription.Ring3: Instance?
+Added Property HandRigDescription.Thumb1: Instance?
+Added Property HandRigDescription.Thumb2: Instance?
+Added Property HandRigDescription.Thumb3: Instance?
+Added Property HandRigDescription.IndexRange: Vector3
+Added Property HandRigDescription.MiddleRange: Vector3
+Added Property HandRigDescription.PinkyRange: Vector3
+Added Property HandRigDescription.RingRange: Vector3
+Added Property HandRigDescription.ThumbRange: Vector3
+Added Property HandRigDescription.IndexSize: number
+Added Property HandRigDescription.MiddleSize: number
+Added Property HandRigDescription.PinkySize: number
+Added Property HandRigDescription.RingSize: number
+Added Property HandRigDescription.ThumbSize: number
+Added Property HandRigDescription.Index1TposeAdjustment: CFrame
+Added Property HandRigDescription.Index2TposeAdjustment: CFrame
+Added Property HandRigDescription.Index3TposeAdjustment: CFrame
+Added Property HandRigDescription.Middle1TposeAdjustment: CFrame
+Added Property HandRigDescription.Middle2TposeAdjustment: CFrame
+Added Property HandRigDescription.Middle3TposeAdjustment: CFrame
+Added Property HandRigDescription.Pinky1TposeAdjustment: CFrame
+Added Property HandRigDescription.Pinky2TposeAdjustment: CFrame
+Added Property HandRigDescription.Pinky3TposeAdjustment: CFrame
+Added Property HandRigDescription.Ring1TposeAdjustment: CFrame
+Added Property HandRigDescription.Ring2TposeAdjustment: CFrame
+Added Property HandRigDescription.Ring3TposeAdjustment: CFrame
+Added Property HandRigDescription.Thumb1TposeAdjustment: CFrame
+Added Property HandRigDescription.Thumb2TposeAdjustment: CFrame
+Added Property HandRigDescription.Thumb3TposeAdjustment: CFrame
 
-Added Class AvatarAnimationRules : Instance
-Added Property AvatarAnimationRules.AnimationClipsMode: Enum.AvatarSettingsAnimationClipsMode {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.AnimationPacksMode: Enum.AvatarSettingsAnimationPacksMode {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomClimbAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomClimbAnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomFallAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomFallAnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomIdleAlt1AnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomIdleAlt1AnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomIdleAlt2AnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomIdleAlt2AnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomIdleAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomIdleAnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomJumpAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomJumpAnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomRunAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomRunAnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomSwimAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomSwimAnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomSwimIdleAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomSwimIdleAnimationId: number {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomWalkAnimationEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarAnimationRules.CustomWalkAnimationId: number {RobloxScriptSecurity}
+Added Class VideoCapture : Capture [NotCreatable] [NotReplicated]
+Added Property VideoCapture.TimeLength: number {RobloxScriptSecurity} [ReadOnly]
 
-Added Class AvatarBodyRules : Instance
-Added Property AvatarBodyRules.AppearanceMode: Enum.AvatarSettingsAppearanceMode {RobloxScriptSecurity}
-Added Property AvatarBodyRules.BuildMode: Enum.AvatarSettingsBuildMode {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomBodyAvatarReference: Instance? {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomBodyBundleId: number {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomBodyType: Enum.AvatarSettingsCustomBodyType {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomBodyTypeScale: NumberRange {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomHeadEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomHeadId: number {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomHeadScale: NumberRange {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomHeight: NumberRange {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomHeightScale: NumberRange {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomLeftArmEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomLeftArmId: number {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomLeftLegEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomLeftLegId: number {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomProportionsScale: NumberRange {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomRightArmEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomRightArmId: number {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomRightLegEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomRightLegId: number {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomTorsoEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomTorsoId: number {RobloxScriptSecurity}
-Added Property AvatarBodyRules.CustomWidthScale: NumberRange {RobloxScriptSecurity}
-Added Property AvatarBodyRules.KeepPlayerHead: boolean {RobloxScriptSecurity}
-Added Property AvatarBodyRules.ScaleMode: Enum.AvatarSettingsScaleMode {RobloxScriptSecurity}
+Added Property AuroraService.HashRoundingPoint: number [Preliminary]
+Added Property AuroraService.IgnoreRotation: boolean [Preliminary]
+Added Property AuroraService.RollbackOffset: number [Preliminary]
+Added Property AvatarSettings.Loaded: boolean {RobloxScriptSecurity} [ReadOnly]
+Added Property MaterialVariant.ColorMapContent: string {PluginSecurity}
+Added Property MaterialVariant.MetalnessMapContent: string {PluginSecurity}
+Added Property MaterialVariant.NormalMapContent: string {PluginSecurity}
+Added Property MaterialVariant.RoughnessMapContent: string {PluginSecurity}
+Added Property NegateOperation.PreviousOperation: Enum.NegateOperationHiddenHistory {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
 
-Added Class AvatarClothingRules : Instance
-Added Property AvatarClothingRules.ClothingMode: Enum.AvatarSettingsClothingMode {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomClassicPantsAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomClassicPantsAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomClassicShirtsAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomClassicShirtsAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomClassicTShirtsAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomClassicTShirtsAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomClothingMode: Enum.AvatarSettingsCustomClothingMode {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomDressSkirtAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomDressSkirtAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomJacketAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomJacketAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomLeftShoesAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomLeftShoesAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomPantsAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomPantsAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomRightShoesAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomRightShoesAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomShirtAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomShirtAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomShortsAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomShortsAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomSweaterAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomSweaterAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomTShirtAccessoryEnabled: boolean {RobloxScriptSecurity}
-Added Property AvatarClothingRules.CustomTShirtAccessoryId: number {RobloxScriptSecurity}
-Added Property AvatarClothingRules.LimitBounds: Vector3 {RobloxScriptSecurity}
+Added Function AvatarSettings:Publish() -> () {RobloxScriptSecurity}
+Added Function CaptureService:StartVideoCaptureAsync(onCaptureReady: (...any) -> ...any, captureParams: { [string]: any }?) -> Enum.VideoCaptureResult [Yields]
+Added Function CaptureService:StartVideoCaptureInternalAsync() -> Enum.VideoCaptureResult {RobloxScriptSecurity} [Yields]
+Added Function CaptureService:StopVideoCapture() -> ()
+Added Function PublishService:PublishDescendantAssetsAsync(instance: Instance) -> boolean {RobloxScriptSecurity} [Yields]
+Added Function SoundService:SetSoundEnabled(enabled: boolean) -> () {RobloxScriptSecurity}
 
-Added Class AvatarCollisionRules : Instance
-Added Property AvatarCollisionRules.CollisionMode: Enum.AvatarSettingsCollisionMode {RobloxScriptSecurity}
-Added Property AvatarCollisionRules.HitAndTouchDetectionMode: Enum.AvatarSettingsHitAndTouchDetectionMode {RobloxScriptSecurity}
-Added Property AvatarCollisionRules.LegacyCollisionMode: Enum.AvatarSettingsLegacyCollisionMode {RobloxScriptSecurity}
-Added Property AvatarCollisionRules.SingleColliderSize: Vector3 {RobloxScriptSecurity}
+Added Event VoiceChatService.PublishingHandshakeAckedWithBothSdp(fullHandshakeAnswer: string, compressedHandshakeAnswer: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.PublishingHandshakeAckedWithCompressedSdp(compressedHandshakeAnswer: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.PublishingHandshakeInitiatedWithBothSdp(fullHandshakeOffer: string, compressedHandshakeOffer: string, muteState: Enum.MuteState, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.PublishingHandshakeInitiatedWithCompressedSdp(compressedHandshakeOffer: string, muteState: Enum.MuteState, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.SubscriptionHandshakeAckedWithBothSdp(eventTag: number, fullHandshakeAnswer: string, compressedSdpAnswer: string, usersToMute: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.SubscriptionHandshakeAckedWithCompressedSdp(eventTag: number, compressedSdpAnswer: string, usersToMute: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.SubscriptionHandshakeInitiatedWithBothSdp(fullHandshakeOffer: string, compressedHandshakeOffer: string, newSubscriptionStates: string, isNewConnection: boolean, sessionId: string, eventTag: number, compressMode: number) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.SubscriptionHandshakeInitiatedWithCompressedSdp(compressedHandshakeOffer: string, newSubscriptionStates: string, isNewConnection: boolean, sessionId: string, eventTag: number, compressMode: number) {RobloxSecurity} [Hidden]
 
-Added Class AvatarRules : Instance
-Added Property AvatarRules.AvatarType: Enum.GameAvatarType {RobloxScriptSecurity}
+Added Enum HandRigDescriptionSide
+Added EnumItem HandRigDescriptionSide.None : 0
+Added EnumItem HandRigDescriptionSide.Left : 1
+Added EnumItem HandRigDescriptionSide.Right : 2
 
-Added Class AvatarSettings : Instance [NotCreatable] [Service]
+Added Enum NegateOperationHiddenHistory
+Added EnumItem NegateOperationHiddenHistory.None : 0
+Added EnumItem NegateOperationHiddenHistory.NegatedUnion : 1
+Added EnumItem NegateOperationHiddenHistory.NegatedIntersection : 2
 
-Added Property AuroraScriptObject.FrameId: number [Preliminary]
-Added Property BaseWrap.MaxSize: Vector3 {RobloxScriptSecurity} [Hidden]
-Added Property BaseWrap.Offset: Vector3 {RobloxScriptSecurity} [Hidden]
-Added Property Humanoid.OverrideDefaultCollisions: boolean {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property PartOperation.OffCentered: boolean {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property StyleDerive.Priority: number
-Added Property VideoFrame.VideoContent: string {RobloxScriptSecurity} [Hidden]
+Added EnumItem WrapLayerDebugMode.PreWrapDeformerOuterCage : 14
+Added EnumItem WrapTargetDebugMode.PreWrapDeformerCage : 9
 
-Added Function CaptureService:IsCapturingVideo() -> boolean {RobloxScriptSecurity}
-Added Function Humanoid:ApplyAvatarRules(avatarRules: AvatarRules) -> () {RobloxScriptSecurity} [Yields]
-Added Function IXPService:LogFlagLinkedUserLayerExposure(layerName: string) -> () {LocalUserSecurity}
-Added Function Player:LoadCharacterWithAvatarRules(avatarRules: AvatarRules) -> () {RobloxScriptSecurity} [Yields]
-Added Function UserInputService:GetPasteText() -> string {RobloxScriptSecurity}
+Added Tag [NotBrowsable] to Class HumanoidRigDescription
 
-Added Enum AudioCaptureMode
+Removed Property AvatarBodyRules.CustomBodyAvatarReference
 
-Added Enum AvatarSettingsAccessoryLimitMethod
-Added EnumItem AvatarSettingsAccessoryLimitMethod.Scale : 0
-Added EnumItem AvatarSettingsAccessoryLimitMethod.Remove : 1
-
-Added Enum AvatarSettingsAccessoryMode
-Added EnumItem AvatarSettingsAccessoryMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsAccessoryMode.CustomLimit : 1
-
-Added Enum AvatarSettingsAnimationClipsMode
-Added EnumItem AvatarSettingsAnimationClipsMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsAnimationClipsMode.CustomClips : 1
-
-Added Enum AvatarSettingsAnimationPacksMode
-Added EnumItem AvatarSettingsAnimationPacksMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsAnimationPacksMode.StandardR15 : 1
-Added EnumItem AvatarSettingsAnimationPacksMode.StandardR6 : 2
-
-Added Enum AvatarSettingsAppearanceMode
-Added EnumItem AvatarSettingsAppearanceMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsAppearanceMode.CustomParts : 1
-Added EnumItem AvatarSettingsAppearanceMode.CustomBody : 2
-
-Added Enum AvatarSettingsBuildMode
-Added EnumItem AvatarSettingsBuildMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsBuildMode.CustomBuild : 1
-
-Added Enum AvatarSettingsClothingMode
-Added EnumItem AvatarSettingsClothingMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsClothingMode.CustomLimit : 1
-
-Added Enum AvatarSettingsCollisionMode
-Added EnumItem AvatarSettingsCollisionMode.Default : 0
-Added EnumItem AvatarSettingsCollisionMode.SingleCollider : 1
-Added EnumItem AvatarSettingsCollisionMode.Legacy : 2
-
-Added Enum AvatarSettingsCustomAccessoryMode
-Added EnumItem AvatarSettingsCustomAccessoryMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsCustomAccessoryMode.CustomAccessories : 1
-
-Added Enum AvatarSettingsCustomBodyType
-Added EnumItem AvatarSettingsCustomBodyType.AvatarReference : 0
-Added EnumItem AvatarSettingsCustomBodyType.BundleId : 1
-
-Added Enum AvatarSettingsCustomClothingMode
-Added EnumItem AvatarSettingsCustomClothingMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsCustomClothingMode.CustomClothing : 1
-
-Added Enum AvatarSettingsHitAndTouchDetectionMode
-Added EnumItem AvatarSettingsHitAndTouchDetectionMode.UseParts : 0
-Added EnumItem AvatarSettingsHitAndTouchDetectionMode.UseCollider : 1
-
-Added Enum AvatarSettingsJumpMode
-Added EnumItem AvatarSettingsJumpMode.JumpHeight : 0
-Added EnumItem AvatarSettingsJumpMode.JumpPower : 1
-
-Added Enum AvatarSettingsLegacyCollisionMode
-Added EnumItem AvatarSettingsLegacyCollisionMode.R6Colliders : 0
-Added EnumItem AvatarSettingsLegacyCollisionMode.InnerBoxColliders : 1
-
-Added Enum AvatarSettingsScaleMode
-Added EnumItem AvatarSettingsScaleMode.PlayerChoice : 0
-Added EnumItem AvatarSettingsScaleMode.CustomScale : 1
-
-Added Enum VideoCaptureResult
-Added EnumItem VideoCaptureResult.Success : 0
-Added EnumItem VideoCaptureResult.OtherError : 1
-Added EnumItem VideoCaptureResult.CapturingAlready : 2
-Added EnumItem VideoCaptureResult.NoDeviceSupport : 3
-Added EnumItem VideoCaptureResult.NoSpaceOnDevice : 4
-
-Added EnumItem HttpError.ConnectionClosed : 13
-Added EnumItem HttpError.ServerProtocolError : 14
-
-Added Tag [Deprecated] to Property EditableMesh.SkinningEnabled
-
-Added Tag [Deprecated] to Enum StateObjectFieldType
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.Boolean
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.CFrame
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.Color3
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.Float
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.Instance
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.Random
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.Vector2
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.Vector3
-Added Tag [Deprecated] to EnumItem StateObjectFieldType.INVALID
-
-Changed the serialization of Property PartOperation.ComponentIndex
-from:[🚫 None]
-to:[💾|📁 Serialized]
-
-Changed the serialization of Property StyleDerive.Index
-from:[💾|📁 Serialized]
-to:[📁 LoadOnly]
+Removed Function CaptureService:StartVideoCaptureInternal
+Removed Function CaptureService:StopCapture
+Removed Function ThirdPartyUserService:GetUserPlatformId
+Removed Function ThirdPartyUserService:IsOver13
+Removed Function ThirdPartyUserService:ReturnToEngagement
