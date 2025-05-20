@@ -1,97 +1,71 @@
-Version 0.673.0.6730711
+Version 0.674.0.6740785
 
 
-Added Class HandRigDescription : Instance
-Added Property HandRigDescription.Side: Enum.HandRigDescriptionSide
-Added Property HandRigDescription.Index1: Instance?
-Added Property HandRigDescription.Index2: Instance?
-Added Property HandRigDescription.Index3: Instance?
-Added Property HandRigDescription.Middle1: Instance?
-Added Property HandRigDescription.Middle2: Instance?
-Added Property HandRigDescription.Middle3: Instance?
-Added Property HandRigDescription.Pinky1: Instance?
-Added Property HandRigDescription.Pinky2: Instance?
-Added Property HandRigDescription.Pinky3: Instance?
-Added Property HandRigDescription.Ring1: Instance?
-Added Property HandRigDescription.Ring2: Instance?
-Added Property HandRigDescription.Ring3: Instance?
-Added Property HandRigDescription.Thumb1: Instance?
-Added Property HandRigDescription.Thumb2: Instance?
-Added Property HandRigDescription.Thumb3: Instance?
-Added Property HandRigDescription.IndexRange: Vector3
-Added Property HandRigDescription.MiddleRange: Vector3
-Added Property HandRigDescription.PinkyRange: Vector3
-Added Property HandRigDescription.RingRange: Vector3
-Added Property HandRigDescription.ThumbRange: Vector3
-Added Property HandRigDescription.IndexSize: number
-Added Property HandRigDescription.MiddleSize: number
-Added Property HandRigDescription.PinkySize: number
-Added Property HandRigDescription.RingSize: number
-Added Property HandRigDescription.ThumbSize: number
-Added Property HandRigDescription.Index1TposeAdjustment: CFrame
-Added Property HandRigDescription.Index2TposeAdjustment: CFrame
-Added Property HandRigDescription.Index3TposeAdjustment: CFrame
-Added Property HandRigDescription.Middle1TposeAdjustment: CFrame
-Added Property HandRigDescription.Middle2TposeAdjustment: CFrame
-Added Property HandRigDescription.Middle3TposeAdjustment: CFrame
-Added Property HandRigDescription.Pinky1TposeAdjustment: CFrame
-Added Property HandRigDescription.Pinky2TposeAdjustment: CFrame
-Added Property HandRigDescription.Pinky3TposeAdjustment: CFrame
-Added Property HandRigDescription.Ring1TposeAdjustment: CFrame
-Added Property HandRigDescription.Ring2TposeAdjustment: CFrame
-Added Property HandRigDescription.Ring3TposeAdjustment: CFrame
-Added Property HandRigDescription.Thumb1TposeAdjustment: CFrame
-Added Property HandRigDescription.Thumb2TposeAdjustment: CFrame
-Added Property HandRigDescription.Thumb3TposeAdjustment: CFrame
+Added Property HumanoidRigDescription.HeadBase: Instance?
+Added Property HumanoidRigDescription.HeadBaseRangeMax: Vector3
+Added Property HumanoidRigDescription.HeadBaseRangeMin: Vector3
+Added Property HumanoidRigDescription.HeadBaseSize: number
+Added Property HumanoidRigDescription.HeadBaseTposeAdjustment: CFrame
+Added Property TerrainDetail.ColorMapContent: string {PluginSecurity}
+Added Property TerrainDetail.MetalnessMapContent: string {PluginSecurity}
+Added Property TerrainDetail.NormalMapContent: string {PluginSecurity}
+Added Property TerrainDetail.RoughnessMapContent: string {PluginSecurity}
+Added Property TriangleMeshPart.ConvexDecompHolder: NetAssetRef {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property WrapLayer.MaxSize: Vector3 {RobloxScriptSecurity} [Hidden]
+Added Property WrapLayer.Offset: Vector3 {RobloxScriptSecurity} [Hidden]
 
-Added Class VideoCapture : Capture [NotCreatable] [NotReplicated]
-Added Property VideoCapture.TimeLength: number {RobloxScriptSecurity} [ReadOnly]
+Added Function HandRigDescription:GetFingerControl(fingerIndex: number) -> Vector3
+Added Function HandRigDescription:GetFingerTip(fingerIndex: number) -> Vector3
+Added Function HandRigDescription:SetFingerControl(fingerIndex: number, control: Vector3) -> ()
+Added Function HandRigDescription:SetFingerTip(fingerIndex: number, point: Vector3) -> ()
+Added Function HumanoidRigDescription:GetJointFromName(name: string) -> Instance? {🧬Safe}
+Added Function MemoryStoreQueue:GetSizeAsync(excludeInvisible: boolean? = false) -> number [Yields]
+Added Function MemoryStoreSortedMap:GetSizeAsync() -> number [Yields]
+Added Function UGCValidationService:GetBoundingBoxManipulationData(partMeshObjects: { any }, partCFs: { any }, meshScales: { any }) -> { [string]: any } {RobloxScriptSecurity}
 
-Added Property AuroraService.HashRoundingPoint: number [Preliminary]
-Added Property AuroraService.IgnoreRotation: boolean [Preliminary]
-Added Property AuroraService.RollbackOffset: number [Preliminary]
-Added Property AvatarSettings.Loaded: boolean {RobloxScriptSecurity} [ReadOnly]
-Added Property MaterialVariant.ColorMapContent: string {PluginSecurity}
-Added Property MaterialVariant.MetalnessMapContent: string {PluginSecurity}
-Added Property MaterialVariant.NormalMapContent: string {PluginSecurity}
-Added Property MaterialVariant.RoughnessMapContent: string {PluginSecurity}
-Added Property NegateOperation.PreviousOperation: Enum.NegateOperationHiddenHistory {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Event AdService.RewardedVideoAdEnded() {RobloxScriptSecurity}
+Added Event AdService.RewardedVideoAdStarted() {RobloxScriptSecurity}
+Added Event CaptureService.UserVideoCaptureFailed(result: Enum.VideoCaptureResult) {RobloxScriptSecurity}
+Added Event CaptureService.VideoCaptureInProgress(isInProgress: boolean) {RobloxScriptSecurity}
+Added Event TeamCreatePublishService.TeamCreatePlaceUploadRequest(metadata: { [string]: any }) {RobloxSecurity} [Hidden]
+Added Event TeamCreatePublishService.TeamCreatePlaceUploadResponse(success: boolean, metadata: { [string]: any }) {RobloxSecurity} [Hidden]
 
-Added Function AvatarSettings:Publish() -> () {RobloxScriptSecurity}
-Added Function CaptureService:StartVideoCaptureAsync(onCaptureReady: (...any) -> ...any, captureParams: { [string]: any }?) -> Enum.VideoCaptureResult [Yields]
-Added Function CaptureService:StartVideoCaptureInternalAsync() -> Enum.VideoCaptureResult {RobloxScriptSecurity} [Yields]
-Added Function CaptureService:StopVideoCapture() -> ()
-Added Function PublishService:PublishDescendantAssetsAsync(instance: Instance) -> boolean {RobloxScriptSecurity} [Yields]
-Added Function SoundService:SetSoundEnabled(enabled: boolean) -> () {RobloxScriptSecurity}
+Added Enum CaptureType
+Added EnumItem CaptureType.Screenshot : 0
+Added EnumItem CaptureType.Video : 1
 
-Added Event VoiceChatService.PublishingHandshakeAckedWithBothSdp(fullHandshakeAnswer: string, compressedHandshakeAnswer: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.PublishingHandshakeAckedWithCompressedSdp(compressedHandshakeAnswer: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.PublishingHandshakeInitiatedWithBothSdp(fullHandshakeOffer: string, compressedHandshakeOffer: string, muteState: Enum.MuteState, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.PublishingHandshakeInitiatedWithCompressedSdp(compressedHandshakeOffer: string, muteState: Enum.MuteState, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.SubscriptionHandshakeAckedWithBothSdp(eventTag: number, fullHandshakeAnswer: string, compressedSdpAnswer: string, usersToMute: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.SubscriptionHandshakeAckedWithCompressedSdp(eventTag: number, compressedSdpAnswer: string, usersToMute: string, sessionId: string, compressMode: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.SubscriptionHandshakeInitiatedWithBothSdp(fullHandshakeOffer: string, compressedHandshakeOffer: string, newSubscriptionStates: string, isNewConnection: boolean, sessionId: string, eventTag: number, compressMode: number) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.SubscriptionHandshakeInitiatedWithCompressedSdp(compressedHandshakeOffer: string, newSubscriptionStates: string, isNewConnection: boolean, sessionId: string, eventTag: number, compressMode: number) {RobloxSecurity} [Hidden]
+Added Tag [NotBrowsable] to Class AudioChannelMixer
+Added Tag [NotBrowsable] to Class AudioChannelSplitter
+Added Tag [NotBrowsable] to Class HandRigDescription
 
-Added Enum HandRigDescriptionSide
-Added EnumItem HandRigDescriptionSide.None : 0
-Added EnumItem HandRigDescriptionSide.Left : 1
-Added EnumItem HandRigDescriptionSide.Right : 2
+Changed the parameters of Function InputAction:Fire
+from:(value: any)
+to:(state: any)
 
-Added Enum NegateOperationHiddenHistory
-Added EnumItem NegateOperationHiddenHistory.None : 0
-Added EnumItem NegateOperationHiddenHistory.NegatedUnion : 1
-Added EnumItem NegateOperationHiddenHistory.NegatedIntersection : 2
+Changed the parameters of Event CaptureService.CaptureBegan
+from:()
+to:(captureType: Enum.CaptureType)
 
-Added EnumItem WrapLayerDebugMode.PreWrapDeformerOuterCage : 14
-Added EnumItem WrapTargetDebugMode.PreWrapDeformerCage : 9
+Changed the parameters of Event CaptureService.CaptureEnded
+from:()
+to:(captureType: Enum.CaptureType)
 
-Added Tag [NotBrowsable] to Class HumanoidRigDescription
+Removed Class GoogleAnalyticsConfiguration
+Removed Property GoogleAnalyticsConfiguration.gaID
 
-Removed Property AvatarBodyRules.CustomBodyAvatarReference
+Removed Class AnalysticsSettings
 
-Removed Function CaptureService:StartVideoCaptureInternal
-Removed Function CaptureService:StopCapture
-Removed Function ThirdPartyUserService:GetUserPlatformId
-Removed Function ThirdPartyUserService:IsOver13
-Removed Function ThirdPartyUserService:ReturnToEngagement
+Removed Property BaseWrap.MaxSize
+Removed Property BaseWrap.Offset
+Removed Property HumanoidRigDescription.Head
+Removed Property HumanoidRigDescription.HeadRangeMax
+Removed Property HumanoidRigDescription.HeadRangeMin
+Removed Property HumanoidRigDescription.HeadSize
+Removed Property HumanoidRigDescription.HeadTposeAdjustment
+Removed Property TriangleMeshPart.ConvexDecompData
+
+Removed Function AssetService:CreateSurfaceAppearance
+
+Removed Tag [Deprecated] from EnumItem KeyCode.MouseLeftButton
+Removed Tag [Deprecated] from EnumItem KeyCode.MouseRightButton
+Removed Tag [Deprecated] from EnumItem KeyCode.MouseMiddleButton
