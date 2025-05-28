@@ -1,71 +1,69 @@
-Version 0.674.0.6740785
+Version 0.675.0.6750712
 
 
-Added Property HumanoidRigDescription.HeadBase: Instance?
-Added Property HumanoidRigDescription.HeadBaseRangeMax: Vector3
-Added Property HumanoidRigDescription.HeadBaseRangeMin: Vector3
-Added Property HumanoidRigDescription.HeadBaseSize: number
-Added Property HumanoidRigDescription.HeadBaseTposeAdjustment: CFrame
-Added Property TerrainDetail.ColorMapContent: string {PluginSecurity}
-Added Property TerrainDetail.MetalnessMapContent: string {PluginSecurity}
-Added Property TerrainDetail.NormalMapContent: string {PluginSecurity}
-Added Property TerrainDetail.RoughnessMapContent: string {PluginSecurity}
-Added Property TriangleMeshPart.ConvexDecompHolder: NetAssetRef {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property WrapLayer.MaxSize: Vector3 {RobloxScriptSecurity} [Hidden]
-Added Property WrapLayer.Offset: Vector3 {RobloxScriptSecurity} [Hidden]
+Added Class TerrainIterateOperation : Object [NotCreatable] [NotReplicated]
+Added Function TerrainIterateOperation:CommitBlock(block: { [string]: any }) -> RBXScriptSignal
+Added Event TerrainIterateOperation.Ready(block: { [string]: any })
 
-Added Function HandRigDescription:GetFingerControl(fingerIndex: number) -> Vector3
-Added Function HandRigDescription:GetFingerTip(fingerIndex: number) -> Vector3
-Added Function HandRigDescription:SetFingerControl(fingerIndex: number, control: Vector3) -> ()
-Added Function HandRigDescription:SetFingerTip(fingerIndex: number, point: Vector3) -> ()
-Added Function HumanoidRigDescription:GetJointFromName(name: string) -> Instance? {🧬Safe}
-Added Function MemoryStoreQueue:GetSizeAsync(excludeInvisible: boolean? = false) -> number [Yields]
-Added Function MemoryStoreSortedMap:GetSizeAsync() -> number [Yields]
-Added Function UGCValidationService:GetBoundingBoxManipulationData(partMeshObjects: { any }, partCFs: { any }, meshScales: { any }) -> { [string]: any } {RobloxScriptSecurity}
+Added Class TerrainModifyOperation : Object [NotCreatable] [NotReplicated]
+Added Function TerrainModifyOperation:CommitBlock(block: { [string]: any }) -> RBXScriptSignal
+Added Event TerrainModifyOperation.Ready(block: { [string]: any })
 
-Added Event AdService.RewardedVideoAdEnded() {RobloxScriptSecurity}
-Added Event AdService.RewardedVideoAdStarted() {RobloxScriptSecurity}
-Added Event CaptureService.UserVideoCaptureFailed(result: Enum.VideoCaptureResult) {RobloxScriptSecurity}
-Added Event CaptureService.VideoCaptureInProgress(isInProgress: boolean) {RobloxScriptSecurity}
-Added Event TeamCreatePublishService.TeamCreatePlaceUploadRequest(metadata: { [string]: any }) {RobloxSecurity} [Hidden]
-Added Event TeamCreatePublishService.TeamCreatePlaceUploadResponse(success: boolean, metadata: { [string]: any }) {RobloxSecurity} [Hidden]
+Added Class TerrainReadOperation : Object [NotCreatable] [NotReplicated]
+Added Event TerrainReadOperation.Ready(block: { [string]: any })
 
-Added Enum CaptureType
-Added EnumItem CaptureType.Screenshot : 0
-Added EnumItem CaptureType.Video : 1
+Added Class TerrainWriteOperation : Object [NotCreatable] [NotReplicated]
+Added Function TerrainWriteOperation:CommitBlock(block: { [string]: any }) -> RBXScriptSignal
+Added Function TerrainWriteOperation:GetBlock() -> { [string]: any } [CustomLuaState]
 
-Added Tag [NotBrowsable] to Class AudioChannelMixer
-Added Tag [NotBrowsable] to Class AudioChannelSplitter
-Added Tag [NotBrowsable] to Class HandRigDescription
+Added Class SlimContentProvider : CacheableContentProvider [NotCreatable] [Service]
+Added Function SlimContentProvider:GetContentMemoryData() -> { [string]: any } {RobloxSecurity}
 
-Changed the parameters of Function InputAction:Fire
-from:(value: any)
-to:(state: any)
+Added Property PartOperation.ManifoldMesh_DEPRECATED: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable] [Preliminary]
+Added Property UserInputService.PreferredInput: Enum.PreferredInput [ReadOnly]
 
-Changed the parameters of Event CaptureService.CaptureBegan
+Added Function CaptureService:DeleteVideoCapture(videoCapture: VideoCapture) -> () {RobloxScriptSecurity}
+Added Function CaptureService:OnVideoCaptureShared(videoCapture: VideoCapture) -> () {RobloxScriptSecurity}
+Added Function CaptureService:SaveVideoCaptureToExternalStorage(videoCapture: VideoCapture) -> () {RobloxScriptSecurity}
+Added Function Player:PinStreamingForInstance(instance: Instance, depth: number) -> () {RobloxScriptSecurity}
+Added Function Player:UnpinStreamingForInstance(instance: Instance, depth: number) -> () {RobloxScriptSecurity}
+Added Function Terrain:ClearVoxelsAsync_beta(region: Region3, channelIds: { any }) -> () [CustomLuaState]
+Added Function Terrain:IterateVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainIterateOperation [CustomLuaState]
+Added Function Terrain:ModifyVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainModifyOperation [CustomLuaState]
+Added Function Terrain:ReadVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainReadOperation [CustomLuaState]
+Added Function Terrain:WriteVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainWriteOperation [CustomLuaState]
+
+Added Event Player.PinStreamingStart(instance: Instance, depth: number) {RobloxSecurity} [Hidden]
+Added Event Player.RequestStreamingPin(instance: Instance, depth: number) {RobloxSecurity} [Hidden]
+Added Event Player.StreamingPinComplete(instance: Instance) {RobloxScriptSecurity}
+Added Event Player.UnpinStreaming(instance: Instance, depth: number) {RobloxSecurity} [Hidden]
+
+Added Enum PreferredInput
+Added EnumItem PreferredInput.KeyboardAndMouse : 0
+Added EnumItem PreferredInput.Gamepad : 1
+Added EnumItem PreferredInput.Touch : 2
+
+Added EnumItem DeveloperMemoryTag.GraphicsSlimModels : 25
+
+Added Tag [Deprecated] to Function TextFilterResult:GetChatForUserAsync
+
+Changed the parameters of Function AdService:ShowRewardedVideoAdAsync
+from:(player: Player, reward: AdReward)
+to:(player: Player, reward: AdReward, placementId: number?)
+
+Changed the parameters of Function AssetService:SavePlaceAsync
 from:()
-to:(captureType: Enum.CaptureType)
+to:(requestParameters: { [string]: any }?)
 
-Changed the parameters of Event CaptureService.CaptureEnded
-from:()
-to:(captureType: Enum.CaptureType)
+Changed the security of Function AvatarCreationService:AutoSetupAvatarAsync
+from:{RobloxScriptSecurity}
+to:{None}
 
-Removed Class GoogleAnalyticsConfiguration
-Removed Property GoogleAnalyticsConfiguration.gaID
+Changed the parameters of Event CaptureService.VideoCaptureInProgress
+from:(isInProgress: boolean)
+to:(isInProgress: boolean, captureTrigger: string)
 
-Removed Class AnalysticsSettings
+Removed Property PartOperation.ManifoldMesh
 
-Removed Property BaseWrap.MaxSize
-Removed Property BaseWrap.Offset
-Removed Property HumanoidRigDescription.Head
-Removed Property HumanoidRigDescription.HeadRangeMax
-Removed Property HumanoidRigDescription.HeadRangeMin
-Removed Property HumanoidRigDescription.HeadSize
-Removed Property HumanoidRigDescription.HeadTposeAdjustment
-Removed Property TriangleMeshPart.ConvexDecompData
-
-Removed Function AssetService:CreateSurfaceAppearance
-
-Removed Tag [Deprecated] from EnumItem KeyCode.MouseLeftButton
-Removed Tag [Deprecated] from EnumItem KeyCode.MouseRightButton
-Removed Tag [Deprecated] from EnumItem KeyCode.MouseMiddleButton
+Removed Tag [NotBrowsable] from Class AudioChannelMixer
+Removed Tag [NotBrowsable] from Class AudioChannelSplitter
