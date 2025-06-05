@@ -1,69 +1,44 @@
-Version 0.675.0.6750712
+Cilent release 0.676.0.6760531
 
 
-Added Class TerrainIterateOperation : Object [NotCreatable] [NotReplicated]
-Added Function TerrainIterateOperation:CommitBlock(block: { [string]: any }) -> RBXScriptSignal
-Added Event TerrainIterateOperation.Ready(block: { [string]: any })
+Added Class MLSession : Object [NotCreatable] [NotReplicated]
+Added Function MLSession:ForwardAsync(data: { [string]: any }) -> { [string]: any } [Yields]
 
-Added Class TerrainModifyOperation : Object [NotCreatable] [NotReplicated]
-Added Function TerrainModifyOperation:CommitBlock(block: { [string]: any }) -> RBXScriptSignal
-Added Event TerrainModifyOperation.Ready(block: { [string]: any })
+Added Class MLService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function MLService:CreateSessionAsync(assetId: string) -> MLSession [Yields]
 
-Added Class TerrainReadOperation : Object [NotCreatable] [NotReplicated]
-Added Event TerrainReadOperation.Ready(block: { [string]: any })
+Added Property AuroraScriptObject.MaxFrequency: number [Hidden] [NotScriptable] [Preliminary]
+Added Property InputAction.BoolState: boolean {RobloxScriptSecurity} [NotScriptable] [ReadOnly]
+Added Property InputAction.Direction1DState: number {RobloxScriptSecurity} [NotScriptable] [ReadOnly]
+Added Property InputAction.Direction2DState: Vector2 {RobloxScriptSecurity} [NotScriptable] [ReadOnly]
+Added Property TextChatService.isLegacyChatDisabled: boolean {RobloxScriptSecurity} [Hidden] [NotReplicated]
 
-Added Class TerrainWriteOperation : Object [NotCreatable] [NotReplicated]
-Added Function TerrainWriteOperation:CommitBlock(block: { [string]: any }) -> RBXScriptSignal
-Added Function TerrainWriteOperation:GetBlock() -> { [string]: any } [CustomLuaState]
+Added Function CaptureService:PreVideoCaptureShared(videoCapture: VideoCapture) -> string {RobloxScriptSecurity}
+Added Function Humanoid:ComputeR15BodyBoundingBox() -> (CFrame, Vector3) {RobloxScriptSecurity}
 
-Added Class SlimContentProvider : CacheableContentProvider [NotCreatable] [Service]
-Added Function SlimContentProvider:GetContentMemoryData() -> { [string]: any } {RobloxSecurity}
+Added Event AdService.rewardedVideoAdPlayServerToClientWithPlacement(rewardDetails: string, placementId: number) {RobloxSecurity} [Hidden]
+Added Event CaptureService.UserVideoCaptureStartFailed(result: Enum.VideoCaptureStartedResult) {RobloxScriptSecurity}
 
-Added Property PartOperation.ManifoldMesh_DEPRECATED: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable] [Preliminary]
-Added Property UserInputService.PreferredInput: Enum.PreferredInput [ReadOnly]
+Added Enum VideoCaptureStartedResult
+Added EnumItem VideoCaptureStartedResult.Success : 0
+Added EnumItem VideoCaptureStartedResult.OtherError : 1
+Added EnumItem VideoCaptureStartedResult.CapturingAlready : 2
+Added EnumItem VideoCaptureStartedResult.NoDeviceSupport : 3
+Added EnumItem VideoCaptureStartedResult.NoSpaceOnDevice : 4
 
-Added Function CaptureService:DeleteVideoCapture(videoCapture: VideoCapture) -> () {RobloxScriptSecurity}
-Added Function CaptureService:OnVideoCaptureShared(videoCapture: VideoCapture) -> () {RobloxScriptSecurity}
-Added Function CaptureService:SaveVideoCaptureToExternalStorage(videoCapture: VideoCapture) -> () {RobloxScriptSecurity}
-Added Function Player:PinStreamingForInstance(instance: Instance, depth: number) -> () {RobloxScriptSecurity}
-Added Function Player:UnpinStreamingForInstance(instance: Instance, depth: number) -> () {RobloxScriptSecurity}
-Added Function Terrain:ClearVoxelsAsync_beta(region: Region3, channelIds: { any }) -> () [CustomLuaState]
-Added Function Terrain:IterateVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainIterateOperation [CustomLuaState]
-Added Function Terrain:ModifyVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainModifyOperation [CustomLuaState]
-Added Function Terrain:ReadVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainReadOperation [CustomLuaState]
-Added Function Terrain:WriteVoxelsAsync_beta(region: Region3, resolution: number, channelIds: { any }) -> TerrainWriteOperation [CustomLuaState]
+Added EnumItem VideoCaptureResult.ScreenSizeChanged : 2
+Added EnumItem VideoCaptureResult.TimeLimitReached : 3
 
-Added Event Player.PinStreamingStart(instance: Instance, depth: number) {RobloxSecurity} [Hidden]
-Added Event Player.RequestStreamingPin(instance: Instance, depth: number) {RobloxSecurity} [Hidden]
-Added Event Player.StreamingPinComplete(instance: Instance) {RobloxScriptSecurity}
-Added Event Player.UnpinStreaming(instance: Instance, depth: number) {RobloxSecurity} [Hidden]
+Changed the return-type of Function CaptureService:StartVideoCaptureAsync
+from:Enum.VideoCaptureResult
+to:Enum.VideoCaptureStartedResult
 
-Added Enum PreferredInput
-Added EnumItem PreferredInput.KeyboardAndMouse : 0
-Added EnumItem PreferredInput.Gamepad : 1
-Added EnumItem PreferredInput.Touch : 2
+Changed the return-type of Function CaptureService:StartVideoCaptureInternalAsync
+from:Enum.VideoCaptureResult
+to:Enum.VideoCaptureStartedResult
 
-Added EnumItem DeveloperMemoryTag.GraphicsSlimModels : 25
+Removed Property Terrain.ShorelinesUpgraded
 
-Added Tag [Deprecated] to Function TextFilterResult:GetChatForUserAsync
-
-Changed the parameters of Function AdService:ShowRewardedVideoAdAsync
-from:(player: Player, reward: AdReward)
-to:(player: Player, reward: AdReward, placementId: number?)
-
-Changed the parameters of Function AssetService:SavePlaceAsync
-from:()
-to:(requestParameters: { [string]: any }?)
-
-Changed the security of Function AvatarCreationService:AutoSetupAvatarAsync
-from:{RobloxScriptSecurity}
-to:{None}
-
-Changed the parameters of Event CaptureService.VideoCaptureInProgress
-from:(isInProgress: boolean)
-to:(isInProgress: boolean, captureTrigger: string)
-
-Removed Property PartOperation.ManifoldMesh
-
-Removed Tag [NotBrowsable] from Class AudioChannelMixer
-Removed Tag [NotBrowsable] from Class AudioChannelSplitter
+Removed EnumItem VideoCaptureResult.CapturingAlready
+Removed EnumItem VideoCaptureResult.NoDeviceSupport
+Removed EnumItem VideoCaptureResult.NoSpaceOnDevice
